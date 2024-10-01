@@ -12,11 +12,14 @@ if height >= 120.00:
     elif age <= 18:
         print("Youth tickets are $7")
         ticket = 7
+    elif age >=45 and age <=55:
+        print("Your ticket is on the house. You can ride for free!")
+        ticket = 0
     else:
         print("Adult tickets are $12")
         ticket = 12
 
-    is_photo_req = input("Do you want to buy additional photos for $3? (Y/N) ")
+    is_photo_req = input("Do you want additional ride photos taken for $3? (Y/N) ")
     if is_photo_req.lower() == 'y':
         bill = ticket + 3
 
