@@ -73,6 +73,9 @@ def display_help() -> None:
     print(" * * * * ")
 
 def display_game_over() -> None:
+    """
+    Displays Game Over logo
+    """
     print('''
     
                                                          
@@ -96,9 +99,17 @@ questions = [
     "She tells you a scary story from the past and both of you go to sleep.\nNext morning, she offers to give you a map to lead to your home and laughs madly at you.You take the map, and leave the hut to not insult the witch.\nWould you 'follow her address' on the map or 'follow on your own' as you don't trust the wicked map? "
 ]
 def ask_question(question : str) -> str:
+    """
+    Asks a question, checks against pre-defined answers and returns the choice selected by user.
+
+    Args:
+        question (string): current question to ask at the prompt
+
+    Returns:
+        response (string): response selected by the user
+    """
     while True:
         response = input(question)
-
         if response in commands:
             break
         print("\nThat's doesn't work! Re-enter your choice again\n")
