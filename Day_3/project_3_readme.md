@@ -38,7 +38,7 @@ commands -> contains all the valid responses or choices user can make
 
 ## Floorplan
 
-![new](jungle-encounter-map.webp)
+![https://google.com](jungle-encounter-map.webp)
 
 ## Story
 
@@ -54,7 +54,7 @@ You can choose either of the path, but one leads to danger.
 
 Description: You find an old platform erected on the side of the mountain. 
 
-Clue: Upon reaching, you find few useful tools to get you home.
+Clue: Upon reaching, you find few useful tools to get you home. Which one will get you home?
 
 The platform is going to crash soon. So better hurry up!
 
