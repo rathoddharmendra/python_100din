@@ -1,4 +1,4 @@
-[![Python application](https://github.com/rathoddharmendra/python_100dayscodingchallenge/actions/workflows/python-app.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/rathoddharmendra/python_100dayscodingchallenge/actions/workflows/python-app.yml)
+[![Python application](https://github.com/rathoddharmendra/python_100dayscodingchallenge/actions/workflows/python-app.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/rathoddharmendra/python_100dayscodingchallenge/actions/workflows/python-app.yml)  [![Python application](https://github.com/rathoddharmendra/python_100dayscodingchallenge/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/rathoddharmendra/python_100dayscodingchallenge/actions/workflows/python-app.yml)
 
 # python_100dayscodingchallenge
 
