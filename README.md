@@ -1,3 +1,5 @@
+[![Python application](https://github.com/rathoddharmendra/python_100dayscodingchallenge/actions/workflows/python-app.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/rathoddharmendra/python_100dayscodingchallenge/actions/workflows/python-app.yml)
+
 # python_100dayscodingchallenge
 
 This repo is created for me to follow along 100 days of coding practice with python programming. Part of the deal I made to myself and to the community, I am going to track my progress here daily.
