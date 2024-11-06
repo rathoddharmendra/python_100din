@@ -4,7 +4,7 @@ print(len("Hello"))
 print("Hello"[1:])
 name = "Dharmendra Rathod"
 print(f'{name=}')
-print("Hello"[1:])
+print("Hello"[:1])
 
 # Strings, Integer, Float, Boolean
 
