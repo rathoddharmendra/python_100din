@@ -27,7 +27,7 @@ def play_rps():
     print(f"You chose: {user_choice}\n\n {rps_ascii.rps_dict[user_choice]}")
     print(f"Computer chose: {computer_choice}\n\n {rps_ascii.rps_dict[computer_choice]}")
 
-    if (user_choice == 0 and computer_choice == 2 or user_choice == 1 and computer_choice == 0 or user_choice == 2 and computer_choice == 0):
+    if (user_choice == 0 and computer_choice == 2 or user_choice == 1 and computer_choice == 0 or user_choice == 2 and computer_choice == 1):
         print(rps_ascii.win)
     elif(user_choice == computer_choice):
         print(rps_ascii.draw)
