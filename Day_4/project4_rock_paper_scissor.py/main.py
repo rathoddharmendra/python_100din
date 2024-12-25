@@ -9,9 +9,9 @@ def play_rps():
     """
     Function to play Rock, Paper, Scissors game.
     Uses user's choice and computer's random choice to determine the winner.
-
+    Logic submitted from ![https://wrpsa.com/](WRPSA)
     Args:
-        None
+        None 
     """
     print("Welcome to Rock, Paper, Scissors!")
 
@@ -19,7 +19,7 @@ def play_rps():
     user_choice = int(user_input)
     if user_choice < 0 or user_choice > 2:
         print("Invalid choice. Please choose again.")
-        return play_rps()
+        return play_rps() #new_learnen - using return to restart function to play again
 
     computer_choice = random.randint(0, 2)
 
