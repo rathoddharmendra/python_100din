@@ -18,9 +18,9 @@ def generate_password(letter_count: int, number_count: int, special_char_count: 
     # Randomly chooses elements from parents list
     password_elements.extend(random.sample(elements.letters, len(elements.letters))[:letter_count])
     password_elements.extend(random.sample(elements.numbers, len(elements.numbers))[:number_count])
-    password_elements.extend(random.sample(elements.special_chars, len(elements.special_chars))[:special_char_count])
+    # password_elements.extend(random.sample(elements.special_chars, len(elements.special_chars))[:special_char_count])
+    password_elements.extend([random.choice(elements.special_chars) for _ in range(0, special_char_count)])
     
-
     password = (random.sample(password_elements, len(password_elements)))
     # converts chars of list to string
     return ''.join(password)
