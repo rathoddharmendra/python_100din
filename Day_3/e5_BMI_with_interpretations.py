@@ -11,8 +11,8 @@ If the bmi is 25 (including) or over, print out "overweight"
 
 """
 
-weight = 85
-height = 1.85
+weight = 75
+height = 1.78
 
 bmi = weight / (height ** 2)
 
