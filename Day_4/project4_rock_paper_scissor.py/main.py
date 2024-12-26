@@ -34,9 +34,17 @@ def play_rps():
     else:
         print(rps_ascii.loose)
 
+    restart_game = input("\nDo you want to play again? (Y/N) \n")
+    if restart_game.lower() == 'y':
+        play_rps()
+    else:
+        print("Thanks for playing!")
+
 
 if __name__ == "__main__":
     play_rps()
+
+
 
 
 
