@@ -7,7 +7,7 @@ fruits = ["apple", "banana", "cherry", "date", "elderberry"]
 
 # Highest score exexrice #5.39
 student_scores = [random.randint(0, 250) for x in range(50)]
-print(student_scores)
+# print(student_scores)
 
 def calculate_highest_score(scores:list) -> int:
     """
@@ -21,6 +21,21 @@ def calculate_highest_score(scores:list) -> int:
             highest_score = score
     return highest_score
 
-
 # Call the function with the list of student scores.
-print(f"The highest score is: {calculate_highest_score(student_scores)}")
+# print(f"The highest score is: {calculate_highest_score(student_scores)}")
+# print(f"The highest score is: {max(student_scores)}")
+
+# Gauss's challenge #5.40
+
+numbers = [_ for _ in range(1, 101)]
+print(numbers)
+
+sum = 0
+for num in range(0, 50):
+    value = numbers[num]
+    val = numbers[-(num + 1)]
+    sum += numbers[num] + numbers[-(num + 1)]
+
+print (f"{sum=}")
+
+
