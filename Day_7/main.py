@@ -68,7 +68,7 @@ def revealed_letters(chosen_word: list, guessed_letters: list) -> str:
             revealed_word += "-"
     return revealed_word
 
-if __name__ == "__main__":
+def main():
     chosen_word = choose_random_word()
     guessed_letters = []
     
@@ -98,3 +98,6 @@ if __name__ == "__main__":
             print("\nYou're out of lives! Game over.")
             print(f"The secret word was: {chosen_word}")
             break
+
+if __name__ == "__main__":
+    main()
