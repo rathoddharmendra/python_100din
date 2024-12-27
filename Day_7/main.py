@@ -4,10 +4,9 @@ The Hangman Game
 Save the little guy, by guessing the letters of a word before his life runs out.
 
 """
-import random, os
-
 import random
 import os
+import graphics
 
 def choose_random_word() -> str:
     """
@@ -41,12 +40,14 @@ def greetings(word: str) -> None:
     """
     Greet the player and ask them to start the game.
     """
+    print("=" * 40)
     print("Welcome to Hangman!")
-    print("Guess the secret word by guessing letters.")
-    print("You have 7 lives.")
-    print("Good luck!")
+    print(f"{graphics.hangman}\n")
+    print("YOUR GOAL IS TO SAVE THE LITTLE MAN BY GUESSING THE RIGHT LETTERS OF THE SECRET WORD BEFORE HIS 7 LIVES RUN OUT")
+    print(f"The secret word {word} has total {len(word)} letters.")
+    print("GOOD LUCK!")
+    print("=" * 40)
 
-    print(f"The secret word has {word} letters.")
 
 def revealed_letters(chosen_word: list, guessed_letters: list) -> str:
     """
@@ -75,11 +76,15 @@ if __name__ == "__main__":
 
     greetings(revealed_letters(chosen_word, []))
     while lives > 0:
+        if len(guessed_letters) == len(chosen_word):
+            print(f"\nCongratulations! You've guessed the word: {chosen_word}, and saved the little man🧍🏻‍♂️!")
+            break
+
         user_input = input("Guess a letter: ").lower()
         if len(user_input) != 1:
             print("Please enter only one letter.")
             continue
-        else:
+        elif user_input in chosen_word:
             guessed_letters.append(user_input)
         if user_input not in chosen_word:
             lives -= 1
@@ -91,4 +96,5 @@ if __name__ == "__main__":
         print(f"\nYou have {lives} lives left.")
         if lives == 0:
             print("\nYou're out of lives! Game over.")
+            print(f"The secret word was: {chosen_word}")
             break
