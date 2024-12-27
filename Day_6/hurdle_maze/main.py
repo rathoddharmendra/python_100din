@@ -18,20 +18,23 @@ def turn_right():
     turn_left()
     turn_left()
 
-def align_robot_north():
+def find_a_wall():
     while not is_facing_north():
         turn_left()
         
 # one time to align the robot north, then start the main loop
-align_robot_north()
+while front_is_clear():
+    move()
+turn_left()
 
 while not at_goal():
     #checks at every move
     if right_is_clear():
         turn_right()
         move()
-    elif not right_is_clear and front_is_clear():
+    elif wall_on_right and front_is_clear():
         move()
     else:
-        turn_left()    
+        turn_left()  
+
         
