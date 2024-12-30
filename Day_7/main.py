@@ -49,7 +49,7 @@ def greetings(word: str) -> None:
     print("=" * 40)
 
 
-def revealed_letters(chosen_word: list, guessed_letters: list) -> str:
+def revealed_letters(chosen_word: list, guessed_letters: set) -> str:
     """
     Reveal the word by replacing unknown letters with underscores.
 
@@ -70,22 +70,19 @@ def revealed_letters(chosen_word: list, guessed_letters: list) -> str:
 
 def main():
     chosen_word = choose_random_word()
-    guessed_letters = []
+    print(chosen_word)
+    guessed_letters = set()
     
     lives = 7
 
     greetings(revealed_letters(chosen_word, []))
     while lives > 0:
-        if len(guessed_letters) == len(chosen_word):
-            print(f"\nCongratulations! You've guessed the word: {chosen_word}, and saved the little man🧍🏻‍♂️!")
-            break
-
         user_input = input("Guess a letter: ").lower()
         if len(user_input) != 1:
             print("Please enter only one letter.")
             continue
         elif user_input in chosen_word:
-            guessed_letters.append(user_input)
+            guessed_letters.add(user_input)
         if user_input not in chosen_word:
             lives -= 1
             print(f"Sorry, '{user_input}' is not in the word.")
@@ -94,7 +91,11 @@ def main():
 
         print(revealed_letters(chosen_word, guessed_letters))
         print(f"\nYou have {lives} lives left.")
-        if lives == 0:
+
+        if len(guessed_letters) == len(chosen_word):
+            print(f"\nCongratulations! You've guessed the word: {chosen_word}, and saved the little man🧍🏻‍♂️!")
+            break
+        elif lives <= 0:
             print("\nYou're out of lives! Game over.")
             print(f"The secret word was: {chosen_word}")
             break

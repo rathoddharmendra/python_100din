@@ -5,8 +5,13 @@
 2. The actual game starts by asking the user for input.  
 3. The system displays whether the input is correct or not by comparing it against the random word.  
 4. If the user provides a wrong input, one life is deducted; if the input is correct, the life count remains the same.  
-5. If the user guesses all the correct letters in the word before running out of lives, they win.  
-6. Otherwise, they lose, and the game asks if they want to play again.  
+5. Game displays the current state of the game and guessed letters.
+6. Game goes into checking 3 of the following before start the loop to ask another question
+   1. If lives count is more than zero
+   2. If the user has won
+   3. If not, continue asking another question
+7. If the user guesses all the correct letters in the word before running out of lives, they win.  
+8. Otherwise, they lose, and the game asks if they want to play again.  
 
 #### Rules:
 1. If the input is correct, the system displays the partial answer using dashes and the revealed letters.  
