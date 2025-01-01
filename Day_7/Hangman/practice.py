@@ -20,17 +20,17 @@ while lives > 0:
                 if chosen_word[i] == user_input:
                     guessed_letters_list[i] = user_input
                 #  if won, break game if all letters guessed
-            if "_" not in guessed_letters_list:
+        if "_" not in guessed_letters_list:
                     time.sleep(2) # 2 secs sleep
-                    print(f"Congratulations! You've guessed the word {" ".join(guessed_letters_list)}.")
+                    print(f"Congratulations! You've guessed the word {''.join(guessed_letters_list)}.")
                     break
 
     else:
         print("Incorrect guess!")
         lives -= 1
+        # check if lost
         if lives == 0:
-            print(f"You've lost. The word was {" ".join(guessed_letters_list)}.")
-            break
-
+                print(f"You've lost. The word was {''.join(guessed_letters_list)}.")
+                break
     print(" ".join(guessed_letters_list))
-    print(f"Lives left: {lives}")
+    print(f"{'*'*10}{lives}/7 lives left{'*'*10}")
