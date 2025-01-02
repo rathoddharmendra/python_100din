@@ -9,6 +9,13 @@ This is how you work out whether if a particular year is a leap year.
         - unless the year is also divisible by 400 with no remainder   
 """
 def is_leap_year(year):
+    """
+    Check if a year is a leap year.
+    
+    Args:
+        year (int): The year to check.
+    """
+
     if year % 4 == 0:
         if (year % 100 != 0 or year % 400 == 0):
             return True
