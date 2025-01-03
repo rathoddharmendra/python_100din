@@ -118,16 +118,11 @@ def main():
 
 if __name__ == "__main__":
     # Check if player wants to play
-    players_choice = 'y'
-
-    while players_choice == 'y':
-        players_choice = input("Do you want to play Blackjack? (y/n): ").lower()
-        if players_choice == 'y':
-            os.system('clear')  # Clear the terminal before starting a new game
-            main()
-        else:
-            print("Thanks for playing!")
-            break
+    while input("Do you want to play Blackjack? (y/n): ").lower() == 'y': # new_learnen - using input and game loop, instead of setting a boolean flag
+        os.system('clear')  # Clear the terminal before starting a new game
+        main()
+  
+    print("Thanks for playing!")
             
 
     
