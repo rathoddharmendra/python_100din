@@ -26,6 +26,7 @@ def decide_win(secret_number: int, guess: int) -> int:
         return 1
     else:
         return -1
+        
 def play():
     greetings()
     # initialize secret_number
@@ -55,6 +56,7 @@ def play():
 
     
 if __name__ == "__main__":
+    # new_learnen - best setup for the game loop and clears the screen before each game
     while input("Do you want to play the Number Guess Game? (y/n): ").lower() == 'y':
         os.system('clear')  # Clear the terminal before starting a new game
         play()
