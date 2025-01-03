@@ -33,4 +33,4 @@ def fizz_buzz(target):
 
 
 # Testing functions
-# fizz_buzz(15)
+fizz_buzz(15)
