@@ -1,1 +1,0 @@
-**# Bugs: When app crashes or doesn't work as expected to do**
