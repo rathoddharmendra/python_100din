@@ -11,13 +11,20 @@ def select_random_name() -> dict:
     return random.choice(data)
 
 
-def play_round(name_one:dict) -> list: 
+def select_accounts(name_one:dict) -> tuple:
     if name_one:
         name_one = name_one.copy()
     else:
         name_one = select_random_name()
 
     name_two = select_random_name()
+    if name_two["name"] == name_one["name"]:
+        name_two = select_random_name()
+
+    return name_one, name_two
+
+def play_round(name_one:dict) -> tuple: 
+    name_one, name_two = select_accounts(name_one)
     
     print(f"\n\nCompare A: {name_one["name"]}, a {name_one["description"]}, from {name_one["country"]}")
     print(vs)
@@ -29,12 +36,9 @@ def play_round(name_one:dict) -> list:
 
     round_winner = name_one if name_one["follower_count"] > name_two["follower_count"] else name_two
 
-    346 > 89 
-
-    print(f"Round Result: A - {name_one["name"]} has {name_one["follower_count"]} millions followers vs B - {name_two["name"]} who has {name_two["follower_count"]} millions followers\n")
+    # print(f"Round Result: A - {name_one["name"]} has {name_one["follower_count"]} millions followers vs B - {name_two["name"]} who has {name_two["follower_count"]} millions followers\n")
         
     if user_choice == 'a' and round_winner["name"] == name_one["name"] or user_choice == 'b' and round_winner["name"] == name_two["name"]:
-
         result = True
         return round_winner, result
     else:
