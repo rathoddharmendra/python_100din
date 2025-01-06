@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b05768e7-a184-418f-9083-2e04d42f515a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Day_16/task_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day_16/task_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day_16/task_3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day_16/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day_16/oop-coffee-machine-start/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day_16/oop-coffee-machine-start/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +16,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/rathoddharmendra/python_100din.git",
+    "accountId": "948f31b3-7e69-4123-8806-3ea5d02ff8d5"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
