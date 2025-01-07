@@ -1,7 +1,8 @@
-import random
-from data import question_data
-from question_model import Question
+from quiz_brain import QuizBrain
 
-question_bank = [ Question(question['text'], question['answer']) for question in question_data]
+# Create a quiz brain object
+quiz = QuizBrain()
 
-# print([f'{question.text}:{question.answer}\n' for question in question_bank])
+while quiz.still_has_questions():
+    quiz.next_question()
+
