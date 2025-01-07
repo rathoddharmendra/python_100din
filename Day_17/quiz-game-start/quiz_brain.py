@@ -1,4 +1,4 @@
-from question_bank import question_bank, random_question_data
+from question_bank import question_bank, random_question_bank
 
 """
 ASK USER QUESTIONS FROM A LIST
@@ -15,7 +15,7 @@ next_question(): Asks user the next question from question_bank list, and return
 class QuizBrain:
     def __init__(self):
         # self.question_bank = question_bank
-        self.question_bank = random_question_data
+        self.question_bank = random_question_bank
         self.question_nr = 0
         self.score = 0
     
