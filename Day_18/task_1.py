@@ -27,7 +27,7 @@ def draw_dashed_line(turtle: t.Turtle, step_length: int, steps: int) -> None:
         #     turtle.penup()
 
 
-draw_dashed_line(turtle_1, 10, 50)
+draw_dashed_line(turtle_1, step_length=10, steps=50)
 
 screen = t.Screen()
 screen.window_height()
