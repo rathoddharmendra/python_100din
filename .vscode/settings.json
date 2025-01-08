@@ -1,0 +1,20 @@
+{
+    "editor.hover.enabled": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.useLibraryCodeForTypes": true,
+
+    "python.analysis.packageIndexDepths": 20,
+    "python.analysis.completeFunctionParens": true,
+    "editor.hover.delay": 200,
+    "editor.hover.sticky": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggest.showIcons": true,
+    "editor.suggest.filterGraceful": true,
+    "editor.suggest.localityAware": true,
+    "editor.suggest.showWords": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "editor.inlayHints.enabled": "on"
+
+}
