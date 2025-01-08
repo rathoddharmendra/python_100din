@@ -11,3 +11,27 @@ This repo is created for me to follow along 100 days of coding practice with pyt
 ## How to contribute
 If you are interested to join this project, you can create a sub-folder in the root level with your pen name and start using it right away. Make sure, you are working in your dedicated folder only except for pull requests.
 
+
+## pylance settings
+
+{
+    "editor.hover.enabled": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.useLibraryCodeForTypes": true,
+
+    "python.analysis.packageIndexDepths": 20,
+    "python.analysis.completeFunctionParens": true,
+    "editor.hover.delay": 200,
+    "editor.hover.sticky": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggest.showIcons": true,
+    "editor.suggest.filterGraceful": true,
+    "editor.suggest.localityAware": true,
+    "editor.suggest.showWords": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "editor.inlayHints.enabled": "on"
+
+}
+

@@ -1,4 +1,4 @@
-from turtle import *
+from turtle import * # type: ignore
 color('red', 'yellow')
 begin_fill()
 while True:
