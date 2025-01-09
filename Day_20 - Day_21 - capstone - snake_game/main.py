@@ -3,6 +3,7 @@ from turtle import Turtle, Screen
 import random, time
 import snake
 from food import Food
+from scoreboard import Scoreboard
 from generate_random_color import generate_random_rgb_color
 
 screen = Screen()
@@ -16,6 +17,7 @@ screen.delay(2000)
 # store snakes body
 snake = snake.Snake()
 food = Food()
+score = Scoreboard()
 
 # control snake
 screen.listen()
@@ -32,8 +34,19 @@ while is_game:
     screen.update()
     time.sleep(0.1)
     snake.move()
-    # food.show_next_food()
+    if snake.head.distance(food) < 15:
+        food.refresh()
+        snake.extend()
+        score.update_score()
+    # Detect collisions with wall
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+        is_game = False
+        score.game_over()
 
-
+    # Detect collision with tail
+    for snake_segment in snake.snakes[1:]:
+        if snake_segment.distance(snake.head) < 10:
+            is_game = False
+            score.game_over()
 
 screen.exitonclick()

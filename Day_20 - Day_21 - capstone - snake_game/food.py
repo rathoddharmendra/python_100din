@@ -1,27 +1,27 @@
 # type: ignore
 import turtle, random
 
-class Food:
+class Food(turtle.Turtle):
     def __init__(self):
-        self.food = (0,0)
-        self.is_food_displayed = True
-        self.food = turtle.Turtle("square")
-        self.food.color('white')
-        self.food.penup()
+        super().__init__()
 
-    def show_next_food(self):
-        # screen.setup(width=600, height=600)
-        food_position = (random.randint(-290, 290), random.randint(-290, 290))
-        # while self.is_food_displayed:
-        self.food.goto(food_position)
-        self.food.showturtle()
-            # if self.is_food_displayed == False:
-            #     return
+        self.shape('circle')
+        self.color('blue')
+        self.penup()
+        self.resizemode("user")
+        self.shapesize(0.5, 0.5, outline=0.5)
+        self.refresh()
+
+    def refresh(self):
+        food_position = (random.randint(-280, 280), random.randint(-280, 280))
+        self.goto(food_position)
+        print('nom nom nom')
+
     def get_food_position(self):
-        return self.food.pos()
+        return self.position
 
     def hide_food(self):
-        self.food.hideturtle()
+        self.hideturtle()
         self.is_food_displayed = False
 
 

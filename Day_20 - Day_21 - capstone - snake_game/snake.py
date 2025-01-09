@@ -5,6 +5,7 @@ import random
 from generate_random_color import generate_random_rgb_color
 
 # class enum Values (
+INITIAL_SNAKE_LENGTH = 4
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
@@ -20,7 +21,7 @@ class Snake:
         self.head = self.snakes[0]
 
     def create_snake(self):
-        for i in range(15):
+        for i in range(INITIAL_SNAKE_LENGTH):
             new_snake = Turtle(shape="square")
             new_snake.color(generate_random_rgb_color())
             # new_snake.color('white')
@@ -29,6 +30,18 @@ class Snake:
             new_snake.goto(x=x_position, y=0)
             new_snake.speed(0)
             self.snakes.append(new_snake)
+
+    def _add_snake(self, position: tuple):
+        new_snake = Turtle(shape="square")
+        new_snake.color(generate_random_rgb_color())
+        # new_snake.color('white')
+        new_snake.penup()
+        new_snake.speed(0)
+        new_snake.goto(position)
+        self.snakes.append(new_snake)
+
+    def extend(self):
+        self._add_snake(self.snakes[-1].position())
 
     def move(self):
         self.current_positions = []
