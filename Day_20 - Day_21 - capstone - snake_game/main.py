@@ -11,13 +11,14 @@ screen.colormode(cmode=255)
 screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
-screen.delay(500)
+screen.delay(2000)
 
 # store snakes body
 snake = snake.Snake()
 food = Food()
 
 # control snake
+screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
@@ -34,5 +35,5 @@ while is_game:
     # food.show_next_food()
 
 
-screen.listen()
+
 screen.exitonclick()
