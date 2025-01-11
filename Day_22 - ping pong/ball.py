@@ -3,7 +3,7 @@ from turtle import Turtle
 
 INITIAL_POSITION = (-375, 200)
 BOUNCE_DEGREE = 45
-MOVE_STEP = 3 # ideal 5-10
+MOVE_STEP = 2 # ideal 5-10
 
 class Ball(Turtle):
     def __init__(self):

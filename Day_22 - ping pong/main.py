@@ -4,7 +4,7 @@ from scoreboard import Scoreboard, draw_grid
 from paddle import Paddle
 from ball import Ball
 
-PADDLE_CONTACT = 390
+PADDLE_CONTACT = 378
 X_WALL_CONTACT = 400
 PADDLE_DISTANCE = 50
 # create initial board setup
