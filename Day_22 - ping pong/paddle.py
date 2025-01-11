@@ -21,17 +21,11 @@ class Paddle(Turtle):
         x, y = self.position()
         if y < (SCREEN_LIMIT):
             self.goto(x, y + MOVE_SPEED)
-        # self.setheading(UP)
-        # self.forward(MOVE_SPEED)
-        # self.shapesize(stretch_len=0.5, stretch_wid=3)
-
 
     def move_down(self):
         x, y = self.position()
         if y > (SCREEN_LIMIT * -1):
             self.goto(x, y - MOVE_SPEED)
-        # self.setheading(DOWN)
-        # self.forward(MOVE_SPEED)
-        # self.shapesize(stretch_len=0.5, stretch_wid=3)
+        # self.forward(MOVE_SPEED) #  shapesize doesn't work
 
 
