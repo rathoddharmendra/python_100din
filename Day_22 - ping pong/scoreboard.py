@@ -1,15 +1,16 @@
 #type: ignore
 
 from turtle import Turtle
+import asyncio
 
 class Scoreboard(Turtle):
-    def __init__(self, position: tuple):
+    def __init__(self, initial_position: tuple):
         super().__init__()
         self.score = 0
         self.color('white')
         self.penup()
-        self.position: tuple = position
-        self.goto(self.position) 
+        self.initial_position: tuple = initial_position
+        self.goto(self.initial_position) 
         self.hideturtle()
         self.write_score()
 
@@ -17,21 +18,41 @@ class Scoreboard(Turtle):
         self.clear()
         self.write(f"Score: {self.score}", align="center", font=("Courier New", 24, "bold"))
 
+    def update_score(self):
+        self.score += 1
+        self.write_score()
 
+# async def draw_dotted_line(turtle: Turtle, direction: int, position: tuple, length: int):
+def draw_dotted_line(turtle: Turtle, direction: int, position: tuple, length: int):
+        turtle.setheading(direction)
+        turtle.penup()
+        turtle.goto(position)
+        for _ in range(1, length):
+            if _ % 2 != 0:
+                turtle.down()
+                turtle.forward(10)
+            else:
+                turtle.penup()
+                turtle.forward(10)
 
-def draw_center_line():
-    center_line = Turtle()
-    center_line.speed('fastest')
-    center_line.hideturtle()
-    center_line.pencolor("white")
-    center_line.penup()
-    center_line.goto((0,-500))
-    center_line.setheading(90)
+def draw_grid():
+    """Draws the grid of the gameboard"""
+    lines = []
+    for line in range(1,6):
+        line = Turtle()
+        line.speed('fastest')
+        line.hideturtle()
+        line.pencolor("white")
+        line.penup()
+        lines.append(line)
+        
+    # draws center line
+    # asyncio.gather(draw_dotted_line(turtle=lines[0], direction=90, position=(0,-300), length=60),draw_dotted_line(turtle=lines[1], direction=90, position=(400,-300), length= 60))
+    draw_dotted_line(turtle=lines[0], direction=90, position=(0,-300), length=60)
+    # draws y-edges
+    draw_dotted_line(turtle=lines[1], direction=90, position=(400,-300), length= 60)
+    draw_dotted_line(turtle=lines[2], direction=90, position=(-400,-300), length= 60)
 
-    for _ in range(1, 100):
-        if _ % 2 != 0:
-            center_line.down()
-            center_line.forward(10)
-        else:
-            center_line.penup()
-            center_line.forward(10)
+    # draws x-edges
+    draw_dotted_line(turtle=lines[3], direction=0, position=(-400,-300), length= 80)
+    draw_dotted_line(turtle=lines[4], direction=0, position=(-400,300), length= 80)
