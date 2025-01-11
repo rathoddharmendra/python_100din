@@ -3,6 +3,7 @@ from turtle import Turtle, Screen
 from scoreboard import Scoreboard, draw_grid
 from paddle import Paddle
 from ball import Ball
+import time
 
 PADDLE_CONTACT = 378
 X_WALL_CONTACT = 400
@@ -16,14 +17,18 @@ screen.tracer(0)
 
 # create players
 player_1 = Paddle((-390, 200))
+player_1.color("pink")
 player_2 = Paddle((390, -200))
+player_2.color("blue")
 
 # create ball
 ball = Ball()
 
 # draw grid
 p1_score = Scoreboard((-100, 265))
+p1_score.color('pink')
 p2_score = Scoreboard((100, 265))
+p2_score.color('blue')
 draw_grid()
 screen.update()
 
@@ -61,6 +66,7 @@ def detect_paddle_contact():
 is_game_over = False
 while not is_game_over:
     screen.update()
+    # time.sleep(0.1)
     ball.move()
     detect_paddle_contact()
     detect_miss()
