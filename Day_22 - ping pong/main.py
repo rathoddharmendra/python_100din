@@ -35,21 +35,25 @@ while not is_game_over:
     screen.update()
     ball.move()
 
+    # checks player_1
     if ball.xcor() < -390:
-        if ball.distance(player_1) < 50:
+        if ball.distance(player_1) < 30:
             ball.bounce()
             p1_score.update_score()
         else:
             is_game_over = True
-            print("Player 2 wins!")
+            p1_score.game_over((-150,0))
+            p2_score.win((150,0))
 
+    # checks player_2
     if ball.xcor() > 390:
-        if ball.distance(player_2) < 50:
+        if ball.distance(player_2) < 30:
             ball.bounce()
             p2_score.update_score()
         else:
             is_game_over = True
-            print("Player 1 wins!")    
+            p2_score.game_over((150,0))
+            p1_score.win((-150, 0)) 
 
     # # detect collision with paddles
     # if ball.distance(player_1) < 50 and ball.xcor() > -390:

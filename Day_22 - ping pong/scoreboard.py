@@ -22,6 +22,15 @@ class Scoreboard(Turtle):
         self.score += 1
         self.write_score()
 
+    def game_over(self, position):
+        self.clear()
+        self.goto(position)
+        self.write(f"Game Over! : {self.score}", align="center", font=("Courier New", 24, "bold"))
+    def win(self, position):
+        self.clear()
+        self.goto(position)
+        self.write(f"You Win! : {self.score}", align="center", font=("Courier New", 24, "bold"))
+
 # async def draw_dotted_line(turtle: Turtle, direction: int, position: tuple, length: int):
 def draw_dotted_line(turtle: Turtle, direction: int, position: tuple, length: int):
         turtle.setheading(direction)
