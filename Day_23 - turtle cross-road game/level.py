@@ -1,5 +1,8 @@
 from turtle import Turtle
 
+HEIGHT = 450
+WIDTH = 630
+
 class Level(Turtle):
     def __init__(self):
         super().__init__()
@@ -13,3 +16,6 @@ class Level(Turtle):
         self.clear()
         self.level_number = level_number
         self.write(f"Level {self.level_number}", align="center", font=("Courier", 16, "normal"))
+
+    def make_finish_line(self):
+        pass

@@ -3,7 +3,7 @@ import random, time
 LANES_COORDINATES = [ _ for _ in range(-200, 210, 20)]
 # [-200, -180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200]
 
-class Road():
+class Traffic():
     def __init__(self):
         self.lanes = []
         self.cars = list
