@@ -19,7 +19,7 @@ class Car(Turtle):
 
     def move(self):
         self.off_screen()
-        self.forward(20)
+        self.forward(10)
 
     def off_screen(self):
         if self.xcor() < (-330):

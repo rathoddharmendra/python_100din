@@ -17,10 +17,16 @@ class Traffic():
 
     def create_traffic(self):
         self.add_car()
+        self.garbage_collect()
         print(f'{len(self.cars)=}')
 
     def move_cars(self):
         for car in self.cars:
             car.move()
+
+    def garbage_collect(self):
+        for car in self.cars:
+            if car.xcor() < -280:
+                self.cars.remove(car)
 
     

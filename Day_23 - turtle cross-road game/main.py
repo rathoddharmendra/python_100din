@@ -28,7 +28,7 @@ def reset_car_counter():
     global counter
     counter = 10 - level_number
     
-def increse_level():
+def increase_level():
     if timmy.ycor() > 180:
         level.increase_level()
         timmy.reset_position()
@@ -38,7 +38,7 @@ while is_game_on:
     # play the game here
     time.sleep(0.1)
     # every 5th loop, create 1 car
-    if counter < 5:
+    if counter < 0:
         traffic.create_traffic()
         reset_car_counter()
     else:
@@ -49,24 +49,20 @@ while is_game_on:
     for car in traffic.cars:
         # if car.ycor() + 60 < timmy.ycor() and car.ycor() - 20 > timmy.ycor() :
         distance = timmy.distance(car)
-        timmy_x = timmy.xcor()
-        car_x = car.xcor()
+        timmy_y = timmy.ycor()
+        car_y = car.ycor()
         buffer = 5
-        if distance < 50 or (distance < 50 and car_x + buffer > timmy_x > car_x - buffer):
+        # measure the distance
+        if distance < 50 and (car_y == timmy_y or car_y + buffer == timmy_y or car_y - buffer == timmy_y):
             is_game_on = False
             level.game_over()
             break
     # change level
-    increse_level()
+    increase_level()
     # Declare winner
     if level_number > 1:
         is_game_on = False
         level.declare_win()
-
-        
-
-
-
     
     # create the finish line
 
