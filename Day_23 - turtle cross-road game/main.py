@@ -50,11 +50,11 @@ while is_game_on:
     for car in traffic.cars:
         # if car.ycor() + 60 < timmy.ycor() and car.ycor() - 20 > timmy.ycor() :
         distance = car.distance(timmy)
-        timmy_y = timmy.ycor()
-        car_y = car.ycor()
-        buffer = 5
+        # timmy_y = timmy.ycor()
+        # car_y = car.ycor()
+        # buffer = 5
         # measure the distance
-        if distance < 30:
+        if distance < 30 and car_y == timmy_y:
             is_game_on = False
             level.game_over()
             break
