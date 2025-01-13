@@ -57,11 +57,14 @@ def detect_paddle_contact():
         if ball.distance(player_1) < PADDLE_DISTANCE:
             ball.bounce()
             p1_score.update_score()
+            ball.increase_speed()
     # checks player_2
     if ball.xcor() > PADDLE_CONTACT:
         if ball.distance(player_2) < PADDLE_DISTANCE:
             ball.bounce()
             p2_score.update_score()
+            ball.increase_speed()
+
 # game loop
 is_game_over = False
 while not is_game_over:

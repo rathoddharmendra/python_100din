@@ -3,7 +3,7 @@ from turtle import Turtle
 
 INITIAL_POSITION = (-375, 200)
 BOUNCE_DEGREE = 45
-MOVE_STEP = 6 # ideal 5-10
+# MOVE_STEP = 6 # ideal 5-10
 
 class Ball(Turtle):
     def __init__(self):
@@ -16,12 +16,13 @@ class Ball(Turtle):
         self.speed('slowest')
         self.goto(INITIAL_POSITION)
         self.right(45)
+        self.move_speed = 5
 
     def move(self):
         # self.detect_paddle_collision() # sets direction
         # detect collision
         self.bounce_y()
-        self.forward(MOVE_STEP)
+        self.forward(self.move_speed)
         print(self.position())
 
     # def detect_paddle_collision(self) -> None | bool:
@@ -38,5 +39,9 @@ class Ball(Turtle):
             return True
     def bounce(self) -> None:
         self.left(90)
+
+    def increase_speed(self) -> None:
+        self.move_speed += 0.5
+        print(f'New speed: {self.move_speed}')
     
 
