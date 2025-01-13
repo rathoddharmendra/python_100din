@@ -10,11 +10,14 @@ LANES_COORDINATES = [ _ for _ in range(-160, 170, 20)]
 class Traffic():
     def __init__(self):
         self.cars: list(Car) = []
+        self.level = 1
 
     def add_car(self):
         random_y_coordinate = random.choice(LANES_COORDINATES)
-        self.cars.append(Car(y_position=random_y_coordinate, speed=level_number)) 
+        self.cars.append(Car(y_position=random_y_coordinate, speed=self.level))  
 
+    def increase_level(self):
+        self.level += 1
     def create_traffic(self):
         self.add_car()
         self.garbage_collect()

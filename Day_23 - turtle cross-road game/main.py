@@ -23,14 +23,15 @@ screen.onkey(timmy.move_up, 'Up')
 screen.onkey(timmy.move_down, 'Down')
 
 is_game_on = True
-counter = 10 - level_number
+counter = 10 - traffic.level
 def reset_car_counter():
     global counter
-    counter = 10 - level_number
+    counter = 10 - traffic.level
     
 def increase_level():
     if timmy.ycor() > 180:
         level.increase_level()
+        traffic.increase_level()
         timmy.reset_position()
 
 while is_game_on:
@@ -48,19 +49,19 @@ while is_game_on:
     # detect car collision with the turtle
     for car in traffic.cars:
         # if car.ycor() + 60 < timmy.ycor() and car.ycor() - 20 > timmy.ycor() :
-        distance = timmy.distance(car)
+        distance = car.distance(timmy)
         timmy_y = timmy.ycor()
         car_y = car.ycor()
         buffer = 5
         # measure the distance
-        if distance < 50 and (car_y == timmy_y or car_y + buffer == timmy_y or car_y - buffer == timmy_y):
+        if distance < 30:
             is_game_on = False
             level.game_over()
             break
     # change level
     increase_level()
     # Declare winner
-    if level_number > 1:
+    if traffic.level > 5:
         is_game_on = False
         level.declare_win()
     

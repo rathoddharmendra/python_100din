@@ -24,7 +24,7 @@ class Level(Turtle):
 
     def game_over(self):
         self.clear()
-        self.goto((0, 160))
+        self.goto((0, 0))
         self.write(f"Game Over!", align="center", font=("Courier", 24, "normal"))
 
     def declare_win(self):
