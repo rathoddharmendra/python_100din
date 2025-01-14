@@ -12,27 +12,23 @@ class Letter:
         with open(template_letter_path) as template:
             self.lines = [line.rstrip() for line in template.readlines()]
         with open(invitation_names_path) as names:
-            self.names = names.readlines()
-
+            self.names = [name.removesuffix('\n') for name in names.readlines()]
+            
         self.letters = {}
         
 
-# create draft letters by replacing name
 
     def draft_letters_with_invitation(self):
+        '''create draft letters by replacing name'''
         # replace template
         for name in self.names:
-            self.lines[0] = f'Dear {name.strip('\n')},'
+            self.lines[0] = f'Dear {name},'
             self.lines[6] = self.lines[6].replace('Angela', 'Dee')
             # draft letters and store in unique filename
             draft_letter_path = os.path.join(os.path.dirname(__file__),f'./Output/ReadyToSend/letter_for_{name}')
             with open(draft_letter_path, 'w') as draft_letter:
                 for line in self.lines:
                     draft_letter.write(f'{line}\n')
-
-    
-    def write_letters(self):
-        pass
 
 
 
