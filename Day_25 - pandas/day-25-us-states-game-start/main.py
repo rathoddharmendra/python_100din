@@ -1,5 +1,5 @@
 import turtle
-import os
+import os, time
 from states import States
 
 screen = turtle.Screen()
@@ -12,18 +12,20 @@ states = States()
 
 is_game_on = True
 while is_game_on:
-    user_guess = screen.textinput(title='Guess a State', prompt='Enter the name of a state:')
+    user_guess = screen.textinput(title='Guess a State', prompt='Enter the name of a state:').lower()
 
     if user_guess == 'exit':
         is_game_on = False
+        turtle.write('Click anywhere to exit', align='center', font=('Courier', 24, 'normal'))
+        screen.exitonclick()
     elif states.find_state_by_name(user_guess):
-            found_state = turtle.Turtle()
-            found_state.hideturtle()
-            found_state.penup()
-            found_state.goto(-200, 300)
-            found_state.write(user_guess, align='center', font=('Arial', 16, 'normal'))
+            print('found a state')
+            time.sleep(1)
+
     else:
-         turtle.write('State not found!', align='center', font=('Arial', 16, 'normal'))
+         turtle.write('State not found!', align='center', font=('Courier', 24, 'normal'))
+         time.sleep(1)
+         turtle.clear()
 
 
 screen.mainloop()
