@@ -2,3 +2,4 @@
 workspace.xml
 .vs_code/
 .idea/
+*.pyc
