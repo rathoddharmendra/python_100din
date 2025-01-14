@@ -42,3 +42,20 @@ df_squirrel_count.index.name = 'Fur Color'
 print(df_squirrel_count)
 df_squirrel_count.to_csv(os.path.join(os.path.dirname(__file__),'squirrel_count.csv'))
 
+
+# create dataframe
+keys = []
+values = []
+
+for key, value in squirrel_count.items():
+    keys.append(key)
+    values.append(value)
+
+data_dict = {
+    'Fur Color': keys,
+    'Count': values
+}
+
+df_data_dict = pd.DataFrame(data_dict)
+df_data_dict.to_csv(path_or_buf=os.path.join(os.path.dirname(__file__),'squirrel_count_new.csv'))
+
