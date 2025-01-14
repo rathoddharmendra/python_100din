@@ -1,7 +1,7 @@
 # type: ignore
 
 from turtle import Turtle, Screen
-import random
+import random, time
 from generate_random_color import generate_random_rgb_color
 
 # class enum Values (
@@ -21,6 +21,7 @@ class Snake:
         self.head = self.snakes[0]
 
     def reset_snake(self):
+        time.sleep(1)
         for snake in self.snakes:
             snake.goto(1000,1000)
 
