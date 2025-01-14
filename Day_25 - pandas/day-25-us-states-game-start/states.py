@@ -16,20 +16,25 @@ class Name(Turtle):
 class States:
     def __init__(self):
         self.states_data = pandas.read_csv(data_file_path)
-        self.states_list = [state.lower() for state in self.states_data.state.to_list()]
-        self.guessed_states = []
+        # self.states_list = [state.lower() for state in self.states_data.state.to_list()]
+        # self.guessed_states = []
         self.scoreboard = Scoreboard()
+
     def find_state_by_name(self, name: str):
-        if name in self.states_list:
-            print(self.states_data)
-            state = self.states_data[self.states_data['state'] == name.title()]
-            print(state)
-            x = int(state.x.values[0])
-            y = int(state.y.values[0])
-            state_name = state.state.values[0]
-            new_state = Name(x=x, y=y, name=state_name)
-            self.scoreboard.update_scoreboard()
-            self.guessed_states.append(state_name)  # add guessed state to list
+        if name.title() in self.states_data.state.to_list():
+            try:
+                state = self.states_data[self.states_data['state'] == name.title()]
+            
+                x = int(state.x.values[0])
+                y = int(state.y.values[0])
+                state_name = state.state.values[0]
+                new_state = Name(x=x, y=y, name=state_name)
+            except Exception as e:
+                print(f"Error occurred: {str(e)}")
+                return False
+            finally:
+                self.scoreboard.update_scoreboard()
+            # self.guessed_states.append(state_name)  # add guessed state to list
             return True
         else:
             return False
