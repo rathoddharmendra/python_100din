@@ -23,7 +23,8 @@ class States:
                 x = int(state.x.values[0])
                 y = int(state.y.values[0])
                 state_name = state.state.values[0]
-                new_state = Name(x=x, y=y, name=state_name)
+                new_state = Name(x=state.x.item(), y=state.y.item(), name=state.state.item())
+                # new_state = Name(x=x, y=y, name=state_name)
                 self.guessed_states.append(state_name)  # add guessed state to list
             except Exception as e:
                 print(f"Error occurred: {str(e)}")
@@ -33,6 +34,21 @@ class States:
         else:
             return False
 
+    # def create_unguessed_states(self):
+    #     unguessed_states = [state for state in self.states_data.state.to_list() if state not in self.guessed_states]
+    #     return unguessed_states
+    
+    def create_unguessed_states_csv(self):
+        # Filter unguessed states by excluding guessed states
+        print(~self.states_data.state.isin(self.guessed_states))
+        print(type(~self.states_data.state.isin(self.guessed_states)))
+        unguessed_states = self.states_data[~self.states_data.state.isin(self.guessed_states)]
+        
+        # Save the unguessed states to a CSV file
+        unguessed_states.to_csv(os.path.join(os.path.dirname(__file__),'read_unguessed_states.csv'), index=False)
+        
+        # Print the shape of the remaining states
+        print(unguessed_states.shape)
 
 
 # states = States()

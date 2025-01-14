@@ -3,3 +3,4 @@ workspace.xml
 .vs_code/
 .idea/
 *.pyc
+*/__pycache__/*

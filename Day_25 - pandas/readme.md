@@ -13,3 +13,9 @@
 if [column_name], returns entire column as Series object
 if [condition for data column == some_value], returns only the row with the condition
 `
+
+
+# passing true / false series to dataframe to map out another dataframe
+print(~self.states_data.state.isin(self.guessed_states))
+print(type(~self.states_data.state.isin(self.guessed_states)))
+unguessed_states = self.states_data[~self.states_data.state.isin(self.guessed_states)]

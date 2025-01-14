@@ -11,24 +11,24 @@ turtle.shape(bg_image)
 states = States()
 scoreboard = Scoreboard()
 
-is_game_on = True
-while is_game_on:
-    user_guess = screen.textinput(title='Guess a State', prompt='Enter the name of a state:').lower()
 
-    if user_guess == 'exit':
+while len(states.guessed_states) < 50:
+    user_guess = screen.textinput(title='Guess a State', 
+                                  prompt='Enter the name of a state:').title()
+    if user_guess == 'Exit':
         is_game_on = False
         turtle.write('Click anywhere to exit', align='center', font=('Courier', 24, 'normal'))
-        screen.exitonclick()
+        break
     elif states.find_state_by_name(user_guess):
             scoreboard.update_scoreboard()
             print('found a state')
             time.sleep(1)
-
     else:
          turtle.write('State not found!', align='center', font=('Courier', 24, 'normal'))
          time.sleep(1)
          turtle.clear()
 
+print(states.create_unguessed_states_csv())
 
 screen.mainloop()
 
