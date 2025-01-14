@@ -20,6 +20,14 @@ class Snake:
         self.create_snake()
         self.head = self.snakes[0]
 
+    def reset_snake(self):
+        for snake in self.snakes:
+            snake.goto(1000,1000)
+
+        self.snakes.clear()
+        self.create_snake()
+        self.head = self.snakes[0]
+
     def create_snake(self):
         for i in range(INITIAL_SNAKE_LENGTH):
             new_snake = Turtle(shape="square")
@@ -51,16 +59,8 @@ class Snake:
             y_pos = self.snakes[snake_index - 1].ycor()
             self.current_positions.append((x_pos, y_pos))
             self.snakes[snake_index].goto(x_pos, y_pos)
-            # if self.detect_collision():
-            #     return False
-        
-    # def detect_collision(self):
-    #     if self.head.heading() in self.current_positions or self.head.xcor() in [300, -300] or self.head.ycor() in [300, -300]:
-    #         return True
 
-        
         self.head.forward(MOVE_DISTANCE)
-        # self.head.left(self.direction)
     
         
     def up(self):
