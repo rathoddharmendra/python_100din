@@ -1,9 +1,13 @@
-import tkinter
+import tkinter, os
 
 window = tkinter.Tk()
 window.title("Miles to Km Convertor")
 window.minsize(width=300, height=100)
 window.config(padx=50, pady=10)
+
+img_path = os.path.join(os.path.dirname(__file__), '../blank_states_img.gif')
+img = tkinter.PhotoImage(file=img_path)
+
 
 # Entry and Label
 
@@ -39,6 +43,8 @@ km_data.grid(row=1, column=1)
 km_label2 = tkinter.Label(window, text="Kms")
 km_label2.grid(row=1, column=2)
 
+# img_label = tkinter.Label(window, b=img)
+# img_label.grid(row=0, column=0)
 
 # Function to convert miles to kms
 def convert_miles_to_km():
