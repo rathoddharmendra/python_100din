@@ -12,7 +12,7 @@ WORK_MIN = 1 # 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 30
 tick_mark = '✅'
-reps = 7
+reps = 0
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 def resetTimer():
@@ -21,23 +21,35 @@ def resetTimer():
 def startTimer():
     global reps
     if reps % 2 == 0:
-        countdown(text_id=canvas_text, secs=60, min=WORK_MIN - 1)
-        reps += 1
-    elif reps % 2 == 1:
-        countdown(text_id=canvas_text, secs=60, min=SHORT_BREAK_MIN - 1)
-        reps += 1
+        header.config(text=f'Work', fg=PINK)
+        if reps > 0:
+            check_mark_name.config(text=f'{check_mark_name.cget('text')}  {tick_mark}')
+            
+        countdown(text_id=canvas_text, min=WORK_MIN - 1)
+
+        
     elif reps == 7:
-        countdown(text_id=canvas_text, secs=60, min=LONG_BREAK_MIN - 1)
+        header.config(text=f'LONG BREAK', fg=RED)
+        countdown(text_id=canvas_text, min=LONG_BREAK_MIN - 1)
+        update_canvas_text(text_id=canvas_text, update_text=f"DONE")
+
+        reps = 0
+        return
+    elif reps % 2 == 1:
+        header.config(text=f'SHORT BREAK', fg=GREEN)
+        countdown(text_id=canvas_text, min=SHORT_BREAK_MIN - 1)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 # freq: secs
-def countdown(text_id: int, min: int, secs: int):
+def countdown(text_id: int, min: int, secs: int = 60):
+    global reps
     if secs <= 0:
         min -= 1
         secs = 60
     if min < 0:
-        update_canvas_text(text_id, f"DONE")
+        reps += 1
+        startTimer()
         return # end the countdown
         # todo - add a sound
         # todo - add a break point with reset click
@@ -107,12 +119,13 @@ reset.grid(row=2, column=2)
 # create checkmarks for each completed break
 check_mark_name = Label(
         window,
-        text=tick_mark + "   " + tick_mark+ "   " + tick_mark+ "   " + tick_mark,
+        text='',
         bg=YELLOW,
         highlightbackground=YELLOW,
         highlightthickness=0,
         )
 check_mark_name.grid(row=3, column= 1)
+
 
 window.mainloop()
 
