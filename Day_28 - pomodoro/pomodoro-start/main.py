@@ -1,6 +1,11 @@
 from tkinter import *
 import os, time
 
+# todo:
+# add pause button
+# Lift window when min is less than 1
+# add playsounds
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -8,26 +13,34 @@ GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 
-WORK_MIN = 1 # 25
+WORK_MIN = 20 # 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 30
 tick_mark = '✅'
 reps = 0
+timer = None
+
+
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 def resetTimer():
-    pass
+    global reps
+    window.after_cancel(timer)
+    update_canvas_text(text_id=canvas_text, update_text="00:00")
+    header.config(text="Timer", fg=GREEN)
+    check_mark_name.config(text="")
+    reps = 0
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def startTimer():
+
     global reps
     if reps % 2 == 0:
-        header.config(text=f'Work', fg=PINK)
+        header.config(text=f'Working...', fg=GREEN)
         if reps > 0:
             check_mark_name.config(text=f'{check_mark_name.cget('text')}  {tick_mark}')
-            
+
         countdown(text_id=canvas_text, min=WORK_MIN - 1)
 
-        
     elif reps == 7:
         header.config(text=f'LONG BREAK', fg=RED)
         countdown(text_id=canvas_text, min=LONG_BREAK_MIN - 1)
@@ -36,17 +49,26 @@ def startTimer():
         reps = 0
         return
     elif reps % 2 == 1:
-        header.config(text=f'SHORT BREAK', fg=GREEN)
+        header.config(text=f'SHORT BREAK', fg=PINK)
         countdown(text_id=canvas_text, min=SHORT_BREAK_MIN - 1)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 # freq: secs
 def countdown(text_id: int, min: int, secs: int = 60):
+    '''
+    Once Countdown method is called, it continues to run for 4 work sesssions, 4 short breaks and 1 long break
+    Countdown, depends on start_timer() function to complete interal loops with global reps variable
+    '''
     global reps
-    if secs <= 0:
+    global timer
+    if min == 0:
+        window.lift()
+    if secs <= 0: # every minute to reset secs and decrease 1 min
         min -= 1
         secs = 60
+    # if min == 0: # pop out window when timer is less than 1 min
+    #     window.attributes['topmost'] = True
     if min < 0:
         reps += 1
         startTimer()
@@ -55,7 +77,7 @@ def countdown(text_id: int, min: int, secs: int = 60):
         # todo - add a break point with reset click
     secs -= 1
     update_canvas_text(text_id, f"{min:02d}:{secs:02d}")
-    canvas.after(1000,countdown,text_id, min, secs)
+    timer = canvas.after(1000,countdown,text_id, min, secs)
     # todo - set break point with reset click
 
 # Update the text
@@ -126,6 +148,9 @@ check_mark_name = Label(
         )
 check_mark_name.grid(row=3, column= 1)
 
+window.lift()
+window.attributes("-topmost", True)
+window.after_idle(window.attributes, "-topmost", False)
 
 window.mainloop()
 
