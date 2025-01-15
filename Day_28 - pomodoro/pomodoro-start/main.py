@@ -8,18 +8,27 @@ GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 
-WORK_MIN = 25
+WORK_MIN = 1 # 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 30
 tick_mark = '✅'
-    
+reps = 7
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 def resetTimer():
     pass
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def startTimer():
-    countdown(text_id=canvas_text, secs=60, min=WORK_MIN - 1)
+    global reps
+    if reps % 2 == 0:
+        countdown(text_id=canvas_text, secs=60, min=WORK_MIN - 1)
+        reps += 1
+    elif reps % 2 == 1:
+        countdown(text_id=canvas_text, secs=60, min=SHORT_BREAK_MIN - 1)
+        reps += 1
+    elif reps == 7:
+        countdown(text_id=canvas_text, secs=60, min=LONG_BREAK_MIN - 1)
+
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 # freq: secs
@@ -56,7 +65,7 @@ canvas = Canvas(window, width=220, height=250, bg=YELLOW, highlightthickness=0) 
 bg_image = PhotoImage(file=os.path.join(os.path.dirname(__file__), "tomato.png"))
 canvas.create_image(103, 125,image=bg_image)
 
-canvas_text = canvas.create_text(100,140,text=f'25:00', font=(FONT_NAME, 28, 'bold'), fill=YELLOW )
+canvas_text = canvas.create_text(100,140,text=f'{WORK_MIN:02d}:{0:02d}', font=(FONT_NAME, 28, 'bold'), fill=YELLOW )
 canvas.grid(row=1, column=1)
 
 print(canvas_text)
