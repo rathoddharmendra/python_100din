@@ -6,8 +6,26 @@ window.minsize(width=300, height=100)
 window.config(padx=50, pady=10)
 
 # Entry and Label
-miles_entry = tkinter.Entry(window, width=10)
+
+def scale_used(value: int):
+    # print(value)
+    # print(type(value))
+    try:
+        miles = float(value)
+        km = round(miles * 1.60934, 2)
+        km_data.config(text=f'{km}')
+        # miles_entry.config(string=miles)
+        miles_value.set(int(miles))
+    except Exception as e:
+        km_data.config(text="Invalid input")
+
+miles_scale = tkinter.Scale(from_=0, to=1000, command=scale_used, orient= "horizontal")
+miles_scale.grid(column=1, row=3)
+
+miles_value = tkinter.IntVar()
+miles_entry = tkinter.Entry(window, width=10, textvariable=miles_value)
 miles_entry.grid(row=0, column=1)
+
 
 miles_label = tkinter.Label(window, text="Miles")
 miles_label.grid(row=0, column=2)
@@ -27,7 +45,7 @@ def convert_miles_to_km():
     try:
         miles = float(miles_entry.get())
         km = round(miles * 1.60934, 2)
-        km_data.config(text=km)
+        km_data.config(text=f'{km}')
     except Exception as e:
         km_data.config(text="Invalid input")
 
