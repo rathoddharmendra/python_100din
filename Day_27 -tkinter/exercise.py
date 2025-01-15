@@ -3,13 +3,14 @@ import tkinter, os
 window = tkinter.Tk('Dee')
 window.title('Dee Tkinter')
 window.minsize(width=600, height=200)
-
+window.config(padx=40, pady=20)
 # img_path = os.path.join(os.path.dirname(__file__), 'blank_states_img.gif')
 # img = tkinter.PhotoImage(file=img_path)
 
 
 # Label
 label = tkinter.Label(window, text='Hello, Dee!', font=('Arial', 24, 'bold'))
+label.config(padx=20, pady=10)
 label.grid(column=0,row=0)
 # label.pack()
 # label.place(x=0,y=0)
