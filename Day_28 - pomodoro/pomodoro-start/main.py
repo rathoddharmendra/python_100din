@@ -30,6 +30,7 @@ def resetTimer():
     header.config(text="Timer", fg=GREEN)
     check_mark_name.config(text="")
     reps = 0
+
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def startTimer():
 
@@ -77,7 +78,8 @@ def countdown(text_id: int, min: int, secs: int = 60):
         # todo - add a break point with reset click
     secs -= 1
     update_canvas_text(text_id, f"{min:02d}:{secs:02d}")
-    timer = canvas.after(1000,countdown,text_id, min, secs)
+    timer = window.after(1000,countdown,text_id, min, secs)
+    
     # todo - set break point with reset click
 
 # Update the text
@@ -87,7 +89,7 @@ def update_canvas_text(text_id: int, update_text: str):
 
 window = Tk()
 window.title("Pomodoro Timer")
-window.minsize(width=250, height=250)
+window.minsize(width=300, height=250)
 window.config(padx=25, pady=25, bg=YELLOW)
 
 header = Label(window, text="Timer", font=(FONT_NAME, 36), fg=GREEN, bg=YELLOW)
