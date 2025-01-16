@@ -1,7 +1,7 @@
 from tkinter import *
 import os
 from PIL import Image, ImageTk
-
+from password_generator import PasswordGenerator
 
 # Define constants
 BACKGROUND_COLOR = '#FFFAEC'
@@ -14,6 +14,42 @@ window.title("PASSWORD MANAGER")
 window.minsize(width=500, height=500)
 window.config(bg=BACKGROUND_COLOR, padx=50, pady=25)
 
+def email_validation():
+    pass
+def password_validation():
+    pass
+
+def website_validation():
+    pass
+
+def submit():
+    website = website_entry.get().strip()
+    email = email_entry.get().strip()
+    password = password_entry.get().strip()
+
+    if not website or not email or not password:
+        messagebox.showerror("Error", "All fields must be filled")
+        return
+
+    if not website_validation(website):
+        messagebox.showerror("Error", "Invalid website")
+        return
+
+    if not email_validation(email):
+        messagebox.showerror("Error", "Invalid email")
+        return
+
+    if not password_validation(password):
+        messagebox.showerror("Error", "Invalid password")
+        return
+    print("Saved")
+
+    # Generate and display password
+    generated_password = password_generator.generate_password(12)
+    password_entry.delete(0, END)
+    password_entry.insert(0, generated_password)
+
+    messagebox.showinfo("Success", "Password generated successfully")
 # Load lock photo
 try:
     image_path=os.path.join(os.path.dirname(__file__), 'lock.png')
@@ -24,7 +60,7 @@ except Exception as e:
     print(f"Error loading image: {e}")
     lock_photo = None
 
-
+password_generator = PasswordGenerator()
 # todo - create design ✅
 
 canvas = Canvas(window, width=200, height=200, bg=BACKGROUND_COLOR, highlightbackground=BACKGROUND_COLOR, highlightthickness=0)
@@ -44,7 +80,8 @@ common_design_dict = {
 }
 
 common_entry_dict = {
-    "font": ("Arial", 14, 'bold'),
+    "font": ("Arial", 14),
+    # "align": "center",
     "bg": ENTRY_COLOR,
     "fg": TEXT_COLOR,
     "highlightbackground": BACKGROUND_COLOR,
@@ -73,8 +110,14 @@ entry_password = Entry(window, common_entry_dict)
 entry_password.grid(row=3, column=1)
 
 # GENERATE PASSWORD - create button
-submit_button = Button(window, common_design_dict, text="Generate Password", width=12, fg=TEXT_COLOR, bg=BUTTON_COLOR)
-submit_button.grid(row=3, column=2)
+def generate_password():
+    new_password = password_generator.generate_password(pass_length=12)
+    entry_password.delete(0, END)
+    entry_password.insert(0, new_password)
+    messagebox.showinfo("Success", "Password generated successfully")
+
+generate_password_button = Button(window, common_design_dict, text="Generate Password", width=12, fg=TEXT_COLOR, bg=BUTTON_COLOR, command=generate_password)
+generate_password_button.grid(row=3, column=2)
 
 # SUBMIT - create button
 submit_button = Button(window, common_design_dict, text="Add", width=12,fg=TEXT_COLOR, bg=BUTTON_COLOR)

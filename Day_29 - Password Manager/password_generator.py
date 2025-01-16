@@ -1,5 +1,5 @@
 # type: ignore
-import random, math
+import random, math, clipboard
 ALPHABETS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k','l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
                        'A', 'B', 'C', 'D', 'E', 'F,', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z']
 SPECIAL_CHARACTERS = ['!', '@', ':'';','#','$','|','%', '&', '*', '+', '-', '_']
@@ -22,11 +22,7 @@ class PasswordGenerator:
         return password
     
     def copy_to_clipboard(self, password: str):
-        pass
-
-password_generator = PasswordGenerator()
-new_password = password_generator.generate_password(pass_length=10)
-print(new_password)
+        clipboard.copy(password)
 
 
 

@@ -14,3 +14,14 @@ Credentials would include parameters, such as:
 
 ## Design:
 ![design-lpm](<Screenshot 2025-01-16 at 10.16.55 AM.png>)
+
+
+### venv
+```
+  537  python3 -m venv lpm
+  538  source ./lpm/bin/activate
+  539  pip3 install clipboard
+  540  pip3 freeze
+  541  deactivate
+  542  history
+```
