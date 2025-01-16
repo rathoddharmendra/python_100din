@@ -14,13 +14,7 @@ window.title("PASSWORD MANAGER")
 window.minsize(width=500, height=500)
 window.config(bg=BACKGROUND_COLOR, padx=50, pady=25)
 
-def email_validation():
-    pass
-def password_validation():
-    pass
 
-def website_validation():
-    pass
 
 def submit():
     website = website_entry.get().strip()
@@ -111,7 +105,7 @@ entry_password.grid(row=3, column=1)
 
 # GENERATE PASSWORD - create button
 def generate_password():
-    new_password = password_generator.generate_password(pass_length=12)
+    new_password = password_generator.generate_password(pass_length=14)
     entry_password.delete(0, END)
     entry_password.insert(0, new_password)
     messagebox.showinfo("Success", "Password generated successfully")
