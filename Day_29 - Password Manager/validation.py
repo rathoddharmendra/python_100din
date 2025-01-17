@@ -12,7 +12,7 @@ class Validation:
         pass
 
     def website_validation(self, website):
-    return website.count('.') >= 2 and website.count('@') == 1
+    return 
 
     def email_validation(self, email):
         return '@' in email and '.' in email.split('@')[1]

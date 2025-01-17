@@ -35,22 +35,13 @@ def add():
     password = entry_password.get().strip()
 
     print(f'{website=} {current_email=} {password=}')
-    show_validation_errors('testing validation')
-    # if not website or not email or not password:
-    #     messagebox.showerror("Error", "All fields must be filled")
-    #     return
-
-    # if not website_validation(website):
-    #     messagebox.showerror("Error", "Invalid website")
-    #     return
-
-    # if not email_validation(email):
-    #     messagebox.showerror("Error", "Invalid email")
-    #     return
-
-    # if not password_validation(password):
-    #     messagebox.showerror("Error", "Invalid password")
-    #     return
+    
+    if len(website) < 1 or len(current_email) < 1 or len(password) < 1:
+        show_validation_errors('Please enter all required fields')
+        return
+    if not current_email.count('@'):
+        show_validation_errors('Invalid email')
+        return
     save_file.save_to_disk(website, current_email, password)
     print("Saved")
     
