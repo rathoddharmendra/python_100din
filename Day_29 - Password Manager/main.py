@@ -74,47 +74,48 @@ common_design_dict = {
 }
 
 common_entry_dict = {
-    "font": ("Arial", 14),
+    "font": ("Arial", 16),
     # "align": "center",
     "bg": ENTRY_COLOR,
     "fg": TEXT_COLOR,
     "highlightbackground": BACKGROUND_COLOR,
     "highlightthickness": 0,
+    "insertbackground": BUTTON_COLOR,
     "relief": "flat"
 }
 # WEBSITE - create labels and entries
 label_website = Label(window, common_design_dict, text="Website: " )
 label_website.grid(row=1, column=0)
 
-entry_website = Entry(window, common_entry_dict)
-entry_website.grid(row=1, column=1)
+entry_website = Entry(window, common_entry_dict, width=40)
+entry_website.grid(row=1, column=1, columnspan=2)
 
 # EMAIL - create labels and entries
 label_email = Label(window, common_design_dict, text="Email: ")
 label_email.grid(row=2, column=0)
 
 email = StringVar(window, name='email', value='rathoddharmendra.business@gmail.com')
-entry_email = Entry(window, common_entry_dict, textvariable=email)
-entry_email.grid(row=2, column=1)
+entry_email = Entry(window, common_entry_dict, textvariable=email, width=40)
+entry_email.grid(row=2, column=1, columnspan=2)
 
 # PASSWORD - create labels and entries
 label_password = Label(window, common_design_dict, text="Password: ")
 label_password.grid(row=3, column=0)
 
-entry_password = Entry(window, common_entry_dict)
+entry_password = Entry(window, common_entry_dict, width=21)
 entry_password.grid(row=3, column=1)
 
 # show validation errors
-label_validation = Label(window, common_design_dict, text="", fg=ERROR_COLOR)
-label_validation.grid(row=5, column=1)
+label_validation = Label(window, common_design_dict, text="", fg=ERROR_COLOR, width=40)
+label_validation.grid(row=5, column=1, columnspan=2)
 
 # GENERATE PASSWORD - create button
 
-generate_password_button = Button(window, common_design_dict, text="Generate Password", width=12, fg=BUTTON_COLOR, bg=BUTTON_COLOR, command=generate_password)
+generate_password_button = Button(window, common_design_dict, text="Generate Password", width=15, fg=BUTTON_COLOR, bg=BUTTON_COLOR, command=generate_password)
 generate_password_button.grid(row=3, column=2)
 
 # SUBMIT - create button
-submit_button = Button(window, common_design_dict, text="ADD", width=12,fg=BUTTON_COLOR, highlightcolor=BUTTON_COLOR,command=add )
-submit_button.grid(row=4, column=1)
+submit_button = Button(window, common_design_dict, text="ADD", width=40,fg=BUTTON_COLOR, highlightcolor=BUTTON_COLOR,command=add )
+submit_button.grid(row=4, column=1,columnspan=2)
 
 window.mainloop()
