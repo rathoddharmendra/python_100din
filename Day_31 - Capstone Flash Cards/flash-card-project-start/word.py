@@ -12,7 +12,7 @@ class WordListGenerator:
         self.word_dict = {index: [row[LANG],row['English']] for index, row in self.df.iterrows()}  # convert to list for easier manipulation
     
     def send_row(self):
-        """Return a random French-English word pair"""
+        """Return a random LANG-English word pair"""
         if len(self.word_dict) > 0:
             chosen_index = random.choice([index for index in self.word_dict])
             return (chosen_index, self.word_dict[chosen_index])

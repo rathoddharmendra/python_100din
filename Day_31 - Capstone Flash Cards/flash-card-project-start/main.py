@@ -52,8 +52,8 @@ except Exception as e:
 canvas = Canvas(width=400, height=260)
 canvas.config(bg=BACKGROUND_COLOR, highlightbackground=BACKGROUND_COLOR, highlightthickness=0)
 canvas_image = canvas.create_image(202, 130, image=card_front_image)
-canvas_title = canvas.create_text(200, 50, text='Let\'s Begin', font=('Arial', 20, 'italic'))
-canvas_word = canvas.create_text(200, 150, text='Click Start', font=('Courier', 42, 'bold'))
+canvas_title = canvas.create_text(200, 50, text='Let\'s Begin', font=('Arial', 20, 'italic'), fill='green')
+canvas_word = canvas.create_text(200, 150, text='Click Start', font=('Courier', 42, 'bold'), fill='black')
 canvas.grid(row=0, column=0, columnspan=2)
 
 
@@ -69,13 +69,13 @@ def show_next_card():
         return
     current_index = card[0]
     canvas.itemconfig(canvas_image, image=card_front_image)
-    canvas.itemconfig(canvas_word, text=card[1][0])
-    canvas.itemconfig(canvas_title, text=LANG)
+    canvas.itemconfig(canvas_word, text=card[1][0], fill='black')
+    canvas.itemconfig(canvas_title, text=LANG, fill='red')
     flip = window.after(3000, flip_card,card[1][1])
 def flip_card(english_word: str):
     canvas.itemconfig(canvas_image, image=card_back_image)
-    canvas.itemconfig(canvas_word, text=english_word)
-    canvas.itemconfig(canvas_title, text='English')
+    canvas.itemconfig(canvas_word, text=english_word, fill='white')
+    canvas.itemconfig(canvas_title, text='English', fill='white')
 
 def right():
     try:
