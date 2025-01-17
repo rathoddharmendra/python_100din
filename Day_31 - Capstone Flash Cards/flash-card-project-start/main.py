@@ -1,7 +1,7 @@
 from tkinter import *
 import os
 from PIL import Image, ImageTk
-from word import WordListGenerator
+from word import WordListGenerator, LANG
 
 BACKGROUND_COLOR = "#B1DDC6"
 
@@ -70,7 +70,7 @@ def show_next_card():
     current_index = card[0]
     canvas.itemconfig(canvas_image, image=card_front_image)
     canvas.itemconfig(canvas_word, text=card[1][0])
-    canvas.itemconfig(canvas_title, text='French')
+    canvas.itemconfig(canvas_title, text=LANG)
     flip = window.after(3000, flip_card,card[1][1])
 def flip_card(english_word: str):
     canvas.itemconfig(canvas_image, image=card_back_image)

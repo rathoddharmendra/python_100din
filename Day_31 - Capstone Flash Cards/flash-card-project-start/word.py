@@ -3,12 +3,13 @@ import pandas as pd
 import os
 
 # generates random word list
-
+LANG = 'German'
+file = './data/german.csv'
 class WordListGenerator:
     def __init__(self):
-        filename = os.path.join(os.path.dirname(__file__),'./data/french_words.csv')
+        filename = os.path.join(os.path.dirname(__file__), file)
         self.df: pd.DataFrame = pd.read_csv(filename, delimiter=',') 
-        self.word_dict = {index: [row['French'],row['English']] for index, row in self.df.iterrows()}  # convert to list for easier manipulation
+        self.word_dict = {index: [row[LANG],row['English']] for index, row in self.df.iterrows()}  # convert to list for easier manipulation
     
     def send_row(self):
         """Return a random French-English word pair"""
