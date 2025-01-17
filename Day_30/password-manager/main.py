@@ -38,13 +38,15 @@ def search_password():
     except FileNotFoundError:
         show_validation_errors('No saved passwords found')
         return
-    if website in data:
-        email = data[website]['email']
-        password = data[website]['password']
-        messagebox.showinfo(title=f"{website} credentials", message=f"Email: {email}\n Password: {password}")
     else:
-        messagebox.showwarning(title=f"Not Found", message=f'No saved password for {website}')
-        show_validation_errors(f'No saved password for {website}')
+        if website in data:
+            email = data[website]['email']
+            password = data[website]['password']
+            messagebox.showinfo(title=f"{website} credentials", message=f"Email: {email}\n Password: {password}", parent=window)
+        
+        else:
+            messagebox.showwarning(title=f"Not Found", message=f'No saved password for {website}')
+            show_validation_errors(f'No saved password for {website}')
 def add():
     # gets the values from entries
     website = entry_website.get().title().strip()
@@ -119,7 +121,7 @@ common_design_dict = {
 common_entry_dict = {
     "font": ("Arial", 16),
     # "align": "center",
-    # "bg": ENTRY_COLOR,
+    "bg": ENTRY_COLOR,
     "fg": TEXT_COLOR,
     "highlightbackground": BACKGROUND_COLOR,
     "highlightthickness": 2,
