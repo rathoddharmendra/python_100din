@@ -14,9 +14,7 @@ class WordListGenerator:
             filename = os.path.join(os.path.dirname(__file__), 'data/' + FILE)
             self.df: pd.DataFrame = pd.read_csv(filename, delimiter=',') 
         finally:
-            print(filename)
             self.word_list = self.df.to_dict(orient='records')
-            print(self.word_list)
             # self.word_dict = {index: [row[LANG],row['English']] for index, row in self.df.iterrows()}  # convert to list for easier manipulation
     
     def send_row(self):
