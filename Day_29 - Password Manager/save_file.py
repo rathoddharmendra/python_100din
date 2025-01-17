@@ -3,9 +3,11 @@ import pandas, os
 class SaveFile():
     '''
     saves credentials to a file
+    Args:
+    filename (str): name of the file to save credentials
     '''
-    def __init__(self):
-        self.filename = os.path.join(os.path.dirname(__file__), 'local.txt')
+    def __init__(self, filename: str):
+        self.filename = os.path.join(os.path.dirname(__file__), filename)
 
     def save_to_disk(self, website: str, email: str, password: str):
         values = [website, email, password]

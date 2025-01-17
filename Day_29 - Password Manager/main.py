@@ -7,47 +7,53 @@ from save_file import SaveFile
 # Define constants
 BACKGROUND_COLOR = '#FFFAEC'
 ENTRY_COLOR = '#EFF3EA'
-BUTTON_COLOR = '#578E7E'
+BUTTON_COLOR = '#479e85'
 TEXT_COLOR = '#3D3D3D'
-                 
+ERROR_COLOR = '#FF8383'            
 window = Tk()
 window.title("PASSWORD MANAGER")
-window.minsize(width=500, height=500)
-window.config(bg=BACKGROUND_COLOR, padx=50, pady=25)
+window.minsize(width=400, height=400)
+window.config(bg=BACKGROUND_COLOR, padx=50)
 
 # initialize classes
 password_generator = PasswordGenerator()
-save_file = SaveFile()
+save_file = SaveFile(filename='passwords.csv')
 
-def submit():
-    website = website_entry.get().strip()
-    email = email_entry.get().strip()
-    password = password_entry.get().strip()
+def show_validation_errors(text: str):
+    label_validation.config(text=text)
+    window.after(3000, show_validation_errors, "")
 
-    if not website or not email or not password:
-        messagebox.showerror("Error", "All fields must be filled")
-        return
+def generate_password():
+    new_password = password_generator.generate_password(pass_length=14)
+    entry_password.delete(0, END)
+    entry_password.insert(0, new_password)
+    return new_password
 
-    if not website_validation(website):
-        messagebox.showerror("Error", "Invalid website")
-        return
+def add():
+    website = entry_website.get().strip()
+    current_email = email.get()
+    password = entry_password.get().strip()
 
-    if not email_validation(email):
-        messagebox.showerror("Error", "Invalid email")
-        return
+    print(f'{website=} {current_email=} {password=}')
+    show_validation_errors('testing validation')
+    # if not website or not email or not password:
+    #     messagebox.showerror("Error", "All fields must be filled")
+    #     return
 
-    if not password_validation(password):
-        messagebox.showerror("Error", "Invalid password")
-        return
-    save_file.save_to_disk('hdfc.com', 'john@example.com', 'save_to_disk')
+    # if not website_validation(website):
+    #     messagebox.showerror("Error", "Invalid website")
+    #     return
+
+    # if not email_validation(email):
+    #     messagebox.showerror("Error", "Invalid email")
+    #     return
+
+    # if not password_validation(password):
+    #     messagebox.showerror("Error", "Invalid password")
+    #     return
+    save_file.save_to_disk(website, current_email, password)
     print("Saved")
-
-    # Generate and display password
-    generated_password = password_generator.generate_password(12)
-    password_entry.delete(0, END)
-    password_entry.insert(0, generated_password)
-
-    messagebox.showinfo("Success", "Password generated successfully")
+    
 # Load lock photo
 try:
     image_path=os.path.join(os.path.dirname(__file__), 'lock.png')
@@ -64,7 +70,6 @@ except Exception as e:
 canvas = Canvas(window, width=200, height=200, bg=BACKGROUND_COLOR, highlightbackground=BACKGROUND_COLOR, highlightthickness=0)
 canvas.create_image(100, 100, image=lock_photo)
 canvas.grid(row=0, column=1)
-# canvas.config(padx=10, pady=20)
 
 common_design_dict = {
     "font": ("Arial", 14, 'italic'),
@@ -97,7 +102,8 @@ entry_website.grid(row=1, column=1)
 label_email = Label(window, common_design_dict, text="Email: ")
 label_email.grid(row=2, column=0)
 
-entry_email = Entry(window, common_entry_dict)
+email = StringVar(window, name='email', value='rathoddharmendra.business@gmail.com')
+entry_email = Entry(window, common_entry_dict, textvariable=email)
 entry_email.grid(row=2, column=1)
 
 # PASSWORD - create labels and entries
@@ -107,18 +113,17 @@ label_password.grid(row=3, column=0)
 entry_password = Entry(window, common_entry_dict)
 entry_password.grid(row=3, column=1)
 
-# GENERATE PASSWORD - create button
-def generate_password():
-    new_password = password_generator.generate_password(pass_length=14)
-    entry_password.delete(0, END)
-    entry_password.insert(0, new_password)
-    messagebox.showinfo("Success", "Password generated successfully")
+# show validation errors
+label_validation = Label(window, common_design_dict, text="", fg=ERROR_COLOR)
+label_validation.grid(row=5, column=1)
 
-generate_password_button = Button(window, common_design_dict, text="Generate Password", width=12, fg=TEXT_COLOR, bg=BUTTON_COLOR, command=generate_password)
+# GENERATE PASSWORD - create button
+
+generate_password_button = Button(window, common_design_dict, text="Generate Password", width=12, fg=BUTTON_COLOR, bg=BUTTON_COLOR, command=generate_password)
 generate_password_button.grid(row=3, column=2)
 
 # SUBMIT - create button
-submit_button = Button(window, common_design_dict, text="Add", width=12,fg=TEXT_COLOR, bg=BUTTON_COLOR)
+submit_button = Button(window, common_design_dict, text="ADD", width=12,fg=BUTTON_COLOR, highlightcolor=BUTTON_COLOR,command=add )
 submit_button.grid(row=4, column=1)
 
 window.mainloop()

@@ -1,2 +1,0 @@
-Website,Email,Password
-hdfc.com,john@example.com,save_to_disk
