@@ -1,3 +1,5 @@
+# type: unused class
+
 class Validation:
     def __init__(self, data_path: str):
         self.data_path = data_path
@@ -12,7 +14,7 @@ class Validation:
         pass
 
     def website_validation(self, website):
-    return 
+        return 
 
     def email_validation(self, email):
         return '@' in email and '.' in email.split('@')[1]
