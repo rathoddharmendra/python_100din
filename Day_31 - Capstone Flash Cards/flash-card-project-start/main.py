@@ -8,8 +8,10 @@ BACKGROUND_COLOR = "#B1DDC6"
 
 # create a word list generator
 word_list_generator = WordListGenerator()
-current_index = None
+card = {}
 flip = ''
+
+# create the window
 window = Tk()
 window.title("Flashy")
 window.minsize(width=400, height=400)
@@ -60,18 +62,17 @@ canvas.grid(row=0, column=0, columnspan=2)
 # create buttons
 
 def show_next_card():
-    global current_index, flip
+    global flip, card
 
     card = word_list_generator.send_row()
     if card is None:
         canvas.itemconfig(canvas_word, text="Deck Over")
         canvas.itemconfig(canvas_title, text='FINISH')
         return
-    current_index = card[0]
     canvas.itemconfig(canvas_image, image=card_front_image)
-    canvas.itemconfig(canvas_word, text=card[1][0], fill='black')
+    canvas.itemconfig(canvas_word, text=card['German'], fill='black')
     canvas.itemconfig(canvas_title, text=LANG, fill='red')
-    flip = window.after(3000, flip_card,card[1][1])
+    flip = window.after(3000, flip_card, card['English'])
 def flip_card(english_word: str):
     canvas.itemconfig(canvas_image, image=card_back_image)
     canvas.itemconfig(canvas_word, text=english_word, fill='white')
@@ -80,18 +81,20 @@ def flip_card(english_word: str):
 def right():
     try:
         window.after_cancel(flip)
-        word_list_generator.remove_row(current_index)  # remove the word from the list
+        word_list_generator.remove_row(card)  # remove the word from the list
     except ValueError:
-        print('There was an error - valueerror')
+        print('First Card - There was an error - valueerror')
     except KeyError:
         print('There was an error - keyerror')
 
     show_next_card()
+
 def wrong():
     try:
         window.after_cancel(flip)
     except ValueError:
-        pass
+        print('First Card - There was an error - valueerror')
+
     show_next_card()
 
 
