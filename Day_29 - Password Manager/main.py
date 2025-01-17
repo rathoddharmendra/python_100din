@@ -47,9 +47,9 @@ def add():
     
 # Load lock photo
 try:
-    image_path=os.path.join(os.path.dirname(__file__), 'lock.png')
+    image_path=os.path.join(os.path.dirname(__file__), 'new_lock.png')
     lock_img = Image.open(image_path)  # Open the image
-    lock_img = lock_img.resize((100, 100))  # Resize if needed
+    lock_img = lock_img.resize((180, 180))  # Resize if needed
     lock_photo = ImageTk.PhotoImage(lock_img)  # Convert to PhotoImage
 except Exception as e:
     print(f"Error loading image: {e}")
