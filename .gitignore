@@ -5,4 +5,3 @@ workspace.xml
 *.pyc
 */__pycache__/*
 *venv*
-*.csv
