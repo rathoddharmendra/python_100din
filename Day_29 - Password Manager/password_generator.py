@@ -14,9 +14,7 @@ class PasswordGenerator:
         alphabets = random.sample(ALPHABETS, math.floor(pass_length/2))
         special_characters = random.sample(SPECIAL_CHARACTERS, math.ceil(pass_length/4))
         numbers = random.sample(NUMBERS, math.floor(pass_length/4))
-        password_list.extend(alphabets)
-        password_list.extend(special_characters)
-        password_list.extend(numbers)
+        password_list = alphabets + numbers + special_characters
         password = ''.join(random.sample(password_list, pass_length))
         self.copy_to_clipboard(password)
         return password
