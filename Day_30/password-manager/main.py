@@ -3,7 +3,7 @@ from tkinter import messagebox
 import os
 from PIL import Image, ImageTk
 from password_generator import PasswordGenerator
-from save_file import SaveFile
+import json
 
 # Define constants
 BACKGROUND_COLOR = '#FFFAEC'
@@ -18,7 +18,7 @@ window.config(bg=BACKGROUND_COLOR, padx=50)
 
 # initialize classes
 password_generator = PasswordGenerator()
-save_file = SaveFile(filename='passwords.csv')
+filename = os.path.join(os.path.dirname(__file__),'data.json')
 
 def show_validation_errors(text: str):
     label_validation.config(text=text)
@@ -31,12 +31,14 @@ def generate_password():
     return new_password
 
 def add():
+    # gets the values from entries
     website = entry_website.get().strip()
     current_email = email.get()
     password = entry_password.get().strip()
 
     print(f'{website=} {current_email=} {password=}')
     
+    # checks for validation
     if len(website) < 1 or len(current_email) < 1 or len(password) < 1:
         show_validation_errors('Please enter all required fields')
         messagebox.showwarning(title='error', message='Please enter all required fields')
@@ -46,11 +48,27 @@ def add():
         messagebox.showwarning(title='error', message='Invalid email address')
         return
     
-    save_file.save_to_disk(website, current_email, password)
-    show_validation_errors("Password saved successfully")
-    messagebox.showinfo(title="success", message='Password saved successfully')
-    entry_password.delete(0, END)
-    entry_website.delete(0, END)
+    # load data to a data.json file
+    new_row: dict[str, dict[str, str]] = {
+        website: {
+            "email": current_email,
+            "password": password,
+        }}
+    
+    try:
+        with open(filename, 'r') as file:
+            data = json.load(file)
+            data.update(new_row)
+    except Exception as e:
+        data = new_row
+    finally:
+        with open(filename, 'w') as file:
+            json.dump(data, file, indent=4)
+        # shows success message
+        messagebox.showinfo(title="success", message='Password saved successfully')
+        # clears back the form after saving the data
+        entry_password.delete(0, END)
+        entry_website.delete(0, END)
 
     print("Saved")
     
