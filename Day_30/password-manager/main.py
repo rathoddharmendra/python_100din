@@ -30,9 +30,24 @@ def generate_password():
     entry_password.insert(0, new_password)
     return new_password
 
+def search_password():
+    website = entry_website.get().title().strip()
+    try:
+        with open(filename, 'r') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        show_validation_errors('No saved passwords found')
+        return
+    if website in data:
+        email = data[website]['email']
+        password = data[website]['password']
+        messagebox.showinfo(title=f"{website} credentials", message=f"Email: {email}\n Password: {password}")
+    else:
+        messagebox.showwarning(title=f"Not Found", message=f'No saved password for {website}')
+        show_validation_errors(f'No saved password for {website}')
 def add():
     # gets the values from entries
-    website = entry_website.get().strip()
+    website = entry_website.get().title().strip()
     current_email = email.get()
     password = entry_password.get().strip()
 
@@ -110,15 +125,21 @@ common_entry_dict = {
     "highlightthickness": 2,
     "insertbackground": BUTTON_COLOR,
     "background": BACKGROUND_COLOR,
-    "relief": "groove"
+    "relief": "groove",
 }
+
+
 # WEBSITE - create labels and entries
 label_website = Label(window, common_design_dict, text="Website: " )
 label_website.grid(row=1, column=0)
 label_website.focus()
 
-entry_website = Entry(window, common_entry_dict, width=40)
-entry_website.grid(row=1, column=1, columnspan=2)
+entry_website = Entry(window, common_entry_dict, width=21)
+entry_website.grid(row=1, column=1)
+
+# search the password file
+search_button = Button(window, common_design_dict, text="Search", pady=0, width=15, fg=BUTTON_COLOR, bg=BUTTON_COLOR, command=search_password)
+search_button.grid(row=1, column=2)
 
 # EMAIL - create labels and entries
 label_email = Label(window, common_design_dict, text="Email: ")
@@ -141,7 +162,7 @@ label_validation.grid(row=5, column=1, columnspan=2)
 
 # GENERATE PASSWORD - create button
 
-generate_password_button = Button(window, common_design_dict, text="Generate Password", width=15, fg=BUTTON_COLOR, bg=BUTTON_COLOR, command=generate_password)
+generate_password_button = Button(window, common_design_dict, pady=0, text="Generate Password", width=15, fg=BUTTON_COLOR, bg=BUTTON_COLOR, command=generate_password)
 generate_password_button.grid(row=3, column=2)
 
 # SUBMIT - create button
