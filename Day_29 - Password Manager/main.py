@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 import os
 from PIL import Image, ImageTk
 from password_generator import PasswordGenerator
@@ -38,13 +39,16 @@ def add():
     
     if len(website) < 1 or len(current_email) < 1 or len(password) < 1:
         show_validation_errors('Please enter all required fields')
+        messagebox.showwarning(title='error', message='Please enter all required fields')
         return
     if not current_email.count('@'):
         show_validation_errors('Invalid email')
+        messagebox.showwarning(title='error', message='Invalid email address')
         return
     
     save_file.save_to_disk(website, current_email, password)
     show_validation_errors("Password saved successfully")
+    messagebox.showinfo(title="success", message='Password saved successfully')
     entry_password.delete(0, END)
     entry_website.delete(0, END)
 
@@ -64,7 +68,8 @@ except Exception as e:
 # todo - create design ✅
 
 canvas = Canvas(window, width=200, height=200, bg=BACKGROUND_COLOR, highlightbackground=BACKGROUND_COLOR, highlightthickness=0)
-canvas.create_image(100, 100, image=lock_photo)
+canvas.create_image(150, 150, image=lock_photo)
+canvas.config(relief='raised')
 canvas.grid(row=0, column=1)
 
 common_design_dict = {
