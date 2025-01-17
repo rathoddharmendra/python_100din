@@ -2,6 +2,7 @@ from tkinter import *
 import os
 from PIL import Image, ImageTk
 from password_generator import PasswordGenerator
+from save_file import SaveFile
 
 # Define constants
 BACKGROUND_COLOR = '#FFFAEC'
@@ -14,7 +15,9 @@ window.title("PASSWORD MANAGER")
 window.minsize(width=500, height=500)
 window.config(bg=BACKGROUND_COLOR, padx=50, pady=25)
 
-
+# initialize classes
+password_generator = PasswordGenerator()
+save_file = SaveFile()
 
 def submit():
     website = website_entry.get().strip()
@@ -36,6 +39,7 @@ def submit():
     if not password_validation(password):
         messagebox.showerror("Error", "Invalid password")
         return
+    save_file.save_to_disk('hdfc.com', 'john@example.com', 'save_to_disk')
     print("Saved")
 
     # Generate and display password
@@ -54,7 +58,7 @@ except Exception as e:
     print(f"Error loading image: {e}")
     lock_photo = None
 
-password_generator = PasswordGenerator()
+
 # todo - create design ✅
 
 canvas = Canvas(window, width=200, height=200, bg=BACKGROUND_COLOR, highlightbackground=BACKGROUND_COLOR, highlightthickness=0)
