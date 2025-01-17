@@ -42,7 +42,12 @@ def add():
     if not current_email.count('@'):
         show_validation_errors('Invalid email')
         return
+    
     save_file.save_to_disk(website, current_email, password)
+    show_validation_errors("Password saved successfully")
+    entry_password.delete(0, END)
+    entry_website.delete(0, END)
+
     print("Saved")
     
 # Load lock photo
@@ -63,7 +68,7 @@ canvas.create_image(100, 100, image=lock_photo)
 canvas.grid(row=0, column=1)
 
 common_design_dict = {
-    "font": ("Arial", 14, 'italic'),
+    "font": ("Arial", 14),
     "padx": 10,
     "pady": 10,
     "bg": BACKGROUND_COLOR,
@@ -76,16 +81,18 @@ common_design_dict = {
 common_entry_dict = {
     "font": ("Arial", 16),
     # "align": "center",
-    "bg": ENTRY_COLOR,
+    # "bg": ENTRY_COLOR,
     "fg": TEXT_COLOR,
     "highlightbackground": BACKGROUND_COLOR,
-    "highlightthickness": 0,
+    "highlightthickness": 2,
     "insertbackground": BUTTON_COLOR,
-    "relief": "flat"
+    "background": BACKGROUND_COLOR,
+    "relief": "groove"
 }
 # WEBSITE - create labels and entries
 label_website = Label(window, common_design_dict, text="Website: " )
 label_website.grid(row=1, column=0)
+label_website.focus()
 
 entry_website = Entry(window, common_entry_dict, width=40)
 entry_website.grid(row=1, column=1, columnspan=2)
