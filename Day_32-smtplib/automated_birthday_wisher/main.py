@@ -23,5 +23,5 @@ if __name__ == '__main__':
             replaced_text = [line.replace('{quote}', quote) for line in text]
             body = "\n".join(replaced_text)
         if conn.send_email(FROM_ADDRESS, RECIPIENT_ADDRESS, subject, body):
-            print("Email sent successfully!")
+            print(f"Email sent successfully to {RECIPIENT_ADDRESS} at {current_date}")
 
