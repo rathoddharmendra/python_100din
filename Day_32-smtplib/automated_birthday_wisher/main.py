@@ -22,5 +22,6 @@ if __name__ == '__main__':
             text = email_text.readlines()
             replaced_text = [line.replace('{quote}', quote) for line in text]
             body = "\n".join(replaced_text)
-        conn.send_email(FROM_ADDRESS, RECIPIENT_ADDRESS, subject, body)
+        if conn.send_email(FROM_ADDRESS, RECIPIENT_ADDRESS, subject, body):
+            print("Email sent successfully!")
 

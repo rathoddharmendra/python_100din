@@ -33,7 +33,7 @@ class Connection:
             with SMTP(SMTP_SERVER) as conn:
                 conn.starttls()
                 # conn.ehlo('testing')
-                conn.set_debuglevel(1)  # For debugging, remove this line in production
+                # conn.set_debuglevel(1)  # For debugging, remove this line in production
                 conn.login(user=EMAIL_ADDRESS, password=EMAIL_PASSWORD)
                 conn.sendmail(from_addr=from_address, 
                             to_addrs=to_address, 
