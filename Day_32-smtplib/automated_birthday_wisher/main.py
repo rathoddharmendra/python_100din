@@ -5,7 +5,7 @@ from smtplib import SMTP
 
 # CONSTANTS
 EMAIL_ADDRESS = "dee.services.berlin@gmail.com"
-RECIPIENT_ADDRESS = "sheral.karen8@gmail.com"
+RECIPIENT_ADDRESS = "rathoddharmendra.business@gmail.com"
 
 # GET EMAIL PASSWORD FROM SECRET FILE
 try:
@@ -22,6 +22,8 @@ def send_email(subject: str, body: str):
     try:
         with SMTP(SMTP_SERVER) as conn:
             conn.starttls()
+            # conn.ehlo('testing')
+            conn.set_debuglevel(1)  # For debugging, remove this line in production
             conn.login(user=EMAIL_ADDRESS, password=EMAIL_PASSWORD)
             conn.sendmail(from_addr=EMAIL_ADDRESS, 
                         to_addrs=RECIPIENT_ADDRESS, 
@@ -30,7 +32,6 @@ def send_email(subject: str, body: str):
         print(f"Error connecting to SMTP server: {e}")
         return
             
-
 # SEND EMAIL
 send_email("Love You", "I know you care for me!\n And that's why you are irritated with my pain\n No matter, I will love you always bubu \n Yours, Dee")
 
