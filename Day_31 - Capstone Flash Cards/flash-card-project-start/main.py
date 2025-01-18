@@ -86,6 +86,8 @@ def right():
         print('First Card - There was an error - valueerror')
     except KeyError:
         print('There was an error - keyerror')
+    
+    print(card)
     show_next_card()
 
 def wrong():

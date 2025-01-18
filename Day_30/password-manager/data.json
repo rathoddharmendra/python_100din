@@ -1,10 +1,22 @@
 {
     "Amazon": {
         "email": "rathoddharmendra.business@gmail.com",
-        "password": "r$cI:;q3-kU54J*"
+        "password": "0|9cT:;DL-H7z@X"
     },
     "Ebay": {
         "email": "rathoddharmendra.business@gmail.com",
         "password": "+dO2#u|J3_IB8F,"
+    },
+    "Facebook": {
+        "email": "rathoddharmendra.business@gmail.com",
+        "password": "0@G-tIW+a9_h1R"
+    },
+    "Delta": {
+        "email": "rathoddharmendra.business@gmail.com",
+        "password": "*yv9Y5:;RN6k+@d"
+    },
+    "Dummy": {
+        "email": "rathoddharmendra.business@gmail.com",
+        "password": "|v@cDpz20&hK8#"
     }
 }
