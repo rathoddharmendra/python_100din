@@ -12,6 +12,7 @@
 from birthday import Persons
 from conn import Connection
 from draft_letter import DraftLetter
+
 conn = Connection()
 persons = Persons()
 letter = DraftLetter()

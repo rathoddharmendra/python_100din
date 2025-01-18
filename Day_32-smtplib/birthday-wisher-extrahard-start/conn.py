@@ -1,7 +1,7 @@
 from smtplib import SMTP
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+import datetime as dt
 EMAIL_ADDRESS = "dee.services.berlin@gmail.com"
 
 # GET EMAIL PASSWORD FROM SECRET FILE
@@ -38,6 +38,7 @@ class Connection:
                 conn.sendmail(from_addr=EMAIL_ADDRESS, 
                             to_addrs=to_address, 
                             msg=message.as_string())
+                print(f'Email sent successfully to {to_address} at {dt.datetime.now()}')
                 return True
         except Exception as e:
             print(f"Error connecting to SMTP server: {e}")
