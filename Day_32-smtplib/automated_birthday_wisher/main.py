@@ -1,37 +1,26 @@
-from smtplib import SMTP
-
-
-
+import datetime as dt
+from conn import Connection
+from quotes import Quotes
+import os
 
 # CONSTANTS
-EMAIL_ADDRESS = "dee.services.berlin@gmail.com"
-RECIPIENT_ADDRESS = "rathoddharmendra.business@gmail.com"
+FROM_ADDRESS = "dee.services.berlin@gmail.com"
+RECIPIENT_ADDRESS = "dee.services.berlin@gmail.com"
 
-# GET EMAIL PASSWORD FROM SECRET FILE
-try:
-    with open('/Users/mac_dee/Documents/in-memory-code-access/code.txt') as file:
-        EMAIL_PASSWORD = file.read().strip()
-except FileNotFoundError as e:
-    print("File 'in-memory-code-access' not found. Please create it and add your email password.")
-    raise (f'{FileNotFoundError} : {e}')
+qt = Quotes()
+conn = Connection()
 
-SMTP_SERVER = "smtp.gmail.com"
-SMTP_PORT = 587
+template_path = os.path.join(os.path.dirname(__file__),'email.txt')
 
-def send_email(subject: str, body: str):
-    try:
-        with SMTP(SMTP_SERVER) as conn:
-            conn.starttls()
-            # conn.ehlo('testing')
-            conn.set_debuglevel(1)  # For debugging, remove this line in production
-            conn.login(user=EMAIL_ADDRESS, password=EMAIL_PASSWORD)
-            conn.sendmail(from_addr=EMAIL_ADDRESS, 
-                        to_addrs=RECIPIENT_ADDRESS, 
-                        msg=f"Subject: {subject}\n\n{body}")
-    except Exception as e:
-        print(f"Error connecting to SMTP server: {e}")
-        return
-            
-# SEND EMAIL
-send_email("Love You", "I know you care for me!\n And that's why you are irritated with my pain\n No matter, I will love you always bubu \n Yours, Dee")
+if __name__ == '__main__':
+    current_date = dt.datetime.now()
+    current_day_of_week = current_date.weekday()
+    if current_day_of_week == 5:
+        quote = qt.quote
+        subject = "Good Morning 🌞"
+        with open(template_path) as email_text:
+            text = email_text.readlines()
+            replaced_text = [line.replace('{quote}', quote) for line in text]
+            body = "\n".join(replaced_text)
+        conn.send_email(FROM_ADDRESS, RECIPIENT_ADDRESS, subject, body)
 
