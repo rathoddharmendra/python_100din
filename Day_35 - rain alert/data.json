@@ -4,7 +4,6 @@
     "cnt": 8,
     "list": [
         {
-<<<<<<< HEAD
             "dt": 1737396000,
             "main": {
                 "temp": 300.64,
@@ -16,55 +15,6 @@
                 "grnd_level": 889,
                 "humidity": 52,
                 "temp_kf": 0.6
-=======
-            "dt": 1737385200,
-            "main": {
-                "temp": 299.94,
-                "feels_like": 301.04,
-                "temp_min": 299,
-                "temp_max": 299.94,
-                "pressure": 1014,
-                "sea_level": 1014,
-                "grnd_level": 891,
-                "humidity": 61,
-                "temp_kf": 0.94
-            },
-            "weather": [
-                {
-                    "id": 803,
-                    "main": "Clouds",
-                    "description": "broken clouds",
-                    "icon": "04d"
-                }
-            ],
-            "clouds": {
-                "all": 75
-            },
-            "wind": {
-                "speed": 2.52,
-                "deg": 7,
-                "gust": 2.9
-            },
-            "visibility": 10000,
-            "pop": 0,
-            "sys": {
-                "pod": "d"
-            },
-            "dt_txt": "2025-01-20 15:00:00"
-        },
-        {
-            "dt": 1737396000,
-            "main": {
-                "temp": 299.97,
-                "feels_like": 300.88,
-                "temp_min": 299.97,
-                "temp_max": 300.04,
-                "pressure": 1013,
-                "sea_level": 1013,
-                "grnd_level": 889,
-                "humidity": 58,
-                "temp_kf": -0.07
->>>>>>> ee9d47e (20250120.v1546)
             },
             "weather": [
                 {
@@ -92,7 +42,6 @@
         {
             "dt": 1737406800,
             "main": {
-<<<<<<< HEAD
                 "temp": 297.99,
                 "feels_like": 298.23,
                 "temp_min": 296.51,
@@ -102,17 +51,6 @@
                 "grnd_level": 888,
                 "humidity": 65,
                 "temp_kf": 1.48
-=======
-                "temp": 297.65,
-                "feels_like": 297.96,
-                "temp_min": 296.51,
-                "temp_max": 297.65,
-                "pressure": 1011,
-                "sea_level": 1011,
-                "grnd_level": 888,
-                "humidity": 69,
-                "temp_kf": 1.14
->>>>>>> ee9d47e (20250120.v1546)
             },
             "weather": [
                 {
@@ -319,7 +257,6 @@
                 "pod": "d"
             },
             "dt_txt": "2025-01-21 12:00:00"
-<<<<<<< HEAD
         },
         {
             "dt": 1737471600,
@@ -361,23 +298,12 @@
     "city": {
         "id": 3461936,
         "name": "Guar\u00e1",
-=======
-        }
-    ],
-    "city": {
-        "id": 3469058,
-        "name": "Bras\u00edlia",
->>>>>>> ee9d47e (20250120.v1546)
         "coord": {
             "lat": -15.7939,
             "lon": -47.8828
         },
         "country": "BR",
-<<<<<<< HEAD
         "population": 0,
-=======
-        "population": 1000000,
->>>>>>> ee9d47e (20250120.v1546)
         "timezone": -10800,
         "sunrise": 1737363301,
         "sunset": 1737409789
