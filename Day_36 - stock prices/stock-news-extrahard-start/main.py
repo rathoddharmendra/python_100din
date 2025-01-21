@@ -14,10 +14,10 @@ if stock_variation_data > 1:
     news_data = news.get_news()
 
     message = f'''
-    \n
-    {STOCK}: {movement_symbol}{stock_variation_data}%
-    Headline: {news_data[0]}
-    Brief: {news_data[1]}
-    '''
+\n
+{STOCK}: {movement_symbol}{stock_variation_data}%
+Headline: {news_data[0]}
+Brief: {news_data[1]}
+'''
     # send news via sms
     SmsClient().send_sms(msg=message)

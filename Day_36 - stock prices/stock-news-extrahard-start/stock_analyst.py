@@ -10,7 +10,7 @@ class StockAnalyzer:
             'apikey': os.environ.get('ALPHAVANTAGE_KEY')
         }
 
-    def check_stock_variation(self) -> tuple[int, int]:
+    def check_stock_variation(self) -> tuple[int, float]:
         response = requests.get(self.url, params=self.parameters)
         response.raise_for_status()
         data = response.json()
@@ -25,7 +25,7 @@ class StockAnalyzer:
         # if there is a more than 5% gap, then there is a chance of volatility
         direction = 0 if closing_day_closing_price - day_before_closing_day_closing_price > 0 else -1
         closing_gap = abs(closing_day_closing_price - day_before_closing_day_closing_price)
-        closing_gap_percentage = round((closing_gap / day_before_closing_day_closing_price) * 100)
+        closing_gap_percentage = round((closing_gap / day_before_closing_day_closing_price) * 100, 2)
         return (direction, closing_gap_percentage)
 
     def get_day_before_closing_day(self, closing_day: str):

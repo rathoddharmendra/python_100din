@@ -25,7 +25,7 @@ class NewsAPI:
         with open(os.path.join(os.path.dirname(__file__),'news.json'), mode='w') as news_file:
             json.dump(data, news_file, indent=4)
         headline = data['articles'][0]['title']
-        brief = unescape(data['articles'][0]['content'])
+        brief = unescape(data['articles'][0]['description'])
         return (headline, brief)
     
 
