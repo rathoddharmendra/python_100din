@@ -2,6 +2,8 @@ from nutritionix import Nutritionix
 from google_sheet import update_workouts
 import datetime as dt
 
+# view results in https://docs.google.com/spreadsheets/d/1W6KCANQ-9Swoo5C_LIjmkw0kZN7y4ktLxtrHLEeJ9X8/edit?gid=0#gid=0
+
 nutritionix = Nutritionix()
 exercises = nutritionix.record_exercise()
 
