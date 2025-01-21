@@ -1,0 +1,20 @@
+{
+    "exercises": [
+        {
+            "tag_id": 63,
+            "user_input": "swam",
+            "duration_min": 60,
+            "met": 6,
+            "nf_calories": 420,
+            "photo": {
+                "highres": "https://d2xdmhkmkbyw75.cloudfront.net/exercise//63_highres.jpg",
+                "thumb": "https://d2xdmhkmkbyw75.cloudfront.net/exercise//63_thumb.jpg",
+                "is_user_uploaded": false
+            },
+            "compendium_code": 18310,
+            "name": "swimming",
+            "description": null,
+            "benefits": null
+        }
+    ]
+}

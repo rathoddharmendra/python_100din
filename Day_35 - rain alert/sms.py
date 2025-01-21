@@ -4,11 +4,8 @@ from twilio.rest import Client
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
-# ACf584d5ee1e1b083e3386b282475fe333
-# 71503d41de615f6e0ae6c1dca1b00df
-# +14066041514
 
-
+TWILIO_PHONE_NUMBER = os.environ.get('TWILIO_PHONE_NUMBER')
 # Initialize a client
 class SmsClient:
     def __init__(self):
@@ -20,7 +17,7 @@ class SmsClient:
         client = Client(self.account_sid, self.auth_token)
         message = client.messages.create(
             body= msg if msg else "Advised to carry an umbrella today ☔️",
-            from_="+14066041514",
+            from_=TWILIO_PHONE_NUMBER,
             to="+491786798318",
         )
         print(message.status)

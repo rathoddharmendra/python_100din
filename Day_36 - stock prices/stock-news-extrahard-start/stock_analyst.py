@@ -7,7 +7,7 @@ class StockAnalyzer:
         self.parameters: dict = {
             'function': 'TIME_SERIES_DAILY',
             'symbol': stock_symbol,
-            'apikey': os.environ.get('ALPHAVANTAGE_KEY')
+            'apikey': os.environ.get('ALPHAVANTAGE_API_KEY')
         }
 
     def check_stock_variation(self) -> tuple[int, float]:

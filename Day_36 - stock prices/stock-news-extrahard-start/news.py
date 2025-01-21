@@ -1,7 +1,7 @@
 import requests, os, json
 from html import unescape
 
-API_KEY = os.environ.get('NEWS_API')
+API_KEY = os.environ.get('NEWS_API_KEY')
 BASE_URL = 'https://newsapi.org/v2/everything'
 
 # example: https://newsapi.org/v2/everything?q=Tesla%20Inc&sortBy=popularity&language=en&pageSize=3&apiKey=02681927410544b984e1fc850852a140
