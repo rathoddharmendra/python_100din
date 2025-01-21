@@ -1,3 +1,6 @@
+from stock_analyst import StockAnalyzer
+from news import NewsAPI
+from sms import SmsClient
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
@@ -31,3 +34,23 @@ Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and 
 
 # And, sends the message via sms
 
+
+# check to see if the last 2 days delta is more than 5 %
+    # read data from api
+    # evaluate last 2 days delta
+
+stock_analyzer = StockAnalyzer(stock_symbol=STOCK)
+direction, stock_variation_data = stock_analyzer.check_stock_variation()
+# if more than 5% fluctuation, check news
+if stock_variation_data > 1:
+    movement_symbol = '🔺' if direction == 0 else '🔻'
+    news = NewsAPI(stock_name=COMPANY_NAME)
+    news_data = news.get_news()
+    # send news via sms
+    message = f'''
+    \n
+    {STOCK}: {movement_symbol}{stock_variation_data}%
+    Headline: {news_data[0]}
+    Brief: {news_data[1]}
+    '''
+    SmsClient().send_sms(msg=message)

@@ -1,0 +1,45 @@
+{
+    "status": "ok",
+    "totalResults": 713,
+    "articles": [
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Melia Russell,Ben Bergman,Riddhi Kanetkar,Leena Rao,Samantha Stokes,Rebecca Torrence",
+            "title": "VCs say digital agents, 'crypto mania,' and a torrent of liquidity are the tech trends to watch in 2025",
+            "description": "VCs at 35 firms like a16z and IVP tell us what's hot in tech next year, how regulatory changes could rouse the exit market, and where AI goes in 2025.",
+            "url": "https://www.businessinsider.com/vc-tech-trends-digital-agents-crypto-resurgence-and-liquidity-boom-2024-12",
+            "urlToImage": "https://i.insider.com/6761d53f1d90e3bcf31d6c45?width=1200&format=jpeg",
+            "publishedAt": "2024-12-21T10:00:01Z",
+            "content": "zentilia/Getty Images; Jenny Chang-Rodriguez/BI\r\nAfter three years of tense reductions, the skies are clearing over Silicon Valley, and startup investors seem broadly optimistic about a resurgence in\u2026 [+16497 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Ghazal Ahmed",
+            "title": "Tesla, Inc.\u00a0(TSLA): AI and Autonomous Driving Drive Long-Term Bull Case Amid Q4 Delivery Projections",
+            "description": "We recently compiled a list of the 10 AI News You Can\u2019t Miss. In this article, we are going to take a look at where Tesla, Inc. (NASDAQ:TSLA) stands against ...",
+            "url": "https://finance.yahoo.com/news/tesla-inc-tsla-ai-autonomous-153534984.html",
+            "urlToImage": "https://s.yimg.com/ny/api/res/1.2/R3DsTXHuX1Up50du0B.awA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzM-/https://media.zenfs.com/en/insidermonkey.com/1277c6032fd09b727a10249a170024cf",
+            "publishedAt": "2024-12-26T15:35:34Z",
+            "content": "We recently compiled a list of the 10 AI News You Can't Miss.\u00a0In this article, we are going to take a look at where Tesla, Inc.\u00a0(NASDAQ:TSLA) stands against the other AI stocks you can't miss.\r\nAccor\u2026 [+4911 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Andrew R. Chow",
+            "title": "How the Benefits\u2014and Harms\u2014of AI Grew in 2024",
+            "description": "In 2024, tech companies raced ahead with AI, driving markets and stirring regulators.",
+            "url": "https://time.com/7200444/how-ai-benefits-harms-grew-in-2024/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/12/nvidia-humanoid-robots-ai-tech-2024.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-12-30T12:00:00Z",
+            "content": "In 2024, both cutting-edge technology and the companies controlling it grew increasingly powerful, provoking euphoric wonderment and existential dread. Companies like Nvidia and Alphabet soared in va\u2026 [+7062 chars]"
+        }
+    ]
+}
