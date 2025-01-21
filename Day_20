@@ -1,0 +1,33 @@
+2025-01-21 13:57:48.980 Python[71092:719150] +[IMKClient subclass]: chose IMKClient_Modern
+2025-01-21 13:57:48.980 Python[71092:719150] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+(200, 248, 165)
+(137, 79, 50)
+(80, 128, 184)
+(26, 162, 218)
+(19, 9, 121)
+(237, 190, 138)
+(62, 79, 230)
+(3, 187, 2)
+(37, 229, 114)
+(182, 187, 76)
+nom nom nom
+Traceback (most recent call last):
+  File "/Users/mac_dee/Documents/Dee/code/python_100din/Day_20 - Day_21 - capstone - snake_game/main.py", line 36, in <module>
+    snake.move()
+    ~~~~~~~~~~^^
+  File "/Users/mac_dee/Documents/Dee/code/python_100din/Day_20 - Day_21 - capstone - snake_game/snake.py", line 62, in move
+    self.snakes[snake_index].goto(x_pos, y_pos)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/turtle.py", line 1774, in goto
+    self._goto(Vec2D(x, y))
+    ~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/turtle.py", line 3199, in _goto
+    screen._pointlist(self.currentLineItem),
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/turtle.py", line 744, in _pointlist
+    cl = self.cv.coords(item)
+  File "<string>", line 1, in coords
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/tkinter/__init__.py", line 2964, in coords
+    self.tk.call((self._w, 'coords') + args))]
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: invalid command name ".!canvas"

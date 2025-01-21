@@ -1,0 +1,1 @@
+/Library/Frameworks/Python.framework/Versions/3.13/bin/python3 '/Users/mac_dee/Documents/Dee/code/python_100din/Day_20 - Day_21 - capstone - snake_game/main.py'
