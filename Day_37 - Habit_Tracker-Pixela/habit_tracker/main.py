@@ -18,11 +18,11 @@ user_body = {
     'notMinor': 'yes'
 }
 
-if requests.get(BASE_URL + f'@{USERNAME}').status_code == 404:
-    # {"message":"Success. Let's visit https://pixe.la/@dee-berlin , it is your profile page!","isSuccess":true}
-    response = requests.post(BASE_URL + 'v1/users', json=user_body)
-    response.raise_for_status()
-    print(response.text)
+# if requests.get(BASE_URL + f'@{USERNAME}').status_code == 404:
+#     # {"message":"Success. Let's visit https://pixe.la/@dee-berlin , it is your profile page!","isSuccess":true}
+#     response = requests.post(BASE_URL + 'v1/users', json=user_body)
+#     response.raise_for_status()
+#     print(response.text)
 
 # if create doesn't exist, create a new graph
 # $ curl -X POST https://pixe.la/v1/users/a-know/graphs -H 
@@ -36,10 +36,10 @@ graph_body = {
     "color":"ajisai",
     "timezone":"Europe/Berlin",
 }
-if requests.get(graph_url, headers=HEADER).status_code != 200:
-    response = requests.post(url=graph_url, json=graph_body, headers=HEADER)
-    response.raise_for_status()
-    print(response.text)
+# if requests.get(graph_url, headers=HEADER).status_code > 300:
+#     response = requests.post(url=graph_url, json=graph_body, headers=HEADER)
+#     response.raise_for_status()
+#     print(response.text)
 # {"message":"Success.","isSuccess":true}
 
 # post a pixel
@@ -63,6 +63,24 @@ pixel_body = {
     "optionalData": json.dumps(optionalData)
 }
 
-response = requests.post(url=pixel_url, json=pixel_body, headers=HEADER)
+# response = requests.post(url=pixel_url, json=pixel_body, headers=HEADER)
+# response.raise_for_status()
+# print(response.text)
+
+# update today's pixel data
+pixel_update_date = datetime.now().strftime('%Y%m%d')
+pixel_update_body = {
+    "quantity": "2"
+}
+pixel_update_url = f'{BASE_URL}v1/users/{USERNAME}/graphs/{GRAPH_ID}/{pixel_update_date}'
+
+# response = requests.put(url=pixel_update_url, json=pixel_update_body, headers=HEADER)
+# response.raise_for_status()
+# print(f'{response.text=}')
+
+pixel_delete_date = datetime.now().strftime('%Y%m%d')
+delete_pixel_url = f'{BASE_URL}v1/users/{USERNAME}/graphs/{GRAPH_ID}/{pixel_delete_date}'
+
+response = requests.delete(url=pixel_update_url, headers=HEADER)
 response.raise_for_status()
-print(response.text)
+print(f'{response.text=}')
