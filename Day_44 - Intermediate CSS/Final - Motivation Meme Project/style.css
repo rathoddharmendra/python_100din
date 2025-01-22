@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --variable: 'new_test'
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.card > img{
+    width: 100%;
+    height: auto;
+    border: 5px solid white;
+}
+
+.card > h1 {
+    font-family: "Libre Baskerville", serif;
+    text-transform: uppercase;
+}
+
+.card > p {
+    font-size: 0.8rem;
+}
