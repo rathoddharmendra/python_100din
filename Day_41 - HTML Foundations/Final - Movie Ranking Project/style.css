@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.title{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color:rgba(2, 54, 45)
+}
+
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.movie {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    max-width: 200px;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+img{
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
