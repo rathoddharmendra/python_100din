@@ -6,11 +6,52 @@
   <title>CSS Box Model</title>
   <style>
     /* Write your CSS code here */
+    div {
+      width: 200px;
+      height: 200px;
+    }
 
+    div:nth-child(1){
+      background-color: cadetblue;
+      overflow-y: hidden;
+      padding: 20px;
+      border: 10px solid black;
+    }
+    div:nth-child(1) > p {
+      margin: 0;
+    }
+
+    div:nth-child(2){
+      background-color: gold;
+      border: solid black;
+      border-width: 20px 10px;
+      margin-left: 260px;
+
+    }
+
+    div:nth-child(3){
+      background-color: indianred;
+      border: 10px solid black;
+      margin-left: 40px;
+
+
+    }
   </style>
 </head>
 
 <body>
+
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, aliquid omnis natus voluptatum doloribus maiores veritatis enim placeat tenetur autem iusto quidem saepe id fugit perspiciatis? Quia vero vel repellat.
+        A aspernatur facere, temporibus id aliquid nisi incidunt accusantium sapiente minus quos perspiciatis. Id officia similique cum accusantium aspernatur mollitia, iusto assumenda repellendus a, deleniti molestiae totam debitis, consequatur officiis.
+        Molestias quae dolorum blanditiis esse dolor veniam modi nesciunt ipsum accusamus ad sed possimus quas, assumenda et doloribus pariatur recusandae exercitationem, velit ipsa. Placeat ab illo, nostrum sit similique nisi!
+        Recusandae maxime magni dolores, fugiat mollitia quod alias quo sit aliquam voluptatibus accusantium ab incidunt, doloremque quia a laudantium ad beatae, sapiente numquam sequi exercitationem in repellendus. Impedit, adipisci officiis.
+        Obcaecati voluptatum iusto sit a nostrum recusandae nemo distinctio asperiores nulla. Eos asperiores illum deserunt voluptates molestias! Maxime sapiente iste nihil totam, velit quisquam eos natus qui! Aut, praesentium excepturi.
+      </p>
+    </div>
+    <div></div>
+    <div></div>
 
 
   <!-- TODOs:
