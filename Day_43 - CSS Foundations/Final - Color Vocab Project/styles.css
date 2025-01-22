@@ -1,0 +1,33 @@
+
+
+#blue {
+    color: blue;
+}
+#red {
+    color: red;
+}
+#green {
+    color: green;
+}
+#yellow {
+    color: yellow;
+}
+#orange {
+    color: orange;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+* {
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.class-title{
+    font-weight: normal;
+}
