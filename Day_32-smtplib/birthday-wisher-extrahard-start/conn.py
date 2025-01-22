@@ -2,15 +2,18 @@ from smtplib import SMTP
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import datetime as dt
+import os
+
 EMAIL_ADDRESS = "dee.services.berlin@gmail.com"
+EMAIL_PASSWORD = os.environ.get('DEE_GMAIL_API_KEY')
 
 # GET EMAIL PASSWORD FROM SECRET FILE
-try:
-    with open('/Users/mac_dee/Documents/in-memory-code-access/code.txt') as file:
-        EMAIL_PASSWORD = file.read().strip()
-except FileNotFoundError as e:
-    print("File 'in-memory-code-access' not found. Please create it and add your email password.")
-    raise (f'{FileNotFoundError} : {e}')
+# try:
+#     with open('/Users/mac_dee/Documents/in-memory-code-access/code.txt') as file:
+#         EMAIL_PASSWORD = file.read().strip()
+# except FileNotFoundError as e:
+#     print("File 'in-memory-code-access' not found. Please create it and add your email password.")
+#     raise (f'{FileNotFoundError} : {e}')
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
