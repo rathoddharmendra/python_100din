@@ -1,0 +1,12 @@
+* {
+    background-color: rgb(147, 206, 150);
+}
+
+/* '*' - selects all elements */
+
+*[draggable] {
+    color: rgb(216, 90, 90);
+    cursor: move;
+    user-select: none;
+    font-size: 3rem;
+}
