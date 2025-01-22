@@ -1,0 +1,1762 @@
+{
+  "tracks": {
+    "href": "https://api.spotify.com/v1/search?offset=0&limit=20&query=kaho%2520naa%2520pyaar%2520hai&type=track&market=IN&locale=en-IN,en-US;q%3D0.9,en-GB;q%3D0.8,en;q%3D0.7,kn;q%3D0.6,hi;q%3D0.5,fr;q%3D0.4,de;q%3D0.3",
+    "limit": 20,
+    "next": "https://api.spotify.com/v1/search?offset=20&limit=20&query=kaho%2520naa%2520pyaar%2520hai&type=track&market=IN&locale=en-IN,en-US;q%3D0.9,en-GB;q%3D0.8,en;q%3D0.7,kn;q%3D0.6,hi;q%3D0.5,fr;q%3D0.4,de;q%3D0.3",
+    "offset": 0,
+    "previous": null,
+    "total": 1000,
+    "items": [
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5c3Qxc5sTis0Oq3XcOdIJD"
+              },
+              "href": "https://api.spotify.com/v1/artists/5c3Qxc5sTis0Oq3XcOdIJD",
+              "id": "5c3Qxc5sTis0Oq3XcOdIJD",
+              "name": "Rajesh Roshan",
+              "type": "artist",
+              "uri": "spotify:artist:5c3Qxc5sTis0Oq3XcOdIJD"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/5SlkP0iR96aZmh3mf556hE"
+          },
+          "href": "https://api.spotify.com/v1/albums/5SlkP0iR96aZmh3mf556hE",
+          "id": "5SlkP0iR96aZmh3mf556hE",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27371e825de206b85843b7928ed"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0271e825de206b85843b7928ed"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485171e825de206b85843b7928ed"
+            }
+          ],
+          "is_playable": true,
+          "name": "Kaho Naa Pyar Hai (Original Motion Picture Soundtrack)",
+          "release_date": "2000-01-14",
+          "release_date_precision": "day",
+          "total_tracks": 14,
+          "type": "album",
+          "uri": "spotify:album:5SlkP0iR96aZmh3mf556hE"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/70B80Lwx2sxti0M1Ng9e8K"
+            },
+            "href": "https://api.spotify.com/v1/artists/70B80Lwx2sxti0M1Ng9e8K",
+            "id": "70B80Lwx2sxti0M1Ng9e8K",
+            "name": "Udit Narayan",
+            "type": "artist",
+            "uri": "spotify:artist:70B80Lwx2sxti0M1Ng9e8K"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3gBKY0y3dFFVRqicLnVZYz"
+            },
+            "href": "https://api.spotify.com/v1/artists/3gBKY0y3dFFVRqicLnVZYz",
+            "id": "3gBKY0y3dFFVRqicLnVZYz",
+            "name": "Alka Yagnik",
+            "type": "artist",
+            "uri": "spotify:artist:3gBKY0y3dFFVRqicLnVZYz"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 423666,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109939980"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/48cmf2ESI39lvkPsof5m3c"
+        },
+        "href": "https://api.spotify.com/v1/tracks/48cmf2ESI39lvkPsof5m3c",
+        "id": "48cmf2ESI39lvkPsof5m3c",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Kaho Naa Pyar Hai - Happy",
+        "popularity": 36,
+        "preview_url": null,
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:48cmf2ESI39lvkPsof5m3c"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5c3Qxc5sTis0Oq3XcOdIJD"
+              },
+              "href": "https://api.spotify.com/v1/artists/5c3Qxc5sTis0Oq3XcOdIJD",
+              "id": "5c3Qxc5sTis0Oq3XcOdIJD",
+              "name": "Rajesh Roshan",
+              "type": "artist",
+              "uri": "spotify:artist:5c3Qxc5sTis0Oq3XcOdIJD"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/43IiV93d1773K3Zrz30dn1"
+          },
+          "href": "https://api.spotify.com/v1/albums/43IiV93d1773K3Zrz30dn1",
+          "id": "43IiV93d1773K3Zrz30dn1",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851411ab4d35e34639863d00b07"
+            }
+          ],
+          "is_playable": true,
+          "name": "Kaho Naa Pyaar Hai (Original Motion Picture Soundtrack)",
+          "release_date": "2000-10-01",
+          "release_date_precision": "day",
+          "total_tracks": 9,
+          "type": "album",
+          "uri": "spotify:album:43IiV93d1773K3Zrz30dn1"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/70B80Lwx2sxti0M1Ng9e8K"
+            },
+            "href": "https://api.spotify.com/v1/artists/70B80Lwx2sxti0M1Ng9e8K",
+            "id": "70B80Lwx2sxti0M1Ng9e8K",
+            "name": "Udit Narayan",
+            "type": "artist",
+            "uri": "spotify:artist:70B80Lwx2sxti0M1Ng9e8K"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3gBKY0y3dFFVRqicLnVZYz"
+            },
+            "href": "https://api.spotify.com/v1/artists/3gBKY0y3dFFVRqicLnVZYz",
+            "id": "3gBKY0y3dFFVRqicLnVZYz",
+            "name": "Alka Yagnik",
+            "type": "artist",
+            "uri": "spotify:artist:3gBKY0y3dFFVRqicLnVZYz"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 423666,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109939980"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1kNRT6BC7rbZmwlozMk86v"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1kNRT6BC7rbZmwlozMk86v",
+        "id": "1kNRT6BC7rbZmwlozMk86v",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Kaho Naa Pyar Hai, Pt. 1",
+        "popularity": 46,
+        "preview_url": null,
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:1kNRT6BC7rbZmwlozMk86v"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5c3Qxc5sTis0Oq3XcOdIJD"
+              },
+              "href": "https://api.spotify.com/v1/artists/5c3Qxc5sTis0Oq3XcOdIJD",
+              "id": "5c3Qxc5sTis0Oq3XcOdIJD",
+              "name": "Rajesh Roshan",
+              "type": "artist",
+              "uri": "spotify:artist:5c3Qxc5sTis0Oq3XcOdIJD"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/43IiV93d1773K3Zrz30dn1"
+          },
+          "href": "https://api.spotify.com/v1/albums/43IiV93d1773K3Zrz30dn1",
+          "id": "43IiV93d1773K3Zrz30dn1",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851411ab4d35e34639863d00b07"
+            }
+          ],
+          "is_playable": true,
+          "name": "Kaho Naa Pyaar Hai (Original Motion Picture Soundtrack)",
+          "release_date": "2000-10-01",
+          "release_date_precision": "day",
+          "total_tracks": 9,
+          "type": "album",
+          "uri": "spotify:album:43IiV93d1773K3Zrz30dn1"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7guD32ltIhsA1tHdf7IVe0"
+            },
+            "href": "https://api.spotify.com/v1/artists/7guD32ltIhsA1tHdf7IVe0",
+            "id": "7guD32ltIhsA1tHdf7IVe0",
+            "name": "Babul Supriyo",
+            "type": "artist",
+            "uri": "spotify:artist:7guD32ltIhsA1tHdf7IVe0"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 476453,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109940030"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/3nun7aHcDngqcCPlE1O6fu"
+        },
+        "href": "https://api.spotify.com/v1/tracks/3nun7aHcDngqcCPlE1O6fu",
+        "id": "3nun7aHcDngqcCPlE1O6fu",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Dil Ne Dil Ko Pukara",
+        "popularity": 35,
+        "preview_url": null,
+        "track_number": 7,
+        "type": "track",
+        "uri": "spotify:track:3nun7aHcDngqcCPlE1O6fu"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3JjXbumwQIBBOioBoHNFZm"
+              },
+              "href": "https://api.spotify.com/v1/artists/3JjXbumwQIBBOioBoHNFZm",
+              "id": "3JjXbumwQIBBOioBoHNFZm",
+              "name": "Tasleema Nasreen Khan",
+              "type": "artist",
+              "uri": "spotify:artist:3JjXbumwQIBBOioBoHNFZm"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/5KcLQhBWv0ChrjqsKXwZGS"
+          },
+          "href": "https://api.spotify.com/v1/albums/5KcLQhBWv0ChrjqsKXwZGS",
+          "id": "5KcLQhBWv0ChrjqsKXwZGS",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2739e0d2dde11dffb6093efe86d"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e029e0d2dde11dffb6093efe86d"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048519e0d2dde11dffb6093efe86d"
+            }
+          ],
+          "is_playable": true,
+          "name": "Kaho Na Kaho",
+          "release_date": "2022-09-01",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:5KcLQhBWv0ChrjqsKXwZGS"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3JjXbumwQIBBOioBoHNFZm"
+            },
+            "href": "https://api.spotify.com/v1/artists/3JjXbumwQIBBOioBoHNFZm",
+            "id": "3JjXbumwQIBBOioBoHNFZm",
+            "name": "Tasleema Nasreen Khan",
+            "type": "artist",
+            "uri": "spotify:artist:3JjXbumwQIBBOioBoHNFZm"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 167042,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "TCAGK2265394"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/7yLw25pdyoE1mmt931EVfo"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7yLw25pdyoE1mmt931EVfo",
+        "id": "7yLw25pdyoE1mmt931EVfo",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Kaho Na Kaho",
+        "popularity": 37,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:7yLw25pdyoE1mmt931EVfo"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5c3Qxc5sTis0Oq3XcOdIJD"
+              },
+              "href": "https://api.spotify.com/v1/artists/5c3Qxc5sTis0Oq3XcOdIJD",
+              "id": "5c3Qxc5sTis0Oq3XcOdIJD",
+              "name": "Rajesh Roshan",
+              "type": "artist",
+              "uri": "spotify:artist:5c3Qxc5sTis0Oq3XcOdIJD"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/5SlkP0iR96aZmh3mf556hE"
+          },
+          "href": "https://api.spotify.com/v1/albums/5SlkP0iR96aZmh3mf556hE",
+          "id": "5SlkP0iR96aZmh3mf556hE",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27371e825de206b85843b7928ed"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0271e825de206b85843b7928ed"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485171e825de206b85843b7928ed"
+            }
+          ],
+          "is_playable": true,
+          "name": "Kaho Naa Pyar Hai (Original Motion Picture Soundtrack)",
+          "release_date": "2000-01-14",
+          "release_date_precision": "day",
+          "total_tracks": 14,
+          "type": "album",
+          "uri": "spotify:album:5SlkP0iR96aZmh3mf556hE"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7guD32ltIhsA1tHdf7IVe0"
+            },
+            "href": "https://api.spotify.com/v1/artists/7guD32ltIhsA1tHdf7IVe0",
+            "id": "7guD32ltIhsA1tHdf7IVe0",
+            "name": "Babul Supriyo",
+            "type": "artist",
+            "uri": "spotify:artist:7guD32ltIhsA1tHdf7IVe0"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 476453,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109940030"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/47yADWI4YgYygReoCpZXlj"
+        },
+        "href": "https://api.spotify.com/v1/tracks/47yADWI4YgYygReoCpZXlj",
+        "id": "47yADWI4YgYygReoCpZXlj",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Dil Ne Dil Ko Pukara",
+        "popularity": 24,
+        "preview_url": null,
+        "track_number": 7,
+        "type": "track",
+        "uri": "spotify:track:47yADWI4YgYygReoCpZXlj"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4YgUVg4p7xtMOrOS4GjiJZ"
+              },
+              "href": "https://api.spotify.com/v1/artists/4YgUVg4p7xtMOrOS4GjiJZ",
+              "id": "4YgUVg4p7xtMOrOS4GjiJZ",
+              "name": "Jatin-Lalit",
+              "type": "artist",
+              "uri": "spotify:artist:4YgUVg4p7xtMOrOS4GjiJZ"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/47Hagri5liYQTiUrjnUdLF"
+          },
+          "href": "https://api.spotify.com/v1/albums/47Hagri5liYQTiUrjnUdLF",
+          "id": "47Hagri5liYQTiUrjnUdLF",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2733b1a73787cb4c73ddc92b302"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e023b1a73787cb4c73ddc92b302"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048513b1a73787cb4c73ddc92b302"
+            }
+          ],
+          "is_playable": true,
+          "name": "Jo Jeeta Wohi Sikandar (Original Motion Picture Soundtrack)",
+          "release_date": "1991-12-30",
+          "release_date_precision": "day",
+          "total_tracks": 7,
+          "type": "album",
+          "uri": "spotify:album:47Hagri5liYQTiUrjnUdLF"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/70B80Lwx2sxti0M1Ng9e8K"
+            },
+            "href": "https://api.spotify.com/v1/artists/70B80Lwx2sxti0M1Ng9e8K",
+            "id": "70B80Lwx2sxti0M1Ng9e8K",
+            "name": "Udit Narayan",
+            "type": "artist",
+            "uri": "spotify:artist:70B80Lwx2sxti0M1Ng9e8K"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1HGMG8RHvcu1mfdM9MeTek"
+            },
+            "href": "https://api.spotify.com/v1/artists/1HGMG8RHvcu1mfdM9MeTek",
+            "id": "1HGMG8RHvcu1mfdM9MeTek",
+            "name": "Sadhana Sargam",
+            "type": "artist",
+            "uri": "spotify:artist:1HGMG8RHvcu1mfdM9MeTek"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 291400,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109235800"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1VrheK4CdhX74nrOSNIFtH"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1VrheK4CdhX74nrOSNIFtH",
+        "id": "1VrheK4CdhX74nrOSNIFtH",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Pehla Nasha",
+        "popularity": 47,
+        "preview_url": null,
+        "track_number": 4,
+        "type": "track",
+        "uri": "spotify:track:1VrheK4CdhX74nrOSNIFtH"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5c3Qxc5sTis0Oq3XcOdIJD"
+              },
+              "href": "https://api.spotify.com/v1/artists/5c3Qxc5sTis0Oq3XcOdIJD",
+              "id": "5c3Qxc5sTis0Oq3XcOdIJD",
+              "name": "Rajesh Roshan",
+              "type": "artist",
+              "uri": "spotify:artist:5c3Qxc5sTis0Oq3XcOdIJD"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/43IiV93d1773K3Zrz30dn1"
+          },
+          "href": "https://api.spotify.com/v1/albums/43IiV93d1773K3Zrz30dn1",
+          "id": "43IiV93d1773K3Zrz30dn1",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851411ab4d35e34639863d00b07"
+            }
+          ],
+          "is_playable": true,
+          "name": "Kaho Naa Pyaar Hai (Original Motion Picture Soundtrack)",
+          "release_date": "2000-10-01",
+          "release_date_precision": "day",
+          "total_tracks": 9,
+          "type": "album",
+          "uri": "spotify:album:43IiV93d1773K3Zrz30dn1"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/70B80Lwx2sxti0M1Ng9e8K"
+            },
+            "href": "https://api.spotify.com/v1/artists/70B80Lwx2sxti0M1Ng9e8K",
+            "id": "70B80Lwx2sxti0M1Ng9e8K",
+            "name": "Udit Narayan",
+            "type": "artist",
+            "uri": "spotify:artist:70B80Lwx2sxti0M1Ng9e8K"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 68546,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109940040"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2kQ01mgmolvlVjrwPDYDlc"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2kQ01mgmolvlVjrwPDYDlc",
+        "id": "2kQ01mgmolvlVjrwPDYDlc",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Kaho Naa Pyar Hai, Pt. 2",
+        "popularity": 31,
+        "preview_url": null,
+        "track_number": 8,
+        "type": "track",
+        "uri": "spotify:track:2kQ01mgmolvlVjrwPDYDlc"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/71hjb5G92mGoKRSAW3Cj00"
+              },
+              "href": "https://api.spotify.com/v1/artists/71hjb5G92mGoKRSAW3Cj00",
+              "id": "71hjb5G92mGoKRSAW3Cj00",
+              "name": "Anu Malik",
+              "type": "artist",
+              "uri": "spotify:artist:71hjb5G92mGoKRSAW3Cj00"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/66SvSqaZI1DtUpbwxUHNhP"
+              },
+              "href": "https://api.spotify.com/v1/artists/66SvSqaZI1DtUpbwxUHNhP",
+              "id": "66SvSqaZI1DtUpbwxUHNhP",
+              "name": "Najam Sheraz",
+              "type": "artist",
+              "uri": "spotify:artist:66SvSqaZI1DtUpbwxUHNhP"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/4Ncc4SXe72mXB2d8Xdw64s"
+          },
+          "href": "https://api.spotify.com/v1/albums/4Ncc4SXe72mXB2d8Xdw64s",
+          "id": "4Ncc4SXe72mXB2d8Xdw64s",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2734acc92d5e249f80ccd3f9f85"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e024acc92d5e249f80ccd3f9f85"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048514acc92d5e249f80ccd3f9f85"
+            }
+          ],
+          "is_playable": true,
+          "name": "Murder",
+          "release_date": "2024-04-13",
+          "release_date_precision": "day",
+          "total_tracks": 17,
+          "type": "album",
+          "uri": "spotify:album:4Ncc4SXe72mXB2d8Xdw64s"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6fjlehmqzeqeDmRwnbvapd"
+            },
+            "href": "https://api.spotify.com/v1/artists/6fjlehmqzeqeDmRwnbvapd",
+            "id": "6fjlehmqzeqeDmRwnbvapd",
+            "name": "Amir Jamal",
+            "type": "artist",
+            "uri": "spotify:artist:6fjlehmqzeqeDmRwnbvapd"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/71hjb5G92mGoKRSAW3Cj00"
+            },
+            "href": "https://api.spotify.com/v1/artists/71hjb5G92mGoKRSAW3Cj00",
+            "id": "71hjb5G92mGoKRSAW3Cj00",
+            "name": "Anu Malik",
+            "type": "artist",
+            "uri": "spotify:artist:71hjb5G92mGoKRSAW3Cj00"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 311676,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH100902140"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/6iK2pxK4fCJLZwrzUslWgY"
+        },
+        "href": "https://api.spotify.com/v1/tracks/6iK2pxK4fCJLZwrzUslWgY",
+        "id": "6iK2pxK4fCJLZwrzUslWgY",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Kaho Na Kaho - From \"Murder\"",
+        "popularity": 65,
+        "preview_url": null,
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:6iK2pxK4fCJLZwrzUslWgY"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5c3Qxc5sTis0Oq3XcOdIJD"
+              },
+              "href": "https://api.spotify.com/v1/artists/5c3Qxc5sTis0Oq3XcOdIJD",
+              "id": "5c3Qxc5sTis0Oq3XcOdIJD",
+              "name": "Rajesh Roshan",
+              "type": "artist",
+              "uri": "spotify:artist:5c3Qxc5sTis0Oq3XcOdIJD"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/43IiV93d1773K3Zrz30dn1"
+          },
+          "href": "https://api.spotify.com/v1/albums/43IiV93d1773K3Zrz30dn1",
+          "id": "43IiV93d1773K3Zrz30dn1",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851411ab4d35e34639863d00b07"
+            }
+          ],
+          "is_playable": true,
+          "name": "Kaho Naa Pyaar Hai (Original Motion Picture Soundtrack)",
+          "release_date": "2000-10-01",
+          "release_date_precision": "day",
+          "total_tracks": 9,
+          "type": "album",
+          "uri": "spotify:album:43IiV93d1773K3Zrz30dn1"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2L16nDKTxhFGaDriR2AHTB"
+            },
+            "href": "https://api.spotify.com/v1/artists/2L16nDKTxhFGaDriR2AHTB",
+            "id": "2L16nDKTxhFGaDriR2AHTB",
+            "name": "Lucky Ali",
+            "type": "artist",
+            "uri": "spotify:artist:2L16nDKTxhFGaDriR2AHTB"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7gVwxXFMkSYwYGNHIt77qU"
+            },
+            "href": "https://api.spotify.com/v1/artists/7gVwxXFMkSYwYGNHIt77qU",
+            "id": "7gVwxXFMkSYwYGNHIt77qU",
+            "name": "Ramya",
+            "type": "artist",
+            "uri": "spotify:artist:7gVwxXFMkSYwYGNHIt77qU"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 383213,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109939990"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/0zX7Zcf1ijrwrhT65pcdb8"
+        },
+        "href": "https://api.spotify.com/v1/tracks/0zX7Zcf1ijrwrhT65pcdb8",
+        "id": "0zX7Zcf1ijrwrhT65pcdb8",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Na Tum Jano Na Hum",
+        "popularity": 40,
+        "preview_url": null,
+        "track_number": 3,
+        "type": "track",
+        "uri": "spotify:track:0zX7Zcf1ijrwrhT65pcdb8"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5c3Qxc5sTis0Oq3XcOdIJD"
+              },
+              "href": "https://api.spotify.com/v1/artists/5c3Qxc5sTis0Oq3XcOdIJD",
+              "id": "5c3Qxc5sTis0Oq3XcOdIJD",
+              "name": "Rajesh Roshan",
+              "type": "artist",
+              "uri": "spotify:artist:5c3Qxc5sTis0Oq3XcOdIJD"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/43IiV93d1773K3Zrz30dn1"
+          },
+          "href": "https://api.spotify.com/v1/albums/43IiV93d1773K3Zrz30dn1",
+          "id": "43IiV93d1773K3Zrz30dn1",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02411ab4d35e34639863d00b07"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851411ab4d35e34639863d00b07"
+            }
+          ],
+          "is_playable": true,
+          "name": "Kaho Naa Pyaar Hai (Original Motion Picture Soundtrack)",
+          "release_date": "2000-10-01",
+          "release_date_precision": "day",
+          "total_tracks": 9,
+          "type": "album",
+          "uri": "spotify:album:43IiV93d1773K3Zrz30dn1"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/70B80Lwx2sxti0M1Ng9e8K"
+            },
+            "href": "https://api.spotify.com/v1/artists/70B80Lwx2sxti0M1Ng9e8K",
+            "id": "70B80Lwx2sxti0M1Ng9e8K",
+            "name": "Udit Narayan",
+            "type": "artist",
+            "uri": "spotify:artist:70B80Lwx2sxti0M1Ng9e8K"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3gBKY0y3dFFVRqicLnVZYz"
+            },
+            "href": "https://api.spotify.com/v1/artists/3gBKY0y3dFFVRqicLnVZYz",
+            "id": "3gBKY0y3dFFVRqicLnVZYz",
+            "name": "Alka Yagnik",
+            "type": "artist",
+            "uri": "spotify:artist:3gBKY0y3dFFVRqicLnVZYz"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 358000,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109940000"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/3M5rhWh3kGIie1vd8PU1IK"
+        },
+        "href": "https://api.spotify.com/v1/tracks/3M5rhWh3kGIie1vd8PU1IK",
+        "id": "3M5rhWh3kGIie1vd8PU1IK",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Pyar Ki Kashti Mein",
+        "popularity": 38,
+        "preview_url": null,
+        "track_number": 4,
+        "type": "track",
+        "uri": "spotify:track:3M5rhWh3kGIie1vd8PU1IK"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4YgUVg4p7xtMOrOS4GjiJZ"
+              },
+              "href": "https://api.spotify.com/v1/artists/4YgUVg4p7xtMOrOS4GjiJZ",
+              "id": "4YgUVg4p7xtMOrOS4GjiJZ",
+              "name": "Jatin-Lalit",
+              "type": "artist",
+              "uri": "spotify:artist:4YgUVg4p7xtMOrOS4GjiJZ"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2d32nptMD0pI7TcizK1vxR"
+          },
+          "href": "https://api.spotify.com/v1/albums/2d32nptMD0pI7TcizK1vxR",
+          "id": "2d32nptMD0pI7TcizK1vxR",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273524a7160781acdaf5b6677bd"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02524a7160781acdaf5b6677bd"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851524a7160781acdaf5b6677bd"
+            }
+          ],
+          "is_playable": true,
+          "name": "Raju Chacha (Original Motion Picture Soundtrack)",
+          "release_date": "2000-10-30",
+          "release_date_precision": "day",
+          "total_tracks": 8,
+          "type": "album",
+          "uri": "spotify:album:2d32nptMD0pI7TcizK1vxR"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4YgUVg4p7xtMOrOS4GjiJZ"
+            },
+            "href": "https://api.spotify.com/v1/artists/4YgUVg4p7xtMOrOS4GjiJZ",
+            "id": "4YgUVg4p7xtMOrOS4GjiJZ",
+            "name": "Jatin-Lalit",
+            "type": "artist",
+            "uri": "spotify:artist:4YgUVg4p7xtMOrOS4GjiJZ"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3gBKY0y3dFFVRqicLnVZYz"
+            },
+            "href": "https://api.spotify.com/v1/artists/3gBKY0y3dFFVRqicLnVZYz",
+            "id": "3gBKY0y3dFFVRqicLnVZYz",
+            "name": "Alka Yagnik",
+            "type": "artist",
+            "uri": "spotify:artist:3gBKY0y3dFFVRqicLnVZYz"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4K6blSRoklNdpw4mzLxwfn"
+            },
+            "href": "https://api.spotify.com/v1/artists/4K6blSRoklNdpw4mzLxwfn",
+            "id": "4K6blSRoklNdpw4mzLxwfn",
+            "name": "Kumar Sanu",
+            "type": "artist",
+            "uri": "spotify:artist:4K6blSRoklNdpw4mzLxwfn"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 425266,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INS170000564"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2x70bF6QXIHoShg2EUJmug"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2x70bF6QXIHoShg2EUJmug",
+        "id": "2x70bF6QXIHoShg2EUJmug",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Yeh Vaada Hai",
+        "popularity": 16,
+        "preview_url": null,
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:2x70bF6QXIHoShg2EUJmug"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2JSYASbWU5Y0fVpts3Eq7g"
+              },
+              "href": "https://api.spotify.com/v1/artists/2JSYASbWU5Y0fVpts3Eq7g",
+              "id": "2JSYASbWU5Y0fVpts3Eq7g",
+              "name": "R. D. Burman",
+              "type": "artist",
+              "uri": "spotify:artist:2JSYASbWU5Y0fVpts3Eq7g"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1nLvkKjnfpnouM0Mpyd4cc"
+              },
+              "href": "https://api.spotify.com/v1/artists/1nLvkKjnfpnouM0Mpyd4cc",
+              "id": "1nLvkKjnfpnouM0Mpyd4cc",
+              "name": "Sahir Ludhianvi",
+              "type": "artist",
+              "uri": "spotify:artist:1nLvkKjnfpnouM0Mpyd4cc"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1U5zgr455OGyIkLNXvDdrf"
+              },
+              "href": "https://api.spotify.com/v1/artists/1U5zgr455OGyIkLNXvDdrf",
+              "id": "1U5zgr455OGyIkLNXvDdrf",
+              "name": "Traditional",
+              "type": "artist",
+              "uri": "spotify:artist:1U5zgr455OGyIkLNXvDdrf"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7a9K0qqbcKgGnvxEMKSUSR"
+          },
+          "href": "https://api.spotify.com/v1/albums/7a9K0qqbcKgGnvxEMKSUSR",
+          "id": "7a9K0qqbcKgGnvxEMKSUSR",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273cf3170e2aa67da13d8077cc8"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02cf3170e2aa67da13d8077cc8"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851cf3170e2aa67da13d8077cc8"
+            }
+          ],
+          "is_playable": true,
+          "name": "The Burning Train (Original Motion Picture Soundtrack)",
+          "release_date": "1979-12-31",
+          "release_date_precision": "day",
+          "total_tracks": 9,
+          "type": "album",
+          "uri": "spotify:album:7a9K0qqbcKgGnvxEMKSUSR"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5as8A4G47Ohu9NSWs3Je8U"
+            },
+            "href": "https://api.spotify.com/v1/artists/5as8A4G47Ohu9NSWs3Je8U",
+            "id": "5as8A4G47Ohu9NSWs3Je8U",
+            "name": "Asha Bhosle",
+            "type": "artist",
+            "uri": "spotify:artist:5as8A4G47Ohu9NSWs3Je8U"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0GF4shudTAFv8ak9eWdd4Y"
+            },
+            "href": "https://api.spotify.com/v1/artists/0GF4shudTAFv8ak9eWdd4Y",
+            "id": "0GF4shudTAFv8ak9eWdd4Y",
+            "name": "Kishore Kumar",
+            "type": "artist",
+            "uri": "spotify:artist:0GF4shudTAFv8ak9eWdd4Y"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1nLvkKjnfpnouM0Mpyd4cc"
+            },
+            "href": "https://api.spotify.com/v1/artists/1nLvkKjnfpnouM0Mpyd4cc",
+            "id": "1nLvkKjnfpnouM0Mpyd4cc",
+            "name": "Sahir Ludhianvi",
+            "type": "artist",
+            "uri": "spotify:artist:1nLvkKjnfpnouM0Mpyd4cc"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 251640,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109445330"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/7oze3hCUr1JjwlaAdSsAaT"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7oze3hCUr1JjwlaAdSsAaT",
+        "id": "7oze3hCUr1JjwlaAdSsAaT",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Wada Han Wada",
+        "popularity": 5,
+        "preview_url": null,
+        "track_number": 5,
+        "type": "track",
+        "uri": "spotify:track:7oze3hCUr1JjwlaAdSsAaT"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2JSYASbWU5Y0fVpts3Eq7g"
+              },
+              "href": "https://api.spotify.com/v1/artists/2JSYASbWU5Y0fVpts3Eq7g",
+              "id": "2JSYASbWU5Y0fVpts3Eq7g",
+              "name": "R. D. Burman",
+              "type": "artist",
+              "uri": "spotify:artist:2JSYASbWU5Y0fVpts3Eq7g"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7o3dmagAmo8vwVALOk6YYs"
+          },
+          "href": "https://api.spotify.com/v1/albums/7o3dmagAmo8vwVALOk6YYs",
+          "id": "7o3dmagAmo8vwVALOk6YYs",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273c2f9bfa7a2bcf729a4e39d1a"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02c2f9bfa7a2bcf729a4e39d1a"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851c2f9bfa7a2bcf729a4e39d1a"
+            }
+          ],
+          "is_playable": true,
+          "name": "Mere Jeevan Saathi (Original Motion Picture Soundtrack)",
+          "release_date": "2013-11-01",
+          "release_date_precision": "day",
+          "total_tracks": 9,
+          "type": "album",
+          "uri": "spotify:album:7o3dmagAmo8vwVALOk6YYs"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/61JrslREXq98hurYL2hYoc"
+            },
+            "href": "https://api.spotify.com/v1/artists/61JrslREXq98hurYL2hYoc",
+            "id": "61JrslREXq98hurYL2hYoc",
+            "name": "Lata Mangeshkar",
+            "type": "artist",
+            "uri": "spotify:artist:61JrslREXq98hurYL2hYoc"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0GF4shudTAFv8ak9eWdd4Y"
+            },
+            "href": "https://api.spotify.com/v1/artists/0GF4shudTAFv8ak9eWdd4Y",
+            "id": "0GF4shudTAFv8ak9eWdd4Y",
+            "name": "Kishore Kumar",
+            "type": "artist",
+            "uri": "spotify:artist:0GF4shudTAFv8ak9eWdd4Y"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 355160,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109744420"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/58RNNdLc8WypghqeoLOUfT"
+        },
+        "href": "https://api.spotify.com/v1/tracks/58RNNdLc8WypghqeoLOUfT",
+        "id": "58RNNdLc8WypghqeoLOUfT",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Diwana Kar Ke Chhodoge",
+        "popularity": 10,
+        "preview_url": null,
+        "track_number": 8,
+        "type": "track",
+        "uri": "spotify:track:58RNNdLc8WypghqeoLOUfT"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5ixQ5hSywFLUaxoaA0uVaH"
+              },
+              "href": "https://api.spotify.com/v1/artists/5ixQ5hSywFLUaxoaA0uVaH",
+              "id": "5ixQ5hSywFLUaxoaA0uVaH",
+              "name": "Anand Raj Anand",
+              "type": "artist",
+              "uri": "spotify:artist:5ixQ5hSywFLUaxoaA0uVaH"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/3G8OfUWjS1D3FngcF6iO0M"
+          },
+          "href": "https://api.spotify.com/v1/albums/3G8OfUWjS1D3FngcF6iO0M",
+          "id": "3G8OfUWjS1D3FngcF6iO0M",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2732bc9ca16d0a4a43c518293c8"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e022bc9ca16d0a4a43c518293c8"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048512bc9ca16d0a4a43c518293c8"
+            }
+          ],
+          "is_playable": true,
+          "name": "Koi Kisise Kum Nahin (Original Motion Picture Soundtrack)",
+          "release_date": "1997-12-31",
+          "release_date_precision": "day",
+          "total_tracks": 6,
+          "type": "album",
+          "uri": "spotify:album:3G8OfUWjS1D3FngcF6iO0M"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4K6blSRoklNdpw4mzLxwfn"
+            },
+            "href": "https://api.spotify.com/v1/artists/4K6blSRoklNdpw4mzLxwfn",
+            "id": "4K6blSRoklNdpw4mzLxwfn",
+            "name": "Kumar Sanu",
+            "type": "artist",
+            "uri": "spotify:artist:4K6blSRoklNdpw4mzLxwfn"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6WPmTGeeoymoVlXVtsCwz7"
+            },
+            "href": "https://api.spotify.com/v1/artists/6WPmTGeeoymoVlXVtsCwz7",
+            "id": "6WPmTGeeoymoVlXVtsCwz7",
+            "name": "Kavita Krishnamurthy",
+            "type": "artist",
+            "uri": "spotify:artist:6WPmTGeeoymoVlXVtsCwz7"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 294333,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INH109849570"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/6AXXJYh2whe6uw1whXGhyo"
+        },
+        "href": "https://api.spotify.com/v1/tracks/6AXXJYh2whe6uw1whXGhyo",
+        "id": "6AXXJYh2whe6uw1whXGhyo",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Sawali Hasina",
+        "popularity": 0,
+        "preview_url": null,
+        "track_number": 6,
+        "type": "track",
+        "uri": "spotify:track:6AXXJYh2whe6uw1whXGhyo"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5cB4d4jPYjMT326sjihQ4m"
+              },
+              "href": "https://api.spotify.com/v1/artists/5cB4d4jPYjMT326sjihQ4m",
+              "id": "5cB4d4jPYjMT326sjihQ4m",
+              "name": "Shaan",
+              "type": "artist",
+              "uri": "spotify:artist:5cB4d4jPYjMT326sjihQ4m"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/3R6aLoE02gGPtWGLBgTUSW"
+          },
+          "href": "https://api.spotify.com/v1/albums/3R6aLoE02gGPtWGLBgTUSW",
+          "id": "3R6aLoE02gGPtWGLBgTUSW",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273fcc812b688c05382f1849ad1"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02fcc812b688c05382f1849ad1"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851fcc812b688c05382f1849ad1"
+            }
+          ],
+          "is_playable": true,
+          "name": "Roop Inka Mastana, Vol. 1",
+          "release_date": "1995-03-12",
+          "release_date_precision": "day",
+          "total_tracks": 8,
+          "type": "album",
+          "uri": "spotify:album:3R6aLoE02gGPtWGLBgTUSW"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5cB4d4jPYjMT326sjihQ4m"
+            },
+            "href": "https://api.spotify.com/v1/artists/5cB4d4jPYjMT326sjihQ4m",
+            "id": "5cB4d4jPYjMT326sjihQ4m",
+            "name": "Shaan",
+            "type": "artist",
+            "uri": "spotify:artist:5cB4d4jPYjMT326sjihQ4m"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6Et5kFQtDjiofS9VhsiA4s"
+            },
+            "href": "https://api.spotify.com/v1/artists/6Et5kFQtDjiofS9VhsiA4s",
+            "id": "6Et5kFQtDjiofS9VhsiA4s",
+            "name": "Sagarika",
+            "type": "artist",
+            "uri": "spotify:artist:6Et5kFQtDjiofS9VhsiA4s"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 269800,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "INM129500941"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2d9E2QK7XLxwUF9KG0dbeo"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2d9E2QK7XLxwUF9KG0dbeo",
+        "id": "2d9E2QK7XLxwUF9KG0dbeo",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Pyar Hua Ikrar",
+        "popularity": 0,
+        "preview_url": null,
+        "track_number": 7,
+        "type": "track",
+        "uri": "spotify:track:2d9E2QK7XLxwUF9KG0dbeo"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3KQylwDxYE7Vxli0BSuwaf"
+              },
+              "href": "https://api.spotify.com/v1/artists/3KQylwDxYE7Vxli0BSuwaf",
+              "id": "3KQylwDxYE7Vxli0BSuwaf",
+              "name": "$OHO BANI",
+              "type": "artist",
+              "uri": "spotify:artist:3KQylwDxYE7Vxli0BSuwaf"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/1nwoelobwUBRLeXLsoaMTD"
+          },
+          "href": "https://api.spotify.com/v1/albums/1nwoelobwUBRLeXLsoaMTD",
+          "id": "1nwoelobwUBRLeXLsoaMTD",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27303eb4f69cbd67cfc3ce3210d"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0203eb4f69cbd67cfc3ce3210d"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485103eb4f69cbd67cfc3ce3210d"
+            }
+          ],
+          "is_playable": true,
+          "name": "$oho Bani Vol.1",
+          "release_date": "2019-10-04",
+          "release_date_precision": "day",
+          "total_tracks": 11,
+          "type": "album",
+          "uri": "spotify:album:1nwoelobwUBRLeXLsoaMTD"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3KQylwDxYE7Vxli0BSuwaf"
+            },
+            "href": "https://api.spotify.com/v1/artists/3KQylwDxYE7Vxli0BSuwaf",
+            "id": "3KQylwDxYE7Vxli0BSuwaf",
+            "name": "$OHO BANI",
+            "type": "artist",
+            "uri": "spotify:artist:3KQylwDxYE7Vxli0BSuwaf"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/36caCzfSrrL7a8Mvd1SuRr"
+            },
+            "href": "https://api.spotify.com/v1/artists/36caCzfSrrL7a8Mvd1SuRr",
+            "id": "36caCzfSrrL7a8Mvd1SuRr",
+            "name": "Chapo102",
+            "type": "artist",
+            "uri": "spotify:artist:36caCzfSrrL7a8Mvd1SuRr"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 182857,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "DELJ81926845"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2GeYLkePQpzMBJwjGLhLZu"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2GeYLkePQpzMBJwjGLhLZu",
+        "id": "2GeYLkePQpzMBJwjGLhLZu",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Highway2Hell",
+        "popularity": 42,
+        "preview_url": null,
+        "track_number": 3,
+        "type": "track",
+        "uri": "spotify:track:2GeYLkePQpzMBJwjGLhLZu"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6tekmZkCK5xHTIwWeqyr0i"
+              },
+              "href": "https://api.spotify.com/v1/artists/6tekmZkCK5xHTIwWeqyr0i",
+              "id": "6tekmZkCK5xHTIwWeqyr0i",
+              "name": "Ra'is",
+              "type": "artist",
+              "uri": "spotify:artist:6tekmZkCK5xHTIwWeqyr0i"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/40UaU205CU5DmqJGAFTzvU"
+          },
+          "href": "https://api.spotify.com/v1/albums/40UaU205CU5DmqJGAFTzvU",
+          "id": "40UaU205CU5DmqJGAFTzvU",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273cb478026f494b9e478ddb6c3"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02cb478026f494b9e478ddb6c3"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851cb478026f494b9e478ddb6c3"
+            }
+          ],
+          "is_playable": true,
+          "name": "Hayat",
+          "release_date": "2020-06-12",
+          "release_date_precision": "day",
+          "total_tracks": 14,
+          "type": "album",
+          "uri": "spotify:album:40UaU205CU5DmqJGAFTzvU"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6tekmZkCK5xHTIwWeqyr0i"
+            },
+            "href": "https://api.spotify.com/v1/artists/6tekmZkCK5xHTIwWeqyr0i",
+            "id": "6tekmZkCK5xHTIwWeqyr0i",
+            "name": "Ra'is",
+            "type": "artist",
+            "uri": "spotify:artist:6tekmZkCK5xHTIwWeqyr0i"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4lR4w01uPOblBqpIAzuCzL"
+            },
+            "href": "https://api.spotify.com/v1/artists/4lR4w01uPOblBqpIAzuCzL",
+            "id": "4lR4w01uPOblBqpIAzuCzL",
+            "name": "NOAH",
+            "type": "artist",
+            "uri": "spotify:artist:4lR4w01uPOblBqpIAzuCzL"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 165128,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "DEQ021911823"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/4SPU8AjQ1NgpRobqn8u5Tl"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4SPU8AjQ1NgpRobqn8u5Tl",
+        "id": "4SPU8AjQ1NgpRobqn8u5Tl",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Wieso?",
+        "popularity": 45,
+        "preview_url": null,
+        "track_number": 5,
+        "type": "track",
+        "uri": "spotify:track:4SPU8AjQ1NgpRobqn8u5Tl"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2EahEAOUPPXAcncTr8laCj"
+              },
+              "href": "https://api.spotify.com/v1/artists/2EahEAOUPPXAcncTr8laCj",
+              "id": "2EahEAOUPPXAcncTr8laCj",
+              "name": "MADE",
+              "type": "artist",
+              "uri": "spotify:artist:2EahEAOUPPXAcncTr8laCj"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/76Q0JmDKLtP19IwAHbKMC7"
+              },
+              "href": "https://api.spotify.com/v1/artists/76Q0JmDKLtP19IwAHbKMC7",
+              "id": "76Q0JmDKLtP19IwAHbKMC7",
+              "name": "Kavo",
+              "type": "artist",
+              "uri": "spotify:artist:76Q0JmDKLtP19IwAHbKMC7"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/4yHanPxDnCyKjDZmMR3l4U"
+          },
+          "href": "https://api.spotify.com/v1/albums/4yHanPxDnCyKjDZmMR3l4U",
+          "id": "4yHanPxDnCyKjDZmMR3l4U",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273f46b316dab4c9ea3e29ac151"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02f46b316dab4c9ea3e29ac151"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851f46b316dab4c9ea3e29ac151"
+            }
+          ],
+          "is_playable": true,
+          "name": "100 Bars",
+          "release_date": "2024-12-24",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:4yHanPxDnCyKjDZmMR3l4U"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2EahEAOUPPXAcncTr8laCj"
+            },
+            "href": "https://api.spotify.com/v1/artists/2EahEAOUPPXAcncTr8laCj",
+            "id": "2EahEAOUPPXAcncTr8laCj",
+            "name": "MADE",
+            "type": "artist",
+            "uri": "spotify:artist:2EahEAOUPPXAcncTr8laCj"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/76Q0JmDKLtP19IwAHbKMC7"
+            },
+            "href": "https://api.spotify.com/v1/artists/76Q0JmDKLtP19IwAHbKMC7",
+            "id": "76Q0JmDKLtP19IwAHbKMC7",
+            "name": "Kavo",
+            "type": "artist",
+            "uri": "spotify:artist:76Q0JmDKLtP19IwAHbKMC7"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 317312,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "CH7812424542"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/4nNaAWSdLOCguV4gTjf8sa"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4nNaAWSdLOCguV4gTjf8sa",
+        "id": "4nNaAWSdLOCguV4gTjf8sa",
+        "is_local": false,
+        "is_playable": true,
+        "name": "100 Bars",
+        "popularity": 41,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:4nNaAWSdLOCguV4gTjf8sa"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/28TqrmNSPiKo5w3WVb3A3N"
+              },
+              "href": "https://api.spotify.com/v1/artists/28TqrmNSPiKo5w3WVb3A3N",
+              "id": "28TqrmNSPiKo5w3WVb3A3N",
+              "name": "Aymen",
+              "type": "artist",
+              "uri": "spotify:artist:28TqrmNSPiKo5w3WVb3A3N"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0yU2VxttAH6SkJ2jVhAJY4"
+          },
+          "href": "https://api.spotify.com/v1/albums/0yU2VxttAH6SkJ2jVhAJY4",
+          "id": "0yU2VxttAH6SkJ2jVhAJY4",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2731ca4cf8c0a10c7abbb5f349a"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e021ca4cf8c0a10c7abbb5f349a"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048511ca4cf8c0a10c7abbb5f349a"
+            }
+          ],
+          "is_playable": true,
+          "name": "Ah Ah",
+          "release_date": "2024-08-30",
+          "release_date_precision": "day",
+          "total_tracks": 4,
+          "type": "album",
+          "uri": "spotify:album:0yU2VxttAH6SkJ2jVhAJY4"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/28TqrmNSPiKo5w3WVb3A3N"
+            },
+            "href": "https://api.spotify.com/v1/artists/28TqrmNSPiKo5w3WVb3A3N",
+            "id": "28TqrmNSPiKo5w3WVb3A3N",
+            "name": "Aymen",
+            "type": "artist",
+            "uri": "spotify:artist:28TqrmNSPiKo5w3WVb3A3N"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 144497,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "DEKF22401182"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/0cktMojlSyXU4tw8EdPIJ3"
+        },
+        "href": "https://api.spotify.com/v1/tracks/0cktMojlSyXU4tw8EdPIJ3",
+        "id": "0cktMojlSyXU4tw8EdPIJ3",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Ah Ah",
+        "popularity": 48,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:0cktMojlSyXU4tw8EdPIJ3"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3KQylwDxYE7Vxli0BSuwaf"
+              },
+              "href": "https://api.spotify.com/v1/artists/3KQylwDxYE7Vxli0BSuwaf",
+              "id": "3KQylwDxYE7Vxli0BSuwaf",
+              "name": "$OHO BANI",
+              "type": "artist",
+              "uri": "spotify:artist:3KQylwDxYE7Vxli0BSuwaf"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/1uLzKNCBqaN81d17IOYSiK"
+          },
+          "href": "https://api.spotify.com/v1/albums/1uLzKNCBqaN81d17IOYSiK",
+          "id": "1uLzKNCBqaN81d17IOYSiK",
+          "images": [
+            {
+              "height": 640,
+              "width": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27367d04313f86a0aaea8dd48b2"
+            },
+            {
+              "height": 300,
+              "width": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0267d04313f86a0aaea8dd48b2"
+            },
+            {
+              "height": 64,
+              "width": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485167d04313f86a0aaea8dd48b2"
+            }
+          ],
+          "is_playable": true,
+          "name": "Highway2Hell",
+          "release_date": "2019-06-07",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:1uLzKNCBqaN81d17IOYSiK"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3KQylwDxYE7Vxli0BSuwaf"
+            },
+            "href": "https://api.spotify.com/v1/artists/3KQylwDxYE7Vxli0BSuwaf",
+            "id": "3KQylwDxYE7Vxli0BSuwaf",
+            "name": "$OHO BANI",
+            "type": "artist",
+            "uri": "spotify:artist:3KQylwDxYE7Vxli0BSuwaf"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/36caCzfSrrL7a8Mvd1SuRr"
+            },
+            "href": "https://api.spotify.com/v1/artists/36caCzfSrrL7a8Mvd1SuRr",
+            "id": "36caCzfSrrL7a8Mvd1SuRr",
+            "name": "Chapo102",
+            "type": "artist",
+            "uri": "spotify:artist:36caCzfSrrL7a8Mvd1SuRr"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 182857,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "DELJ81926845"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/34ADg83xDMCGOaSoPYqFOc"
+        },
+        "href": "https://api.spotify.com/v1/tracks/34ADg83xDMCGOaSoPYqFOc",
+        "id": "34ADg83xDMCGOaSoPYqFOc",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Highway2Hell",
+        "popularity": 34,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:34ADg83xDMCGOaSoPYqFOc"
+      }
+    ]
+  }
+}

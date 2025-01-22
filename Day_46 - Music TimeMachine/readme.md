@@ -4,7 +4,7 @@ Todo:
 2. Hit billboard api to fetch top 100 songs from the year
 3. Send the request as list to next step
 # Build a playlist of Spotify
-4. Call Spotify API to build a playlist
+4. Call Spotify API to build a playlist (subtask - register for developer API requests)
 5. Search all 100 songs and the ones found to the playlist
 6. Share the playlist via SMS, and email to Sheral
 
