@@ -1,0 +1,43 @@
+body {
+    box-sizing: border-box;
+    margin: 2% 10%;
+    padding: 2%;
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite;
+    height: 95vh;
+    line-height: 1.5rem;
+    /* text-align: center; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    color: rgb(13, 123, 171);
+}
+
+h3 {
+    color: rgb(2, 54, 45);
+}
+ol {
+   text-align: center; 
+}
+
+/* new_learner - removes gap between pointer and list element */
+ol li {
+    list-style-position: inside;
+}
+
+li, ul, ol {
+    transition: transform 0.1s ease-in-out;
+}
+
+li:hover, ul:hover, ol:hover  {
+    transform: scale(1.05);
+}
+
+
