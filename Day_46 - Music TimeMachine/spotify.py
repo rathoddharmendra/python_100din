@@ -20,19 +20,12 @@ class Spotify:
     def search_track(self, track: str, artist: str):
        search_result = self.sp.search(q=f'track:{track} artist:{artist}',limit=1,type='track')
        if search_result['tracks']['total'] > 0:
-            file_path = os.path.join(os.path.dirname(__file__), 'track_results.json')
-            # with open(file_path, mode='w') as file:
-            #     json.dump(search_result, file, indent=4)
             return search_result['tracks']['items'][0]['uri']
        else:
            return None
     
     def add_playlist_song(self, playlist_id: int, track_uri_list:list):
-        result = self.sp.playlist_add_items(playlist_id=playlist_id, items=track_uri_list)
-        file_path = os.path.join(os.path.dirname(__file__), 'add_playlist_results.json')
-        # with open(file_path, mode='w') as file:
-        #     json.dump(result, file, indent=4)
-        return True
+        self.sp.playlist_add_items(playlist_id=playlist_id, items=track_uri_list)
         
     
     
