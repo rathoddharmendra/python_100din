@@ -40,13 +40,13 @@ class BillBoard:
         # print(song_titles)
         # print(authors)
         song_titles = []
-        with open(f'{filename}{self.billboard_date}', mode='w') as file:
-            for i, (title, author) in enumerate(zip(soup_song_titles, soup_authors), start=1):
+        # with open(f'{filename}{self.billboard_date}', mode='w') as file:
+        for i, (title, author) in enumerate(zip(soup_song_titles, soup_authors), start=1):
                 # print(f'{title}: By {author}')
-                file.write(f'{title.getText().strip()} -by- {author.getText().strip()}\n')
-                song_titles.append((f'{title.getText().strip()}',f'{author.getText().strip()}'))
+                # file.write(f'{title.getText().strip()} -by- {author.getText().strip()}\n')
+            song_titles.append((f'{title.getText().strip()}',f'{author.getText().strip()}'))
             # <h3 id="title-of-a-story" class="c-title  a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 u-font-size-23@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-245 u-max-width-230@tablet-only u-letter-spacing-0028@tablet">
-        return ({"date": self.billboard_date , "titles": song_titles})
+        return ({"date": self.billboard_date , "titles": song_titles[:10]})
             # <span class="c-label  a-no-trucate a-font-primary-s lrv-u-font-size-14@mobile-max u-line-height-normal@mobile-max u-letter-spacing-0021 lrv-u-display-block a-truncate-ellipsis-2line u-max-width-330 u-max-width-230@tablet-only u-font-size-20@tablet">
             # first_story_paragraph.find_next_sibling("p")
 

@@ -1,0 +1,32 @@
+{'tracks': 
+{'href': 'https://api.spotify.com/v1/search?offset=0&limit=1&query=track%253AAll%20I%20Want%20For%20Christmas%20Is%20You%20artist%253AMariah%20Carey&type=track', 
+'limit': 1, 
+'next': 'https://api.spotify.com/v1/search?offset=1&limit=1&query=track%253AAll%20I%20Want%20For%20Christmas%20Is%20You%20artist%253AMariah%20Carey&type=track', 
+'offset': 0, 'previous': None, 'total': 800, 
+'items': [
+    {'album': 
+    {'album_type': 
+    'album', 'artists': 
+    [{'external_urls': 
+    {'spotify': 'https://open.spotify.com/artist/4iHNK0tOyZPYnBU7nGAgpQ'}, 
+    'href': 'https://api.spotify.com/v1/artists/4iHNK0tOyZPYnBU7nGAgpQ', 
+    'id': '4iHNK0tOyZPYnBU7nGAgpQ', 
+    'name': 'Mariah Carey', 
+    'type': 'artist', 
+    'uri': 'spotify:artist:4iHNK0tOyZPYnBU7nGAgpQ'}], 
+    'available_markets': ['AR', 'AU', 'AT', 'BE', 'BO', 'BR', 'BG', 'CA', 'CL', 'CO', 'CR', 'CY', 'CZ', 'DK', 'DO', 'DE', 'EC', 'EE', 'SV', 'FI', 'FR', 'GR', 'GT', 'HN', 'HK', 'HU', 'IS', 'IE', 'IT', 'LV', 'LT', 'LU', 'MY', 'MT', 'MX', 'NL', 'NZ', 'NI', 'NO', 'PA', 'PY', 'PE', 'PH', 'PL', 'PT', 'SG', 'SK', 'ES', 'SE', 'CH', 'TW', 'TR', 'UY', 'US', 'GB', 'AD', 'LI', 'MC', 'ID', 'JP', 'TH', 'VN', 'RO', 'IL', 'ZA', 'SA', 'AE', 'BH', 'QA', 'OM', 'KW', 'EG', 'MA', 'DZ', 'TN', 'LB', 'JO', 'PS', 'IN', 'BY', 'KZ', 'MD', 'UA', 'AL', 'BA', 'HR', 'ME', 'MK', 'RS', 'SI', 'KR', 'BD', 'PK', 'LK', 'GH', 'KE', 'NG', 'TZ', 'UG', 'AG', 'AM', 'BS', 'BB', 'BZ', 'BT', 'BW', 'BF', 'CV', 'CW', 'DM', 'FJ', 'GM', 'GE', 'GD', 'GW', 'GY', 'HT', 'JM', 'KI', 'LS', 'LR', 'MW', 'MV', 'ML', 'MH', 'FM', 'NA', 'NR', 'NE', 'PW', 'PG', 'PR', 'WS', 'SM', 'ST', 'SN', 'SC', 'SL', 'SB', 'KN', 'LC', 'VC', 'SR', 'TL', 'TO', 'TT', 'TV', 'VU', 'AZ', 'BN', 'BI', 'KH', 'CM', 'TD', 'KM', 'GQ', 'SZ', 'GA', 'GN', 'KG', 'LA', 'MO', 'MR', 'MN', 'NP', 'RW', 'TG', 'UZ', 'ZW', 'BJ', 'MG', 'MU', 'MZ', 'AO', 'CI', 'DJ', 'ZM', 'CD', 'CG', 'IQ', 'LY', 'TJ', 'VE', 'ET', 'XK'], 
+    'external_urls': 
+    {'spotify': 'https://open.spotify.com/album/61ulfFSmmxMhc2wCdmdMkN'}, 
+    'href': 'https://api.spotify.com/v1/albums/61ulfFSmmxMhc2wCdmdMkN', 
+    'id': '61ulfFSmmxMhc2wCdmdMkN', 
+    'images': 
+    [{'height': 640, 'width': 640, 
+    'url': 'https://i.scdn.co/image/ab67616d0000b2734246e3158421f5abb75abc4f'}, 
+    {'height': 300, 'width': 300, 'url': 'https://i.scdn.co/image/ab67616d00001e024246e3158421f5abb75abc4f'}, {'height': 64, 'width': 64, 'url': 'https://i.scdn.co/image/ab67616d000048514246e3158421f5abb75abc4f'}], 
+    'is_playable': True, 
+    'name': 'Merry Christmas', 
+    'release_date': '1994-10-28', 
+    'release_date_precision': 'day', 
+    'total_tracks': 10, 'type': 'album', 
+    'uri': 'spotify:album:61ulfFSmmxMhc2wCdmdMkN'}, 
+    'artists': [{'external_urls': {'spotify': 'https://open.spotify.com/artist/4iHNK0tOyZPYnBU7nGAgpQ'}, 'href': 'https://api.spotify.com/v1/artists/4iHNK0tOyZPYnBU7nGAgpQ', 'id': '4iHNK0tOyZPYnBU7nGAgpQ', 'name': 'Mariah Carey', 'type': 'artist', 'uri': 'spotify:artist:4iHNK0tOyZPYnBU7nGAgpQ'}], 'available_markets': ['AR', 'AU', 'AT', 'BE', 'BO', 'BR', 'BG', 'CA', 'CL', 'CO', 'CR', 'CY', 'CZ', 'DK', 'DO', 'DE', 'EC', 'EE', 'SV', 'FI', 'FR', 'GR', 'GT', 'HN', 'HK', 'HU', 'IS', 'IE', 'IT', 'LV', 'LT', 'LU', 'MY', 'MT', 'MX', 'NL', 'NZ', 'NI', 'NO', 'PA', 'PY', 'PE', 'PH', 'PL', 'PT', 'SG', 'SK', 'ES', 'SE', 'CH', 'TW', 'TR', 'UY', 'US', 'GB', 'AD', 'LI', 'MC', 'ID', 'JP', 'TH', 'VN', 'RO', 'IL', 'ZA', 'SA', 'AE', 'BH', 'QA', 'OM', 'KW', 'EG', 'MA', 'DZ', 'TN', 'LB', 'JO', 'PS', 'IN', 'BY', 'KZ', 'MD', 'UA', 'AL', 'BA', 'HR', 'ME', 'MK', 'RS', 'SI', 'KR', 'BD', 'PK', 'LK', 'GH', 'KE', 'NG', 'TZ', 'UG', 'AG', 'AM', 'BS', 'BB', 'BZ', 'BT', 'BW', 'BF', 'CV', 'CW', 'DM', 'FJ', 'GM', 'GE', 'GD', 'GW', 'GY', 'HT', 'JM', 'KI', 'LS', 'LR', 'MW', 'MV', 'ML', 'MH', 'FM', 'NA', 'NR', 'NE', 'PW', 'PG', 'PR', 'WS', 'SM', 'ST', 'SN', 'SC', 'SL', 'SB', 'KN', 'LC', 'VC', 'SR', 'TL', 'TO', 'TT', 'TV', 'VU', 'AZ', 'BN', 'BI', 'KH', 'CM', 'TD', 'KM', 'GQ', 'SZ', 'GA', 'GN', 'KG', 'LA', 'MO', 'MR', 'MN', 'NP', 'RW', 'TG', 'UZ', 'ZW', 'BJ', 'MG', 'MU', 'MZ', 'AO', 'CI', 'DJ', 'ZM', 'CD', 'CG', 'IQ', 'LY', 'TJ', 'VE', 'ET', 'XK'], 'disc_number': 1, 'duration_ms': 241106, 'explicit': False, 'external_ids': {'isrc': 'USSM19400325'}, 'external_urls': {'spotify': 'https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn'}, 'href': 'https://api.spotify.com/v1/tracks/0bYg9bo50gSsH3LtXe2SQn', 'id': '0bYg9bo50gSsH3LtXe2SQn', 'is_local': False, 'is_playable': True, 'name': 'All I Want for Christmas Is You', 'popularity': 90, 'preview_url': None, 'track_number': 2, 'type': 'track', 'uri': 'spotify:track:0bYg9bo50gSsH3LtXe2SQn'}]}}
