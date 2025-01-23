@@ -1,0 +1,43 @@
+import requests
+import os
+import base64
+
+# [('Never Gonna Not Dance Again', 'P!nk'), ("Dancin' In The Country", 'Tyler Hubbard')]
+# encoded_auth = base64.b64encode(f'{SPOTIFY_CLIENT_ID}:{SPOTIFY_CLIENT_SECRET}'.encode('ascii')).decode('ascii')
+# "Authorization": f'Bearer {encoded_auth}'
+# "grant_type" : "client_credentials"
+
+
+# todo: connect to spotify api
+
+SPOTIFY_BASE_URL = 'https://api.spotify.com'
+SPOTIFY_CLIENT_ID= os.environ.get('SPOTIFY_CLIEND_ID')
+SPOTIFY_CLIENT_SECRET= os.environ.get('SPOTIFY_CLIENT_SECRET')
+REDIRECT_URI = 'http://localhost:8888/callback'
+class Spotify:
+    def __init__(self):
+        self.token = self.get_access_token()
+
+    def get_access_token(self):
+        url = f'{SPOTIFY_BASE_URL}/login'
+
+        header = {
+            "Content-Type": "application/x-www-form-urlencoded",
+        }
+        parameters  = {
+            "client_id": SPOTIFY_CLIENT_ID,
+            "redirect_uri": REDIRECT_URI,
+            "response_type": "code",
+            "scope": "user-read-private user-read-email"
+        }
+        response = requests.post(url, headers=header, params=parameters)
+        requests.redirect
+        response.raise_for_status()
+        
+        if response.status_code == 200:
+            return response.text
+        else:
+            return None
+        
+spotify = Spotify()
+print(spotify.token)

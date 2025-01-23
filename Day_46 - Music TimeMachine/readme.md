@@ -16,5 +16,5 @@ class SmsClient, class EmailClient
 
 # new_learner -
 
-enumerate(zip(song_titles, authors))
+enumerate(zip(song_titles, authors)) -- good for getting the index
 zip stops when small list items are exhausted

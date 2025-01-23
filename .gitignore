@@ -6,3 +6,4 @@ workspace.xml
 */__pycache__/*
 *venv*
 .env
+.cache
