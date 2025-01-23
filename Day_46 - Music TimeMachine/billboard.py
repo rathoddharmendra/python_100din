@@ -18,24 +18,29 @@ class BillBoard:
 
     def get_top_songs(self):
 
-        '''Implement this method to fetch the top 100 songs from the Billboard Hot 100 chart for the given year. Return a list of song titles.'''
+        '''Implement this method to fetch the top 100 songs from the Billboard Hot 100 chart for the given year. 
+        Return:
+         song-titles [list[tuple[str, str]]]: a list of song titles.
+         '''
         response = requests.get(self.url, headers=header) 
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'lxml')
         
-        song_titles = soup.select(selector='h3#title-of-a-story.a-no-trucate')
-        authors = soup.select(selector='h3#title-of-a-story + span')
+        soup_song_titles = soup.select(selector='h3#title-of-a-story.a-no-trucate')
+        soup_authors = soup.select(selector='h3#title-of-a-story + span')
         # print(song_titles)
         # print(authors)
+        song_titles = []
         with open(f'{filename}{self.billboard_date}', mode='w') as file:
-            for i, (title, author) in enumerate(zip(song_titles, authors), start=1):
+            for i, (title, author) in enumerate(zip(soup_song_titles, soup_authors), start=1):
                 print(f'{title}: By {author}')
                 file.write(f'{title.getText().strip()} -by- {author.getText().strip()}\n')
-
+                song_titles.append((f'{title.getText().strip()}',f'{author.getText().strip()}'))
             # <h3 id="title-of-a-story" class="c-title  a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 u-font-size-23@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-245 u-max-width-230@tablet-only u-letter-spacing-0028@tablet">
-        
+        return song_titles
             # <span class="c-label  a-no-trucate a-font-primary-s lrv-u-font-size-14@mobile-max u-line-height-normal@mobile-max u-letter-spacing-0021 lrv-u-display-block a-truncate-ellipsis-2line u-max-width-330 u-max-width-230@tablet-only u-font-size-20@tablet">
             # first_story_paragraph.find_next_sibling("p")
 
 bill_board = BillBoard()
-bill_board.get_top_songs()
+top_songs = bill_board.get_top_songs()
+print(top_songs)
