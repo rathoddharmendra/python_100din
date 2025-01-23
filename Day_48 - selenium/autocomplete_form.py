@@ -15,7 +15,7 @@ driver.get(URL)
 first_name = driver.find_element(By.NAME, 'fName')
 last_name = driver.find_element(By.NAME, 'lName')
 email = driver.find_element(By.NAME, 'email')
-button = driver.find_element(By.CSS_SELECTOR, 'button[type=submit]')
+button = driver.find_element(By.CSS_SELECTOR, 'form button[type=submit]')
 
 first_name.send_keys('Hello Angela')
 last_name.send_keys('From deepest part of me ')
