@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-direction: column;
+    color: rgb(43, 131, 171);
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+.container{
+    max-width: 800px;
+    background-color: beige !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+
+img {
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover{
+    transform:rotateY(90)
+}
+img{
+    width: 400;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 90%;
+
+}
+
+
+.container > * {
+    transition: transform 0.3s ease-in-out;
+}
+.container > *:hover{
+    transform: scale(1.05)
+}
