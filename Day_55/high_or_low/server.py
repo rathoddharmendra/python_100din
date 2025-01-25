@@ -35,27 +35,75 @@ CORRECT_IMAGE = 'https://media.giphy.com/media/4T7e4DmcrP9du/giphy.gif'
 
 def add_style(func):
     def wrapper(*args):
-        return f"""<head>
-        <style>
-        body {{
-            text-align: center;
-            background-color: black;
-            justify-content: center;
-            align-items: center;
-        }}
+        return f"""
+        <html>
+            <head>
+                <style>
+                body {{
+                    text-align: center;
+                    background-color: black;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    height: 95vh;
+                }}
 
-        img {{
-            width: 400;
-            height: auto;
-        }}
-        
-        </style>
-        </head>
-        <body>
-        {func(*args)}
-        </body>
+                h1 {{
+                    color: white;
+                    font-size: 48px;
+                    text-transform: uppercase;
+                }}
+
+                img {{
+                    width: 400;
+                    height: auto;
+                }}
+                
+                </style>
+            </head>
+            <body>
+                {func(*args)}
+            </body>
+        </html>
         """
     return wrapper
+
+def add_style_copy(func):
+    def wrapper_copy(number: int, *args):
+        return f"""
+        <html>
+            <head>
+                <style>
+                body {{
+                    text-align: center;
+                    background-color: black;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    height: 95vh;
+                }}
+
+                h1 {{
+                    color: white;
+                    font-size: 48px;
+                    text-transform: uppercase;
+                }}
+
+                img {{
+                    width: 400;
+                    height: 400;
+                }}
+                
+                </style>
+            </head>
+            <body>
+                {func(number, *args)}
+            </body>
+        </html>
+        """
+    return wrapper_copy
 
 @app.route("/")
 @add_style
@@ -63,7 +111,7 @@ def home():
     return f'<h1>Guess a number betweeen 1 and 10</h1><img src={HOME_IMAGE} alt="correct-image">'
  
 @app.route('/<int:number>')
-@add_style
+@add_style_copy
 def display(number: int):
     if number == CHOSEN_NUMBER:
         return f'<h1>You guessed it right!</h1><img src={CORRECT_IMAGE} alt="correct-image">'
