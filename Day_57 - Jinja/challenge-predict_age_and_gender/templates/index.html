@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age and Gender Reveal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            height: 95vh;
+
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+
+
+        @media screen and (min-width: 768px) {
+            .container {
+                width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey, {{name.title()}}</h1>
+        <p>I think you are {{predicted_gender}} <br>
+            And maybe {{predicted_age}} years old
+        </p>
+        <div> 
+            Go to /guess/demo : 
+            <a href="{{ url_for('home'), num=3}}"> 
+                link 
+            </a>
+        </div>
+    </div>
+    <footer>
+        &copy; {{current_year}} S&D Inc
+    </footer>
+</body>
+</html>
