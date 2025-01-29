@@ -2,12 +2,28 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Column, Integer, String, ForeignKey, Float
+
+from flask_bootstrap import Bootstrap4
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, SelectField, IntegerField
+from wtforms.validators import DataRequired
 import os
 
 db_path = os.path.join(os.path.dirname(__file__), 'new-books-collection.db')
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
+app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+bootstrap = Bootstrap4(app)
+
+
+class Book(FlaskForm):
+    id = IntegerField('ID', validators=[DataRequired()])
+    title = StringField('Book Title', validators=[DataRequired()])
+    author = StringField('Author Name', validators=[DataRequired()])
+    Rating = StringField('Ratings', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
 
 class Base(DeclarativeBase):
   pass
@@ -52,6 +68,33 @@ def add():
             all_books = update_books()
         return redirect(url_for('home'))
     return render_template("add.html")
+
+@app.route("/edit/<int:book_id>", methods=["GET", "POST"])
+def edit(book_id: int):
+    global all_books
+    form = Book()
+    if request.method == 'POST':
+        with app.app_context():
+            book_to_update = db.get_or_404(Books, book_id)
+            book_to_update.title = request.form['title']
+            book_to_update.author = request.form['author']
+            book_to_update.rating = request.form['rating']
+            db.session.commit()
+
+        all_books = update_books()
+        return redirect(url_for('home'))
+    return render_template("edit.html", form=form)
+    
+
+@app.route("/delete/<int:book_id>")
+def delete(book_id):
+    global all_books
+    with app.app_context():
+        book_to_delete = db.get_or_404(Books, book_id)
+        db.session.delete(book_to_delete)
+        db.session.commit()
+        all_books = update_books()
+    return redirect(url_for('home'))
 
 
 if __name__ == "__main__":
