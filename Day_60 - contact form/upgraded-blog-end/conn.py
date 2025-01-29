@@ -22,11 +22,11 @@ class Connection:
     def __init__(self):
         pass
 
-    def send_email(self, from_address: str, to_address: str, subject: str, body: str):
+    def send_email(self, to_address: str, subject: str, body: str):
         # Create a MIME message
         message = MIMEMultipart()
         # message["From"] = from_address
-        # message["To"] = to_address
+        message["To"] = to_address
         # Add email body
         message["Subject"] = subject
         message.attach(MIMEText(body, "plain", "utf-8"))  # Specify UTF-8 encoding
@@ -37,7 +37,7 @@ class Connection:
                 # conn.ehlo('testing')
                 # conn.set_debuglevel(1)  # For debugging, remove this line in production
                 conn.login(user=EMAIL_ADDRESS, password=EMAIL_PASSWORD)
-                conn.sendmail(from_addr=from_address, 
+                conn.sendmail(from_addr=EMAIL_ADDRESS, 
                             to_addrs=to_address, 
                             msg=message.as_string())
                 return True
