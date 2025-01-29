@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Library</title>
-  </head>
-  <body>
+{% include "header.html" %}
+<!-- {% block title %} My Library {% endblock%} -->
     <h1>My Library</h1>
     {% if books|length == 0 %}
     <p>Library is empty.</p>
@@ -13,7 +8,13 @@
 
       {% for book in books %}
       <!-- <li> <a href="{{ url_for('delete', book_id=book.id)}}">Delete</a> {{book.title}} - {{ book.author }} - {{book.rating}}  <a href="url_for('edit', book_id=book.id, title=book.title, author=book.author, rating=book.rating)"> Edit Book </a></li> -->
-      <li> <a href="{{ url_for('delete', book_id=book.id)}}">Delete</a> {{book.title}} - {{ book.author }} - {{book.rating}}  <a href="{{ url_for('edit', book_id=book.id) }}"> Edit Book </a></li>
+       <table class="table">
+        <tr>
+          <td><a href="{{ url_for('delete', book_id=book.id)}}">Delete</a></td>
+          <td>{{book.title}} - {{ book.author }} - {{book.rating}}</td>
+          <td><a href="{{ url_for('edit', book_id=book.id) }}"> Edit Book </a></td>
+        </tr>
+       </table>
       {% endfor %}
     </ul>
     {% endif %}

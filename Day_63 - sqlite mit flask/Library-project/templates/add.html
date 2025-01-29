@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Add Book</title>
-  </head>
-  <body>
+{% include "header.html"%}
+  <h1> Add Book</h1>
+  <p>Add a new book to library</p>
     <form action="{{ url_for('add')}}" method="POST">
       <label>Book Name</label>
       <input type="text" name="title" />
