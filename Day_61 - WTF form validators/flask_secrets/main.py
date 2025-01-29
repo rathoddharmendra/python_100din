@@ -6,6 +6,7 @@ from wtforms.validators import DataRequired, input_required, ValidationError, Em
 from flask_wtf.csrf import CSRFProtect
 from wtforms.fields import SelectField, SubmitField
 from wtforms.widgets import SubmitInput
+import os
 '''
 Red underlines? Install the required packages first: 
 Open the Terminal in PyCharm (bottom left). 
@@ -28,7 +29,7 @@ csrf = CSRFProtect(app)
 
 username = 'admin@gmail.com'
 
-user_password = 12345678
+user_password = '12345678'
 
 WTF_CSRF_SECRET_KEY = 'a random string'
 
@@ -53,15 +54,18 @@ def home():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    os.system('clear')
     my_form = MyForm()
     if request.method == 'POST':
         if my_form.validate_on_submit():
-            if my_form.password == user_password and my_form.email == username:
+            if my_form.data.password == user_password and my_form.data.email == username:
+                print(my_form.data.items())
                 return render_template('success.html')
             else:
+                print(my_form.data.items())
+                # my_form.validate()
                 return render_template('denied.html')
     print(my_form.data.items())
-    # my_form.validate()
     return render_template('login.html', form=my_form)
 
 # @app.route('/submit', methods=['GET', 'POST'])

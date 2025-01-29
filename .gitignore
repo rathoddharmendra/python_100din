@@ -4,6 +4,7 @@ workspace.xml
 .idea/
 *.pyc
 */__pycache__/*
+.venv
 *venv*
 .env
 .cache
