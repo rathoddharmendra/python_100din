@@ -49,7 +49,7 @@ class MyForm(FlaskForm):
     email = StringField(label='Email', validators=[DataRequired(), Email(message='That\'s not a valid email address.')], name='email', description='We will never share your email with anyone else.')
     password = PasswordField(label='Password', validators=[DataRequired(), Length(min=3, max=15, message='Password must be between 3 and 15 letters')], name='password')
     select = SelectField(label='Select your choice: ', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')], validators=[DataRequired()])
-    accept_rules = BooleanField('I accept the site rules', [input_required()])
+    accept_rules = BooleanField('I accept the site rules without reservations', [input_required()])
     submit = SubmitField(label='Submit')
     # go = SubmitInput('Go')
 

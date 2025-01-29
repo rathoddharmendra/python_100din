@@ -7,14 +7,14 @@
       {% endblock %}
     </title>
     {{ bootstrap.load_css() }}
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
     <style>
-      {% block styles %}
-      body{
-          background: purple;
-      }
-      {% endblock %}
-      </style>
+        {% block styles %}
+          iframe {
+            border: 10px dashed rgb(164, 157, 157);
+          }
+        {% endblock %}
+    </style>
   </head>
   <body>
     {% block content %}

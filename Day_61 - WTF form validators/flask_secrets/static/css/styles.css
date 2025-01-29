@@ -20,6 +20,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 50%;
     
 }
 
@@ -33,6 +34,9 @@ input[type="text"], input[type="email"], #password {
     width: 100%;
     border: none;
     cursor: pointer;
+}
+.form-check, input[type="submit"]{
+    margin-top: 20px;
 }
 
 input[type="submit"]{

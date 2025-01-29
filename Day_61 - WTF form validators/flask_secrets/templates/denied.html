@@ -1,15 +1,15 @@
 {% extends "header.html" %}
 {% block title %} Denied {% endblock %}
-{% block styles %}
-{{ super() }}
-h1 {
-	color: red;
-}
 
-/* body {
-	background: red;
-} */
+{% block styles %}
+	{{ super()}}
+	h1{
+	  color: red;
+	}
+
 {% endblock %}
+
+
 {% block content %}
 	<div class="container">
 		<h1>Access Denied </h1>
