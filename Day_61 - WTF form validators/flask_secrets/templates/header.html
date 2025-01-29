@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Secrets</title>
+    <title>
+      {% block title %}
+      
+      {% endblock %}
+    </title>
+    {{ bootstrap.load_css() }}
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}"> -->
+    <style>
+      {% block styles %}
+      body{
+          background: purple;
+      }
+      {% endblock %}
+      </style>
   </head>
   <body>
+    {% block content %}
+    {% endblock %}
+    {{ bootstrap.load_js() }}
+
+  </body>
+</html>

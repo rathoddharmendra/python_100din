@@ -1,4 +1,8 @@
-{% include "header.html" %}
+{% extends "header.html" %}
+{% block title %} 
+Home 
+{% endblock %}
+{% block content %}
     <div class="jumbotron">
       <div class="container">
         <h1>Welcome</h1>
@@ -8,5 +12,4 @@
         >
       </div>
     </div>
-  </body>
-</html>
+{% endblock %}

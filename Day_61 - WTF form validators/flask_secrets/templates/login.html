@@ -1,4 +1,6 @@
-{% include "header.html" %}
+{% extends "header.html" %}
+{% block title %} Login {% endblock %}
+{% block content %}
 
         <div class="container">
 		<h1>Login</h1>
@@ -42,5 +44,4 @@
 
 		</form>
         </div>
-	</body>
-</html>
+{% endblock %}

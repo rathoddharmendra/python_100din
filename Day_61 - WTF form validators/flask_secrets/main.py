@@ -8,6 +8,9 @@ from flask_wtf.csrf import CSRFProtect
 from wtforms.fields import SelectField, SubmitField
 from wtforms.widgets import SubmitInput
 import os
+
+from flask_bootstrap import Bootstrap5
+
 '''
 Red underlines? Install the required packages first: 
 Open the Terminal in PyCharm (bottom left). 
@@ -23,6 +26,7 @@ This will install the packages from requirements.txt for this project.
 
 
 app = Flask(__name__)
+bootstrap = Bootstrap5(app)
 SECRET_KEY = 'my super secret key'.encode('utf8')
 app.secret_key = SECRET_KEY
 csrf = CSRFProtect(app)
@@ -64,11 +68,13 @@ def login():
             if my_form.data['password'] == user_password and my_form.data['email'] == username:
                 print(my_form.data.items())
                 return render_template('success.html')
+                
             else:
                 print(my_form.data.items())
                 # my_form.validate()
                 return render_template('denied.html')
     print(my_form.data.items())
+    # return redirect('/login')
     return render_template('login.html', form=my_form)
 
 
