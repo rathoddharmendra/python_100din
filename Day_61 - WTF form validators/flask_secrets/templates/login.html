@@ -8,40 +8,28 @@
 			{{ form.name.label }} 
 			<br>
 			{{ form.name(size=30) }}
-			<br>
-			{% if form.errors.name %}
-				<ul class="errors">
-				{% for error in form.errors.name %}
-					<li style="color: red;">{{ error }}</li>
-				{% endfor %}
-				</ul>
-			{% endif %}
+			
+			{% for error in form.errors.name %}
+				<span style="color: rgb(221, 50, 50)"> --> {{ error }}</span>
+			{% endfor %}
 			<br>
 
 			{{ form.email.label }} 
 			<!-- {{ form.email.description}} -->
 			<br>
 			{{ form.email(size=30) }}
-			<br>
-			{% if form.errors.email %}
-				<ul class="errors">
-				{% for error in form.errors.email %}
-					<li style="color: red">{{ error }}</li>
-				{% endfor %}
-				</ul>
-			{% endif %}
+			
+			{% for error in form.errors.email %}
+				<span style="color: rgb(221, 50, 50)"> --> {{ error }}</span>
+			{% endfor %}
 			<br>
 
 			{{ form.password.label }} 
 			<br> {{ form.password(size=30) }}
-			<br>
-			{% if form.errors.password %}
-				<ul class="errors">
-				{% for error in form.errors.password %}
-					<li style="color: red">{{ error }}</li>
-				{% endfor %}
-				</ul>
-			{% endif %}
+
+			{% for error in form.errors.password %}
+				<span style="color: rgb(221, 50, 50)"> --> {{ error }}</span>
+			{% endfor %}
 			<br>
 			{{ form.select.label }}
 			<br>
