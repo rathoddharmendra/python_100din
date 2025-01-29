@@ -12,7 +12,8 @@
     <ul>
 
       {% for book in books %}
-      <li> <a href="{{ url_for('delete', book_id=book.id)}}">Delete</a> {{book.title}} - {{ book.author }} - {{book.rating}}  <a href="url_for('edit', book_id=book.id)"> Edit Book </a></li>
+      <!-- <li> <a href="{{ url_for('delete', book_id=book.id)}}">Delete</a> {{book.title}} - {{ book.author }} - {{book.rating}}  <a href="url_for('edit', book_id=book.id, title=book.title, author=book.author, rating=book.rating)"> Edit Book </a></li> -->
+      <li> <a href="{{ url_for('delete', book_id=book.id)}}">Delete</a> {{book.title}} - {{ book.author }} - {{book.rating}}  <a href="{{ url_for('edit', book_id=book.id) }}"> Edit Book </a></li>
       {% endfor %}
     </ul>
     {% endif %}

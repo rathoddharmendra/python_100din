@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {% from 'bootstrap4/form.html' import render_form %}
+    <title>Edit Book</title>
+  
 </head>
 <body>
-    {{ render_form(form) }}
+
+
+      <form action="{{ url_for('edit', book_id=book.id)}}" method="POST">
+        <input type="hidden" name="id" value="{{book.id}}">
+        <label for="title">{{book.title}}</label><br>
+        
+        <label for="author">{{book.author}}</label><br>
+
+        <label for="rating">Rating:</label><br>
+        <input type="text" id="rating" name="rating" value="{{ book.rating }}" placeholder="{{ book.rating }}"><br><br>
+        <input type="submit" value="Submit">
+      </form>
 </body>
 </html>
