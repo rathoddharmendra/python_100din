@@ -68,6 +68,7 @@ def login():
     print(my_form.data.items())
     return render_template('login.html', form=my_form)
 
+
 # @app.route('/submit', methods=['GET', 'POST'])
 # def submit():
 #     my_form = MyForm()
@@ -80,6 +81,7 @@ def login():
 #     print(my_form.data.items())
 
 #     return render_template('denied.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
