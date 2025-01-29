@@ -1,6 +1,7 @@
 # type: ignore
 from flask import Flask, render_template, redirect, request
 from flask_wtf import FlaskForm
+from flask_wtf.form import _Auto
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, input_required, ValidationError, Email, Length
 from flask_wtf.csrf import CSRFProtect
@@ -34,6 +35,8 @@ user_password = '12345678'
 WTF_CSRF_SECRET_KEY = 'a random string'
 
 class MyForm(FlaskForm):
+    # def __init__(self, formdata=..., **kwargs):
+    #     super().__init__(formdata, **kwargs)
     class Meta:
         csrf = True
         locales = ('en_US', 'en')
@@ -58,7 +61,7 @@ def login():
     my_form = MyForm()
     if request.method == 'POST':
         if my_form.validate_on_submit():
-            if my_form.data.password == user_password and my_form.data.email == username:
+            if my_form.data['password'] == user_password and my_form.data['email'] == username:
                 print(my_form.data.items())
                 return render_template('success.html')
             else:
@@ -84,4 +87,4 @@ def login():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5002)
