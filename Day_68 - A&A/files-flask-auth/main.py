@@ -7,8 +7,10 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret-key-goes-here'
+app.config['SECRET_KEY'] = b'_5#y2L"F4Q8z\n\xec]/'
 
+login_manager = LoginManager()
+login_manager.init_app(app)
 # CREATE DATABASE
 db_path = os.path.join(os.path.dirname(__file__), 'instance/users.db')
 
@@ -22,8 +24,16 @@ db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
 # CREATE TABLE IN DB
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
-class User(db.Model):
+@login_manager.unauthorized_handler
+def unauthorized():
+    # do stuff
+    return redirect(url_for('login'))
+
+class User(db.Model, UserMixin):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     email: Mapped[str] = mapped_column(String(100), unique=True)
     password: Mapped[str] = mapped_column(String(100))
@@ -35,12 +45,15 @@ with app.app_context():
 
 
 @app.route('/')
+@login_required
 def home():
     return render_template("index.html")
 
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
+    if current_user.is_authenticated:
+        return render_template('secrets.html', name=current_user.name)
     if request.method == "POST":
         # Hashing and salting the password entered by the user 
         hash_and_salted_password = generate_password_hash(
@@ -55,6 +68,12 @@ def register():
             password=hash_and_salted_password,
         )
 
+        user = User.query.filter_by(email=request.form.get('email')).first()
+
+        if user:
+            flash(f"Email {request.form.get('email')} is already registered, please use another email address.")
+            return redirect(url_for('register'))
+
         db.session.add(new_user)
         db.session.commit()
 
@@ -63,22 +82,44 @@ def register():
     return render_template("register.html")
 
 
-@app.route('/login')
+@app.route('/login', methods=["GET", "POST"])
 def login():
+    if current_user.is_authenticated:
+        return render_template('secrets.html', name=current_user.name)
+    if request.method == "POST":
+        email = request.form.get('email')
+        password = request.form.get('password')
+        user = User.query.filter_by(email=email).first()
+
+        if not user:
+            flash("Email does not exist, please try again.")
+            return redirect(url_for('login'))
+
+        elif not check_password_hash(user.password, password):
+            flash("Password incorrect, please try again.")
+            return redirect(url_for('login'))
+
+        else:
+            login_user(user)
+            return render_template('secrets.html', name=user.name)
     return render_template("login.html")
 
 
 @app.route('/secrets')
+@login_required
 def secrets():
     return render_template("secrets.html")
 
 
 @app.route('/logout')
+@login_required
 def logout():
-    pass
+    logout_user()
+    return render_template("index.html")
 
 
 @app.route('/download')
+@login_required
 def download():
     return send_from_directory(app.config['UPLOAD_FOLDER'], 'cheat_sheet.pdf', as_attachment=True)
 
