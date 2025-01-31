@@ -44,8 +44,8 @@ def home():
 
 
 # HTTP GET - Read Record
-
-@app.route('/random')
+@app.route('/all', methods=['GET'])
+@app.route('/random', methods=['GET'])
 def get_random_cafe():
     cafes = db.session.query(Cafe).all()
     random_cafe = random.choice(cafes)
