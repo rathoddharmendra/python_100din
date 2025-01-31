@@ -17,6 +17,7 @@ class Base(DeclarativeBase):
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
+app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(__file__), 'static/files')
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
