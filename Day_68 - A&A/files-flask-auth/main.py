@@ -76,8 +76,9 @@ def register():
 
         db.session.add(new_user)
         db.session.commit()
-
-        return render_template("secrets.html", name=request.form.get('name'))
+        user = User.query.filter_by(email=request.form.get('email')).first()
+        login_user(user)
+        return render_template('index.html')
 
     return render_template("register.html")
 
@@ -108,7 +109,7 @@ def login():
 @app.route('/secrets')
 @login_required
 def secrets():
-    return render_template("secrets.html")
+    return render_template("secrets.html", name=current_user.name)
 
 
 @app.route('/logout')
