@@ -1,5 +1,4 @@
 from typing import Any, Dict
-
 from story_data import rooms
 
 # Text-based game script
