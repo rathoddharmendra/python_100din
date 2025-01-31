@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect, flash, send_from_directory, jsonify
-from werkzeug.security import generate_password_hash, check_password_hash
+# from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String
@@ -40,32 +40,31 @@ def home():
 
 app = Flask(__name__)
 
-@app.route('/register', methods=["GET", "POST"])
-def register():
-    if request.method == "POST":
-        # Hashing and salting the password entered by the user 
-        hash_and_salted_password = generate_password_hash(
-            request.form.get('password'),
-            method='pbkdf2:sha256',
-            salt_length=8
-        )
-        # Storing the hashed password in our database
-        new_user = User(
-            email=request.form.get('email'),
-            name=request.form.get('name'),
-            password=hash_and_salted_password,
-        )
+# @app.route('/register', methods=["GET", "POST"])
+# def register():
+#     if request.method == "POST":
+#         # Hashing and salting the password entered by the user 
+#         hash_and_salted_password = generate_password_hash(
+#             request.form.get('password'),
+#             method='pbkdf2:sha256',
+#             salt_length=8
+#         )
+#         # Storing the hashed password in our database
+#         new_user = User(
+#             email=request.form.get('email'),
+#             name=request.form.get('name'),
+#             password=hash_and_salted_password,
+#         )
 
-        db.session.add(new_user)
-        db.session.commit()
+#         db.session.add(new_user)
+#         db.session.commit()
 
-        return render_template("secrets.html", name=request.form.get('name'))
+#         return render_template("secrets.html", name=request.form.get('name'))
 
-    return render_template("register.html")
+#     return render_template("register.html")
 
 @app.route('/login')
 def login():
-    # https://werkzeug.palletsprojects.com/en/stable/utils/#werkzeug.security.check_password_hash
     return render_template("login.html")
 
 
@@ -85,6 +84,7 @@ def download():
 
 
 if __name__ == "__main__":
+    app.debug = True
     app.run()
 
 
@@ -93,3 +93,4 @@ if __name__ == "__main__":
 # user = User.query.filter_by(email=email).first()
 # if user:
 #     flash('User already exists')
+    # https://werkzeug.palletsprojects.com/en/stable/utils/#werkzeug.security.check_password_hash
