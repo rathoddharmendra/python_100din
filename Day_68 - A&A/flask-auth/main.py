@@ -5,6 +5,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 import os
+
 db_path = os.path.join(os.path.dirname(__file__), 'instance/users.db')
 
 app = Flask(__name__)
@@ -37,25 +38,34 @@ def home():
     return render_template("index.html")
 
 
-@app.route('/register', methods=['GET','POST'])
-def register():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        email = request.form.get('email')
-        password = request.form.get('password')
+app = Flask(__name__)
 
-        # save user to database
-        new_user = User(email=email, password=password, name=name)
+@app.route('/register', methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        # Hashing and salting the password entered by the user 
+        hash_and_salted_password = generate_password_hash(
+            request.form.get('password'),
+            method='pbkdf2:sha256',
+            salt_length=8
+        )
+        # Storing the hashed password in our database
+        new_user = User(
+            email=request.form.get('email'),
+            name=request.form.get('name'),
+            password=hash_and_salted_password,
+        )
+
         db.session.add(new_user)
         db.session.commit()
-        # return jsonify({'message': 'User created successfully'})
-        return render_template("secrets.html", name=name)
- 
-    return render_template("register.html")
 
+        return render_template("secrets.html", name=request.form.get('name'))
+
+    return render_template("register.html")
 
 @app.route('/login')
 def login():
+    # https://werkzeug.palletsprojects.com/en/stable/utils/#werkzeug.security.check_password_hash
     return render_template("login.html")
 
 
@@ -78,8 +88,8 @@ if __name__ == "__main__":
     app.run()
 
 
-        # generate_password_hash(password, method='sha256')
-        # Check if user already exists
-        # user = User.query.filter_by(email=email).first()
-        # if user:
-        #     flash('User already exists')
+# generate_password_hash(password, method='sha256')
+# Check if user already exists
+# user = User.query.filter_by(email=email).first()
+# if user:
+#     flash('User already exists')
