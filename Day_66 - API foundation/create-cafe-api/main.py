@@ -151,7 +151,18 @@ def update_price(cafe_id: int):
     return jsonify({'error': 'Cafe not found'})
 
 # HTTP DELETE - Delete Record
-
+@app.route('/report-closed/<int:cafe_id>', methods=['DELETE'])
+def remove_cafe(cafe_id: int):
+    cafe = db.session.query(Cafe).get(cafe_id)
+    api_key = request.args.get('api-key')
+    if cafe:
+        if api_key != 'TopSecretAPIKey':
+            return jsonify({'error': 'Invalid API Key'})
+        else:
+            db.session.delete(cafe)
+            db.session.commit()
+            return jsonify({'success': 'Cafe deleted successfully'})
+    return jsonify({'error': 'Cafe not found'})
 
 if __name__ == '__main__':
     # app.run(debug=True) -- cannot run vscode debug mode with error "No module named main"
