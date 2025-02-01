@@ -30,7 +30,6 @@ def load_user(user_id):
 
 @login_manager.unauthorized_handler
 def unauthorized():
-    # do stuff
     return redirect(url_for('login'))
 
 class User(db.Model, UserMixin):
@@ -106,18 +105,16 @@ def login():
     return render_template("login.html")
 
 
-@app.route('/secrets')
-@login_required
-def secrets():
-    return render_template("secrets.html", name=current_user.name)
-
-
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return render_template("index.html")
 
+@app.route('/secrets')
+@login_required
+def secrets():
+    return render_template("secrets.html", name=current_user.name)
 
 @app.route('/download')
 @login_required
