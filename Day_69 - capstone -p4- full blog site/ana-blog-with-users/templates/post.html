@@ -10,7 +10,7 @@
           <h2 class="subheading">{{ post.subtitle }}</h2>
           <span class="meta"
             >Posted by
-            <a href="#">{{ post.author }}</a>
+            <a href="#">{{ post.author.name }}</a>
             on {{ post.date }}
           </span>
         </div>
@@ -26,7 +26,7 @@
       <div class="col-md-10 col-lg-8 col-xl-7">
         {{ post.body|safe }}
         <!--TODO: Only show Edit Post button if user id is 1 (admin user) -->
-       {% if current_user.id == 3 %}
+       {% if current_user.email == 'admin@gmail.com' %}
 
         <div class="d-flex justify-content-end mb-4">
           <a

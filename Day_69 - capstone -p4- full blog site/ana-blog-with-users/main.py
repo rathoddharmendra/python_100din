@@ -1,3 +1,5 @@
+# type: ignore
+
 from datetime import date
 from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
@@ -6,19 +8,18 @@ from flask_gravatar import Gravatar
 from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user, login_required
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship, DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import Integer, String, Text
+from sqlalchemy import Integer, String, Text, ForeignKey
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 import os 
 from typing import List, Dict, Any, Union
 # Import your forms from the forms.py
-from forms import CreatePostForm, RegisterForm, LoginForm
+from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
 Bootstrap5(app)
-
 
 # TODO: Configure Flask-Login
 login_manager = LoginManager()
@@ -37,7 +38,7 @@ def unauthorized():
 def admin_only(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        if current_user.is_authenticated and current_user.id == 3:
+        if current_user.is_authenticated and current_user.email == 'admin@gmail.com':
             return func(*args, **kwargs)
         else:
             abort(403)
@@ -61,22 +62,35 @@ class BlogPost(db.Model):
     subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
     date: Mapped[str] = mapped_column(String(250), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
-    author: Mapped[str] = mapped_column(String(250), nullable=False)
+    author_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"))
+    author = relationship("User", back_populates="posts")
     img_url: Mapped[str] = mapped_column(String(250), nullable=False)
-
+    comments = relationship("Comment", back_populates="post")
 
 # TODO: Create a User table for all your registered users. 
-class User(db.Model, UserMixin):
+class User(UserMixin, db.Model):
     __tablename__ = "users"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     name: Mapped[str] = mapped_column(String(250), nullable=False)
     email: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
     password: Mapped[str] = mapped_column(String(250), nullable=False)
-    # posts: Mapped[List[BlogPost]] = relationship("BlogPost", back_populates="author")
+    posts: Mapped[List[BlogPost]] = relationship("BlogPost", back_populates="author")
+    comments = relationship("Comment", back_populates="author")
+
+# TODO: Create a Comment table for all comments on blog posts
+class Comment(db.Model):
+    __tablename__ = "comments"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    text: Mapped[str] = mapped_column(Text, nullable=False)
+    author_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"))
+    author = relationship("User", back_populates="comments")
+    post_id: Mapped[int] = mapped_column(Integer, ForeignKey("blog_posts.id"))
+    post = relationship("BlogPost", back_populates="comments")
 
 with app.app_context():
     db.create_all()
 
+# https://images.pexels.com/photos/3172740/pexels-photo-3172740.jpeg
 
 # TODO: Use Werkzeug to hash the user's password when creating a new user.
 @app.route('/register', methods=["GET", "POST"])
@@ -128,7 +142,7 @@ def logout():
 def get_all_posts():
     result = db.session.execute(db.select(BlogPost))
     posts = result.scalars().all()
-    return render_template("index.html", all_posts=posts)
+    return render_template("index.html", all_posts=posts )
 
 # TODO: Allow logged-in users to comment on posts
 @app.route("/post/<int:post_id>")
@@ -150,7 +164,8 @@ def add_new_post():
             subtitle=form.subtitle.data,
             body=form.body.data,
             img_url=form.img_url.data,
-            author=current_user,
+            author_id=current_user.id,
+            # author=current_user.name,
             date=date.today().strftime("%B %d, %Y")
         )
         db.session.add(new_post)
@@ -171,14 +186,12 @@ def edit_post(post_id):
         title=post.title,
         subtitle=post.subtitle,
         img_url=post.img_url,
-        author=post.author,
         body=post.body
     )
     if edit_form.validate_on_submit():
         post.title = edit_form.title.data
         post.subtitle = edit_form.subtitle.data
         post.img_url = edit_form.img_url.data
-        post.author = current_user
         post.body = edit_form.body.data
         db.session.commit()
         return redirect(url_for("show_post", post_id=post.id))
@@ -198,13 +211,11 @@ def delete_post(post_id):
 
 
 @app.route("/about")
-@login_required
 def about():
     return render_template("about.html")
 
 
 @app.route("/contact")
-@login_required
 def contact():
     return render_template("contact.html")
 
