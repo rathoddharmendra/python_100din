@@ -1,6 +1,6 @@
 # type: ignore
 
-from datetime import date
+from datetime import date as dt
 from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
@@ -20,6 +20,15 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
 Bootstrap5(app)
+
+gravatar = Gravatar(app,
+                    size=100,
+                    rating='g',
+                    default='retro',
+                    force_default=False,
+                    force_lower=False,
+                    use_ssl=False,
+                    base_url=None)
 
 # TODO: Configure Flask-Login
 login_manager = LoginManager()
@@ -82,6 +91,7 @@ class Comment(db.Model):
     __tablename__ = "comments"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     text: Mapped[str] = mapped_column(Text, nullable=False)
+    # date: Mapped[str] = mapped_column(String(250), nullable=False)
     author_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"))
     author = relationship("User", back_populates="comments")
     post_id: Mapped[int] = mapped_column(Integer, ForeignKey("blog_posts.id"))
@@ -138,7 +148,6 @@ def logout():
     return redirect(url_for('get_all_posts'))
 
 @app.route('/')
-@login_required
 def get_all_posts():
     result = db.session.execute(db.select(BlogPost))
     posts = result.scalars().all()
@@ -146,21 +155,25 @@ def get_all_posts():
 
 # TODO: Allow logged-in users to comment on posts
 @app.route("/post/<int:post_id>", methods=["GET", "POST"])
-@login_required
 def show_post(post_id):
     comment_form = CommentForm()
+    comments = Comment.query.filter_by(post_id=post_id).all()
     if request.method == "POST":
+        if not current_user.is_authenticated:
+            flash("You need to be logged in to comment.")
+            return redirect(url_for("login"))
         if comment_form.validate_on_submit():
             new_comment = Comment(
                 text=comment_form.comment_text.data,
                 author_id=current_user.id,
-                post_id=post_id
+                post_id=post_id,
+                # date=dt.today().strftime("%B %d, %Y")
             )
             db.session.add(new_comment)
             db.session.commit()
         return redirect(url_for("show_post", post_id=post_id))
     requested_post = db.get_or_404(BlogPost, post_id)
-    return render_template("post.html", post=requested_post, comment_form=comment_form)
+    return render_template("post.html", post=requested_post, comment_form=comment_form, comments=comments)
     
 
 # TODO: Use a decorator so only an admin user can create a new post
@@ -177,7 +190,7 @@ def add_new_post():
             img_url=form.img_url.data,
             author_id=current_user.id,
             # author=current_user.name,
-            date=date.today().strftime("%B %d, %Y")
+            date=dt.today().strftime("%B %d, %Y")
         )
         db.session.add(new_post)
         db.session.commit()

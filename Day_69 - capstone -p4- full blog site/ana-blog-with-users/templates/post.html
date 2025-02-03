@@ -41,19 +41,22 @@
         <!-- TODO: Add a CKEditor for commenting below -->
 
             {{ render_form(comment_form) }}
-            
+
         <div class="comment">
           <!-- TODO: Show all the comments on a post -->
           <ul class="commentList">
+            {% for comment in comments %}
             <li>
               <div class="commenterImage">
-                <img src="../static/assets/img/default-profile.jpg" />
+                <img src="{{ comment.author.email | gravatar }}" alt="random-gravatar">
+                <!-- <img src="../static/assets/img/default-profile.jpg" /> -->
               </div>
               <div class="commentText">
-                <p>Some comment</p>
-                <span class="date sub-text">comment author name</span>
+                <p>{{ comment.text }}</p>
+                <span class="date sub-text">{{comment.author.name}}</span>
               </div>
             </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -62,3 +65,5 @@
 </article>
 
 {% include "footer.html" %}
+
+
