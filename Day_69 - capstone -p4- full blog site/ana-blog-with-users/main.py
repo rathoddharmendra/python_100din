@@ -33,6 +33,16 @@ def unauthorized():
     # do stuff
     return redirect(url_for('login'))
 
+
+def admin_only(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if current_user.is_authenticated and current_user.id == 3:
+            return func(*args, **kwargs)
+        else:
+            abort(403)
+    return wrapper
+
 # CREATE DATABASE
 class Base(DeclarativeBase):
     pass
@@ -131,6 +141,7 @@ def show_post(post_id):
 # TODO: Use a decorator so only an admin user can create a new post
 @app.route("/new-post", methods=["GET", "POST"])
 @login_required
+@admin_only
 def add_new_post():
     form = CreatePostForm()
     if form.validate_on_submit():
@@ -149,8 +160,11 @@ def add_new_post():
 
 
 # TODO: Use a decorator so only an admin user can edit a post
+
 @app.route("/edit-post/<int:post_id>", methods=["GET", "POST"])
+@admin_only
 @login_required
+
 def edit_post(post_id):
     post = db.get_or_404(BlogPost, post_id)
     edit_form = CreatePostForm(
@@ -172,7 +186,9 @@ def edit_post(post_id):
 
 
 # TODO: Use a decorator so only an admin user can delete a post
+
 @app.route("/delete/<int:post_id>")
+@admin_only
 @login_required
 def delete_post(post_id):
     post_to_delete = db.get_or_404(BlogPost, post_id)

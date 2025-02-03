@@ -33,7 +33,9 @@
           <a href="#">{{post.author}}</a>
           on {{post.date}}
           <!-- TODO: Only show delete button if user id is 1 (admin user) -->
+        {% if current_user.id == 3 %}
           <a href="{{url_for('delete_post', post_id=post.id) }}">✘</a>
+        {% endif %}
         </p>
       </div>
       <!-- Divider-->
@@ -42,6 +44,7 @@
 
       <!-- New Post -->
       <!-- TODO: Only show Create Post button if user id is 1 (admin user) -->
+       {% if current_user.id == 3 %}
       <div class="d-flex justify-content-end mb-4">
         <a
           class="btn btn-primary float-right"
@@ -49,6 +52,7 @@
           >Create New Post</a
         >
       </div>
+      {% endif %}
 
       <!-- Pager-->
       <div class="d-flex justify-content-end mb-4">
