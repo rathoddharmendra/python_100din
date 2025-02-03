@@ -145,12 +145,23 @@ def get_all_posts():
     return render_template("index.html", all_posts=posts )
 
 # TODO: Allow logged-in users to comment on posts
-@app.route("/post/<int:post_id>")
+@app.route("/post/<int:post_id>", methods=["GET", "POST"])
 @login_required
 def show_post(post_id):
+    comment_form = CommentForm()
+    if request.method == "POST":
+        if comment_form.validate_on_submit():
+            new_comment = Comment(
+                text=comment_form.comment_text.data,
+                author_id=current_user.id,
+                post_id=post_id
+            )
+            db.session.add(new_comment)
+            db.session.commit()
+        return redirect(url_for("show_post", post_id=post_id))
     requested_post = db.get_or_404(BlogPost, post_id)
-    return render_template("post.html", post=requested_post)
-
+    return render_template("post.html", post=requested_post, comment_form=comment_form)
+    
 
 # TODO: Use a decorator so only an admin user can create a new post
 @app.route("/new-post", methods=["GET", "POST"])
@@ -179,7 +190,6 @@ def add_new_post():
 @app.route("/edit-post/<int:post_id>", methods=["GET", "POST"])
 @admin_only
 @login_required
-
 def edit_post(post_id):
     post = db.get_or_404(BlogPost, post_id)
     edit_form = CreatePostForm(
