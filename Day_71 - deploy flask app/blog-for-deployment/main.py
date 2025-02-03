@@ -30,7 +30,7 @@ This will install the packages from the requirements.txt for this project.
 '''
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6bA2'
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -58,9 +58,9 @@ gravatar = Gravatar(app,
 class Base(DeclarativeBase):
     pass
 
-db_path = os.path.join(os.path.dirname(__file__), 'instance/posts.db')
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
-
+# db_path = os.path.join(os.path.dirname(__file__), 'instance/posts.db')
+# app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///dee_db")
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
