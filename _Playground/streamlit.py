@@ -12,3 +12,4 @@ df = pd.DataFrame({
 
 st.write(df)
 st.line_chart(df, x_label='Names', y_label='Score')
+
