@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid" bis_skin_checked="1">
           <a class="navbar-brand" href="#">
             <img id="logo" src="./assets/img/logo.png" alt="icon" />
@@ -42,7 +42,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Book</a>
+                <a class="nav-link" href="#booking-form">Book</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" aria-disabled="true">Contact</a>
@@ -54,7 +54,7 @@
 
       <div class="main">
 
-        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" bis_skin_checked="1">
+        <!-- <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" bis_skin_checked="1">
           <div class="carousel-indicators" bis_skin_checked="1">
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
@@ -100,13 +100,13 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">التالي</span>
           </button>
-        </div>
+        </div> -->
 
         <!-- hero section -->
         <div class="container col-xxl-8 px-4 py-5" bis_skin_checked="1">
           <div class="row flex-lg-row-reverse align-items-center g-5 py-5" bis_skin_checked="1">
             <div class="col-10 col-sm-8 col-lg-6" bis_skin_checked="1">
-              <img src="./assets/img/hero.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+              <img src="./assets/img/hero-1.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
             </div>
             <div class="col-lg-6" bis_skin_checked="1">
               <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">SN Tours & Travels</h1>
@@ -120,39 +120,39 @@
         </div>
          <!-- booking form -->
 
-         <div class="booking-form">
+         <div id="booking-form">
 
           <div class="px-4 py-5 my-5 text-center" bis_skin_checked="1">
-            <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+            <img class="d-block mx-auto mb-4" src="./assets/img/logo.png" alt="" width="100" height="auto">
+            <h1 class="display-5 fw-bold text-body-emphasis">New Booking</h1>
             <div class="col-lg-6 mx-auto" bis_skin_checked="1">
-              <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+              <p class="lead mb-4">Quickly make a new booking with us.</p>
               <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" bis_skin_checked="1">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-              </div>
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Book Now</button>
+             </div>
             </div>
           </div>
 
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
+          <div class="form-container">
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Pickup Address</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="FROM">
           </div>
 
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Drop Address</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="TO">
           </div>
 
           <label for="startDate">Booking Date</label>
           <input id="startDate" class="form-control" type="date" name="date"/>
 
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
           <input type="submit" value="submit">
-
+        </div>
          </div>
 
          <div class="container px-4 py-5" id="featured-3" bis_skin_checked="1">
@@ -191,64 +191,30 @@
                 <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
               </a>
             </div>
+            <div class="col" bis_skin_checked="1">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary" bis_skin_checked="1">
+                <div class="card-header py-3 text-bg-primary border-primary" bis_skin_checked="1">
+                  <h4 class="my-0 fw-normal">Enterprise</h4>
+                </div>
+                <div class="card-body" bis_skin_checked="1">
+                  <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>30 users included</li>
+                    <li>15 GB of storage</li>
+                    <li>Phone and email support</li>
+                    <li>Help center access</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center" bis_skin_checked="1">
-      <div class="col" bis_skin_checked="1">
-        <div class="card mb-4 rounded-3 shadow-sm" bis_skin_checked="1">
-          <div class="card-header py-3" bis_skin_checked="1">
-            <h4 class="my-0 fw-normal">Free</h4>
-          </div>
-          <div class="card-body" bis_skin_checked="1">
-            <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>10 users included</li>
-              <li>2 GB of storage</li>
-              <li>Email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-      </div>
-      <div class="col" bis_skin_checked="1">
-        <div class="card mb-4 rounded-3 shadow-sm" bis_skin_checked="1">
-          <div class="card-header py-3" bis_skin_checked="1">
-            <h4 class="my-0 fw-normal">Pro</h4>
-          </div>
-          <div class="card-body" bis_skin_checked="1">
-            <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-          </div>
-        </div>
-      </div>
-      <div class="col" bis_skin_checked="1">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary" bis_skin_checked="1">
-          <div class="card-header py-3 text-bg-primary border-primary" bis_skin_checked="1">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body" bis_skin_checked="1">
-            <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-          </div>
-        </div>
-      </div>
-    </div>
+     
+      
+      
 
 
 

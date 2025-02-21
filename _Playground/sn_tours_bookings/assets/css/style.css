@@ -22,3 +22,9 @@ nav {
   position: absolute;
   margin-bottom: 100px;
 }
+
+.form-container{
+  max-width: 50%;
+  align-self: center;
+  margin-left: 30%;
+}
