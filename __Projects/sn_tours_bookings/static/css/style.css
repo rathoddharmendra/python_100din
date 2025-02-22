@@ -1,16 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root{
   --primary: #854836;
   --secondary: #FFB22C;
   --tertiary: #F7F7F7;
   --black: #000000;
-
-  
+}
+html{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
 }
 
 body {
     font-family: "Lato", sans-serif;
     /* background-color: var(--primary); */
+    font-family: "Tinos", serif;
+    font-weight: 300;
   }
   
 
@@ -28,4 +35,30 @@ nav {
   max-width: 50%;
   align-self: center;
   margin-left: 30%;
+}
+
+
+/* contact */
+
+#contact {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  max-width: 80%;
+  justify-content: space-around;
+  height: 60vh;
+
+}
+#contact > *{
+}
+
+
+.contact-image {
+  min-width: 300px;
+}
+
+.contact-form > form {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 400px; */
 }

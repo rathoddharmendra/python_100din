@@ -1,3 +1,23 @@
 {% include 'header.html' %}
 {% include 'navbar.html' %}
+
+<div id="contact" class="container-fluid">
+
+    <div class="contact-image">
+        <img src="{{ url_for('static', filename='assets/img/flying_email.jpg')}}" alt="">
+    </div>
+
+    <div class="contact-form">
+        <h2>Get in touch</h2>
+        <form action="{{ url_for('contact')}}" method="POST">
+            <input type="text" name="name" id="name" placeholder="Full Name*">
+            <input type="email" name="email" id="email" placeholder="email address (john.doe@gmail.com)">
+            <input type="text" name="subject" id="subject" placeholder="Message Title*">
+            <textarea name="message" id="message" cols="5" placeholder="Write your message here*"></textarea>
+            <button type="submit">Send Email --> </button>
+
+        </form>
+    </div>
+
+</div>
 {% include 'footer.html' %}

@@ -7,7 +7,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
     return render_template('contact.html')
 
