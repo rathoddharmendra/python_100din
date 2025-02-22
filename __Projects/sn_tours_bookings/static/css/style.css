@@ -5,21 +5,35 @@
   --secondary: #FFB22C;
   --tertiary: #F7F7F7;
   --black: #000000;
+  --navy: #27445D;
+  --teal: #71BBB2;
+  --beige: #EFE9D5;
+  
 }
-html{
+html {
+
+}
+
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-size: 20px;
+  font-family: "Tinos", serif;
+  font-weight: 300;
+  background-color: var(--beige);
+  height: 95vh;
+}
+  
+button{
+  background-color: var(--teal);
 }
 
-body {
-    font-family: "Lato", sans-serif;
-    /* background-color: var(--primary); */
-    font-family: "Tinos", serif;
-    font-weight: 300;
-  }
-  
+
+
+
+
+/* navbar */
 
 #logo {
  width: 50px;
@@ -27,38 +41,216 @@ body {
 }
 
 nav {
-  position: absolute;
-  margin-bottom: 100px;
+  background-color: var(--teal);
+  /* box-shadow: 10px 5px  red; */
+
 }
 
-.form-container{
-  max-width: 50%;
-  align-self: center;
-  margin-left: 30%;
+nav .container {
+  display: flex;
+  flex-direction: row ;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--beige);
+  margin: 0 10% 2%;
+  padding: 7px;
+  
+}
+
+.logo a {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  position: relative;
+  font-size: 1.8rem;
+
+}
+
+.navigation ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--beige);
 }
 
 
+.navigation ul li {
+  list-style: none;
+}
+
+.burger {
+  display: none;
+}
+
+/* hero */
+
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 20px 20%;
+  /* max-width: ; */
+}
+
+.hero-image img {
+  height: 42rem;
+  width: auto;
+  padding: 40px; 
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 40px;
+}
+.lead {
+  margin-bottom: 50px;
+}
+
+
+.hero-text a, .form-container > a, .contact-form button {
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 20px;
+  background-color: var(--teal);
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  width: 10rem;
+  text-align: center;
+}
+
+/* form */
+
+#booking-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20% 40px;
+  text-align: center;
+  align-items: center;
+
+}
+
+.form-container {
+  padding: 50px;
+  text-align: start;
+  border: 1px solid black;
+  border-radius: 25px;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: fit-content;
+  min-width: 50%;
+}
+
+.form-container > div {
+  display: flex;
+  flex-direction: column ;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-container input {
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  width: 80%;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  /* transition:  0.3s; */
+}
+
+.form-container input:focus{
+background-color: var(--teal);
+
+}
 /* contact */
 
 #contact {
   display: flex;
   flex-direction: row;
-  flex: 1;
-  max-width: 80%;
+  height: 80vh;
+  gap: 20%;
   justify-content: space-around;
-  height: 60vh;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 20% 40px;
+  text-align: center;
 
 }
-#contact > *{
-}
-
 
 .contact-image {
   min-width: 300px;
 }
 
-.contact-form > form {
+.contact-form {
   display: flex;
   flex-direction: column;
-  /* min-width: 400px; */
+  height: fit-content;
+  min-width: 50%;
+}
+
+.contact-form > form {
+  display: flex;
+  flex-direction: column ;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  padding: 50px;
+  text-align: start;
+  border: 1px solid black;
+  border-radius: 25px;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: fit-content;
+  min-width: 50%;
+}
+
+.contact-form > form input , .contact-form > form textarea, .contact-form > form button {
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  /* transition:  0.3s; */
+}
+
+.contact-form > form input:focus{
+background-color: var(--teal);
+
+}
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  /* padding: 10px 20%; */
+
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+footer ul li{
+  list-style: none;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: black;
 }

@@ -1,37 +1,22 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container-fluid" bis_skin_checked="1">
-      <a class="navbar-brand" href="#">
+<nav>
+  <div class="container">
+    <div class="logo">
+      <a class="" href="{{url_for('home')}}">
         <img id="logo" src="{{ url_for('static', filename='/assets/img/logo.png') }}" alt="icon" />
-        SN Tours
+        <span>SN Tours</span>
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-        aria-controls="navbarCollapse"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="collapse navbar-collapse"
-        id="navbarCollapse"
-        bis_skin_checked="1"
-      >
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/#booking-form">Book</a>
-            <!-- new_learnen - to add link and move to section -->
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
-          </li>
-        </ul>
-      </div>
     </div>
-  </nav>
+    <div class="navigation">
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="/#booking-form">Booking</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+    <div class="burger">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <i class="fa-solid fa-burger"></i>
+      <span>&equiv;</span>
+    </div>
+  </div>
+</nav>

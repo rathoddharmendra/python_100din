@@ -1,24 +1,38 @@
-{% include 'header.html' %}
-{% include 'navbar.html' %}
+{% include 'header.html' %} {% include 'navbar.html' %}
+<!-- hero section -->
 
-    <div class="container">
-      <div class="main">
-        <!-- hero section -->
-        <div class="container col-xxl-8 px-4 py-5">
-          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-              <img src="{{ url_for('static', filename='assets/img/hero-1.png') }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-            </div>
-            <div class="col-lg-6">
-              <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">SN Tours & Travels</h1>
-              <p class="lead">SN Tours is a trusted cab service in Orai, offering safe, reliable, and affordable transportation. Whether you need local rides, outstation trips, or airport transfers, our well-maintained cars and professional drivers ensure a comfortable journey. Book with SN Tours for a hassle-free travel experience anytime, anywhere in Orai.</p>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <a href='/#booking-form' type="button" class="btn btn-primary btn-lg px-4 me-md-2">Book Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-         {% include 'booking-form.html'%}
+<div class="container">
+  <div class="main">
+    <div class="hero-image col-10 col-sm-8 col-lg-6">
+      <img
+        src="{{ url_for('static', filename='assets/img/hero.png') }}"
+        class="d-block mx-lg-auto img-fluid"
+        alt="Bootstrap Themes"
+        loading="lazy"
+      />
+    </div>
+    <div class="hero-text col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+        SN Tours & Travels
+      </h1>
+      <p class="lead">
+        SN Tours is a trusted cab service in Orai, offering safe, reliable, and
+        affordable transportation. Whether you need local rides, outstation
+        trips, or airport transfers, our well-maintained cars and professional
+        drivers ensure a comfortable journey. Book with SN Tours for a
+        hassle-free travel experience anytime, anywhere in Orai.
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a
+          href="/#booking-form"
+          type="button"
+          class="btn btn-primary btn-lg px-4 me-md-2"
+          >Book Now</a
+        >
       </div>
     </div>
+  </div>
+  {% include 'booking-form.html'%}
+
+</div>
 {% include 'footer.html' %}
