@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -9,6 +9,10 @@ def home():
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'POST':
+        print('form submitted')
+        print(request.form.get('name'))
+        # send an email here
     return render_template('contact.html')
 
 # @app.route('/post/<int:blog_id>')
