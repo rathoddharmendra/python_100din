@@ -1,0 +1,15 @@
+docker exec -it e2f7b0 kafka-topics.sh --bootstrap-server localhost:9092 --list
+docker exec -it 3989856a524f bash
+docker ps
+
+
+docker-compose up -d / docker-compose down
+
+
+
+Shers-MacBook-Air:bin mac_dee$ 
+/opt/homebrew/opt/kafka/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic test-topic --from-beginning
+
+/opt/homebrew/opt/kafka/bin/kafka-topics --bootstrap-server localhost:9092 --list
+
+/opt/homebrew/opt/kafka/bin/kafka-console-producer --bootstrap-server localhost:9092 --topic test-topic
