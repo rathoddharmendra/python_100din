@@ -6,7 +6,7 @@ import random
 app = Flask(__name__)
 
 email_conn = Connection()
-db_cursor, db_conn = generate_cursor()
+
 
 to_address = 'rathoddharmendra.business@gmail.com'
 
@@ -50,14 +50,15 @@ Best,
 SN Tours pvt ltd
 '''
         # send an email to admin
-        # email_conn.send_email(to_address=to_address, subject=admin_subject, body=admin_message)
+        email_conn.send_email(to_address=to_address, subject=admin_subject, body=admin_message)
         # send an email to user
         print('sending email to user')
-        # email_conn.send_email(to_address=email, subject=user_subject, body=user_message)
+        email_conn.send_email(to_address=email, subject=user_subject, body=user_message)
 
         # add to db
         try:
-            db_cursor.execute('INSERT INTO BOOKINGS VALUES (?, ?, ?, ?, ?, ?)', (booking_id, name, email, phone, from_addr, to_addr, booking_date))
+            db_cursor, db_conn = generate_cursor()
+            db_cursor.execute('INSERT INTO BOOKINGS VALUES (?, ?, ?, ?, ?, ?, ?)', (booking_id, name, email, phone, from_addr, to_addr, booking_date))
             db_conn.commit()
         except Exception as e:
             print(f'couldn"t save booking to database with error {e}')
@@ -87,5 +88,5 @@ def contact():
 #     return render_template("postit.html", post=data)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3000)
+    app.run(debug=True, port=3000, host='0.0.0.0')
     

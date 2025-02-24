@@ -6,7 +6,7 @@ db_path = os.path.join(os.path.dirname(__file__),"bucket.db" )
 
 
 def generate_cursor():
-    con = sqlite3.connect(db_path)
+    con = sqlite3.connect(db_path, check_same_thread=False)
     cursor = con.cursor()
     return cursor, con
 
