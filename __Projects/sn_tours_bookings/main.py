@@ -3,6 +3,7 @@ from conn import Connection
 from db import generate_cursor
 import random
 
+
 app = Flask(__name__)
 
 email_conn = Connection()
