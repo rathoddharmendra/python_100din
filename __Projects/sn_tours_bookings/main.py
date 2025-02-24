@@ -3,13 +3,11 @@ from conn import Connection
 from db import generate_cursor
 import random
 
-
 app = Flask(__name__)
 
 email_conn = Connection()
 
-
-to_address = 'rathoddharmendra.business@gmail.com'
+admin_address = 'rathoddharmendra.business@gmail.com'
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -51,7 +49,7 @@ Best,
 SN Tours pvt ltd
 '''
         # send an email to admin
-        email_conn.send_email(to_address=to_address, subject=admin_subject, body=admin_message)
+        email_conn.send_email(to_address=admin_address, subject=admin_subject, body=admin_message)
         # send an email to user
         print('sending email to user')
         email_conn.send_email(to_address=email, subject=user_subject, body=user_message)
