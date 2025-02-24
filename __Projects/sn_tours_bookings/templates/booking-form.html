@@ -12,34 +12,34 @@
       </div>
     </div>
 
-    <form class="form-container">
+    <form class="form-container" action="{{url_for('home')}}" method="POST">
 
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+        <input type="text" name='name' class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" name='email' class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
       </div> 
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Phone Number">
+        <input type="text" name='phone' class="form-control" id="exampleFormControlInput1" placeholder="Phone Number">
       </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Pickup Address</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="FROM">
+      <input type="text" name='from-address' class="form-control" id="exampleFormControlInput1" placeholder="FROM">
     </div>
 
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Drop Address</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="TO">
+      <input type="text" name='to-address' class="form-control" id="exampleFormControlInput1" placeholder="TO">
     </div>
     <div class="mb-3">
     <label for="startDate">Booking Date</label>
-    <input id="startDate" class="form-control" type="date" name="date"/>
+    <input id="startDate" name='booking-date' class="form-control" type="date" name="date"/>
     </div> 
 
-    <a type="submit" class="btn btn-primary btn-lg px-4 gap-3">Book Now</a>
+    <input type="submit" class="btn btn-primary btn-lg px-4 gap-3" value="Book Now"></input>
   </form>
    </div>

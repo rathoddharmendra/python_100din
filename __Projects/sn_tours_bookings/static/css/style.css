@@ -168,6 +168,9 @@ nav a {
   /* transition:  0.3s; */
 }
 
+.form-container input[type="submit"]{
+  background-color: var(--teal);
+}
 .form-container input:focus{
 background-color: var(--teal);
 
