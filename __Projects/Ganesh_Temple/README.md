@@ -15,7 +15,10 @@ Requirements -
   - Allows users to read about construction initiative and display payment options (no payment integration in this release)
     
 
-
+#### Todo 
+1. Create flask application
+2. Create Header and Footer with HTML and CSS
+3. Separate Header and Footer using extension. Create other pages
 
 Research material -
 info@hindutempleberlin.de 

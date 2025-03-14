@@ -1,6 +1,6 @@
 import sqlite3, os
 
-db_path = os.path.join(os.path.dirname(__file__),"bucket.db" )
+db_path = os.path.join(os.path.dirname(__file__),"temple.db" )
 
 # ONE TIME
 

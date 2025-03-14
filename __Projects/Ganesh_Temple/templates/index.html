@@ -1,23 +1,33 @@
-Create 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Sri Ganesha Hindu Temple Berlin </title>
+
 </head>
 <body>
     <Header>
         <Nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <div>
+                <button>
+                    <img src="" alt="">
+                </button>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='assets/logo.png')}}" alt="">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
         </Nav>
     </Header>
     <Main>
