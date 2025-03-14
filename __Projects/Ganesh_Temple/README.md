@@ -16,9 +16,14 @@ Requirements -
     
 
 #### Todo 
-1. Create flask application
-2. Create Header and Footer with HTML and CSS
-3. Separate Header and Footer using extension. Create other pages
+1. Create flask application [x]
+2. Create Header and Footer with HTML and CSS [x]
+3. Separate Header and Footer using extension. Create other pages [x]
+4. Create below sections on main landing page:
+   1.  Hero section 
+   2.  Events section
+   3.  About us
+   4.  Reviews
 
 Research material -
 info@hindutempleberlin.de 
