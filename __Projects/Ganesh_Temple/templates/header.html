@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Sri Ganesha Hindu Temple Berlin </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/logo.png')}}" type="image/x-icon" sizes="32x32">
+
+</head>
+<body>
+    <Header>
+        <Nav>
+            <div>
+                <button>
+                    <img src="{{ url_for('static', filename='assets/donate-logo-w-bg.png')}}" alt="donate-logo">
+                </button>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='assets/logo.png')}}" alt="Sri-Ganesha-Temple-Logo">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="{{url_for('donate')}}">Donate</a></li>
+                    <!-- <li><a href=>Services</a></li> -->
+                    <li><a href="#about">About</a></li>
+                    <li><a href="{{url_for('contact')}}">Contact</a></li>
+                </ul>
+            </div>
+            
+        </Nav>
+    </Header>
+    <Main>

@@ -7,3 +7,90 @@ html {
     padding: 0;
 }
 
+/* global */
+ul li a { 
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+/* header */
+
+Nav  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10rem;
+    /* background-color: #f8f8f8; */
+    border-bottom: 2px solid #f8f8f8;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+Nav > div {
+    flex: 1;
+
+}
+
+Nav > div:nth-child(2) img {
+    width: 7rem;
+    height: auto;
+    border: 0;
+    align-self: center;
+}   
+
+Nav button > img {
+    width: 9rem;
+    height: auto;
+    border: 0;
+    margin-left: -90%;
+
+}   
+
+Nav button {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+Nav ul {
+    display: flex;
+
+}
+
+Nav ul li {
+    margin: 0 1rem;
+}
+
+Nav ul li a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+
+footer {
+    background-color: #f8f8f8;
+    padding: 1rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #f8f8f8;
+}
+
+footer p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+footer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
