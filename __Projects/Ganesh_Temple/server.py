@@ -52,7 +52,7 @@ with app.app_context():
 @app.route('/')
 def home():
     events = requests.get('http://127.0.0.1:3000/events').json()
-    
+    print(events['events'])
     return render_template('index.html', events=events['events'], date=datetime.datetime.now().strftime('%Y-%m-%d'))
 
 @app.route('/contact')
@@ -97,7 +97,6 @@ def add_event():
             event_date = request.form.get('event_date'),
             event_time = request.form.get('event_time'),
             )
-        
         try:
             db.session.add(event)
             db.session.commit()

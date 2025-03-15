@@ -84,6 +84,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid #f8f8f8;
+    margin-top: 7rem;
 }
 
 footer p {
@@ -100,11 +101,74 @@ footer > div {
 }
 
 /* Main Page */
-.events {
+
+#hero {
+    background-image: url(https://t3.ftcdn.net/jpg/02/27/91/16/360_F_227911658_qUp3dMZlR6W8iBe0Y00GZLBB6VLgb1WH.jpg);
+    background-size: cover;
+    background-position: center;
+    height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 10rem;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-item img {
+    min-width: 100rem;
+    height: 60vh;
+    object-fit: cover;
+    
+}
+
+#events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
     border-bottom: 2px solid #f8f8f8;
     text-align: center;
 }
+
+h2 , h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 7rem;
+}
+
+#events table th, tr, td {
+    border: 1px solid #f8f8f8;
+    padding: 1rem;
+}
+
+#about > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+#about > context > div {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 0 7%;
+    text-align: center;
+}
+
+#about > context > div:nth-child(2){
+    flex-direction: row-reverse;
+}
+
+#about > context > div p {
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin: 1rem;
+}
+
