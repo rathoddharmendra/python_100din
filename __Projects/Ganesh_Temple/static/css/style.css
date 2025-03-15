@@ -99,3 +99,12 @@ footer > div {
     flex: 1;
 }
 
+/* Main Page */
+.events {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10rem;
+    border-bottom: 2px solid #f8f8f8;
+    text-align: center;
+}

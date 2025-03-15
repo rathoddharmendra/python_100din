@@ -4,8 +4,36 @@
             <h1>Welcome to Ganesh Temple</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
         </section>
-        <section>
+        <section class="events">
             <!-- events   -->
+            <div>
+                <h2>Upcoming Events</h2>
+                <p>Here are some of the events that are happening at the temple.</p>
+                <p>For more information, please contact the temple.</p>
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Event Name</th>
+                        <th>Event Details</th>
+                        <th>Registration Details</th>
+                        <th>Organised By</th>
+                    </tr>
+                    {% for event in events %}
+                    <tr>
+                        <td>{{ event.date }}</td>
+                        <td>{{ event.time }}</td>
+                        <td>{{ event.event_name }}</td>
+                        <td>{{ event.event_details }}</td>
+                        <td>{{ event.registration_details }}</td>
+                        <td>{{ event.organised_by }}</td>
+                    </tr>
+            
+                    {% endfor %}
+            
+                </table>
+            
+            </div>
         </section>
         <section>
            <!-- about us -->
