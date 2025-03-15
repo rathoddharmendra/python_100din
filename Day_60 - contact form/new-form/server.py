@@ -14,3 +14,13 @@ def submit():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
+
+
+    {
+    "event_name": "Jagannatha Jagran",
+    "event_detail": "Welcome to the night of Jagran!",
+    "organised_by": "Sheral & Dee",
+    "registration_details": "No registration required. All are welcome.",
+    "event_date": "15.03.2025",
+    "event_time": "20:00"
+}

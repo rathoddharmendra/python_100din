@@ -24,6 +24,11 @@ Requirements -
    2.  Events section
    3.  About us
    4.  Reviews
+5. CREATE DB, API AND SHOW EVENTS PAGE ON WEBSITE []
+## Features
+- show events page (API + DB + later - admin) <--
+- contact page (send email + store in DB)
+- become free member (subscribe)
 
 Research material -
 info@hindutempleberlin.de 
