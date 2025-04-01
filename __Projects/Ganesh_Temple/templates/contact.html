@@ -1,8 +1,25 @@
 {% include "header.html" %}
-        <section>
+        <section id="contact">
             <!-- hero slides => 3 images -->
-            <h1>We are glad to hear from you</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <h1>Contact Us</h1>
+            <p>We are glad to hear from you</p>
+            <div>
+                <img src="static/assets/logo.png" alt="temple">
+                <form action="{{ url_for('contact')}}" method="POST">
+                    <!-- <label for="name">Name</label> -->
+                    <input type="text" id="name" name="name" placeholder="Your name..">
+    
+                    <!-- <label for="email">Email</label> -->
+                    <input type="email" id="email" name="email" placeholder="Your email..">
+                    <input type="text" id="phone" name="phone" placeholder="Your Number..">
+    
+                    <!-- <label for="subject">Subject</label> -->
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            
         </section>
 
 {% include "footer.html" %}

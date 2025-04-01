@@ -19,16 +19,18 @@ Requirements -
 1. Create flask application [x]
 2. Create Header and Footer with HTML and CSS [x]
 3. Separate Header and Footer using extension. Create other pages [x]
-4. Create below sections on main landing page:
+4. Create below sections on main landing page: [x]
    1.  Hero section 
    2.  Events section
    3.  About us
-   4.  Reviews
-5. CREATE DB, API AND SHOW EVENTS PAGE ON WEBSITE []
+   4.  -- Reviews
+5. CREATE DB, API AND SHOW EVENTS PAGE ON WEBSITE [x]
+6. Send email on contact us page []
 ## Features
 - show events page (API + DB + later - admin) <--
-- contact page (send email + store in DB)
+- contact page (send email + store in DB) <-- send email here to admin
 - become free member (subscribe)
+- Donation page
 
 Research material -
 info@hindutempleberlin.de 

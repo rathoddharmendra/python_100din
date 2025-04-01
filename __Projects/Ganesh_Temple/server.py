@@ -55,9 +55,25 @@ def home():
     print(events['events'])
     return render_template('index.html', events=events['events'], date=datetime.datetime.now().strftime('%Y-%m-%d'))
 
-@app.route('/contact')
+@app.route('/contact', methods=['POST', 'GET'])
 def contact():
+    if request.method == 'POST':
+        contact = Contact(
+            name=request.form.get('name'),
+            email=request.form.get('email'),
+            phone=request.form.get('phone'),
+            message=request.form.get('subject')
+        )
+        try:
+            # send email here to admin
+            db.session.add(contact)
+            db.session.commit()
+            return render_template('contact.html')
+        #     return jsonify({'success': 'Message sent successfully'})
+        except Exception as e:
+            return jsonify({'error': f'Error sending message with error {e}'})
     return render_template('contact.html')
+
 
 @app.route('/donate')
 def donate():
