@@ -1,0 +1,22 @@
+<nav>
+  <div class="container">
+    <div class="logo">
+      <a class="" href="{{url_for('home')}}">
+        <img id="logo" src="{{ url_for('static', filename='/assets/img/logo.png') }}" alt="icon" />
+        <span>SN Tours</span>
+      </a>
+    </div>
+    <div class="navigation">
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="/#booking-form">Booking</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+    <div class="burger">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <i class="fa-solid fa-burger"></i>
+      <span>&equiv;</span>
+    </div>
+  </div>
+</nav>
