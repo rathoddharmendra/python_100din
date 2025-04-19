@@ -7,12 +7,10 @@
   --black: #000000;
   --navy: #27445D;
   --teal: #71BBB2;
+  --light-teal: rgb(113, 187, 178, 0.2);
   --beige: #ffffff;
   /* --beige: #EFE9D5; */
   
-}
-html {
-
 }
 
 body {
@@ -25,60 +23,82 @@ body {
   background-color: var(--beige);
   height: 95vh;
 }
-  
-button{
-  background-color: var(--teal);
+
+.container{
+  height: fit-content;
+  /* background-color: red; */
 }
-
-
-
-
 
 /* navbar */
-
-.logo img {
- max-width: 90px;
- height: auto;
-}
-.logo span {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.logo a {
-  display: flex;
-  gap: 0;
-  align-items: center;
-  position: relative;
-
-}
-
 nav {
   background-color: var(--teal);
-  /* box-shadow: 10px 5px  red; */
+  position: sticky; top: 0; z-index: 1000;
+  width: 100%;
+  border-bottom: 2px solid var(--beige);
 
 }
 
-nav .container {
+nav > div  {
   display: flex;
   flex-direction: row ;
   justify-content: space-between;
   align-items: center;
   color: var(--beige);
-  margin: 0 10% 2%;
+  margin: 0 2%;
   padding: 7px;
   
 }
 
 
-
+.logo img {
+  max-width: 70px;
+  height: auto;
+  border-radius: 50%;
+  border: dotted 2px rgb(205, 205, 192);
+ }
+ .logo span {
+   font-size: 1rem;
+   letter-spacing: 2px;
+   font-weight: 700;
+ }
+ 
+ .logo a {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   position: relative;
+ 
+ }
+ .navigation {
+  width: 30%;
+ }
 .navigation ul {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  justify-content: space-between;
+  gap: 4%;
+  justify-content: space-evenly;
   align-items: center;
+  margin: 0;
 
+}
+
+
+.navigation ul > li:first-child {
+  border: dotted 2px rgb(224, 187, 99);
+  padding: 12px;
+  border-radius: 75px;
+  transition: all 0.3s ease; /* Add transition here */
+  cursor: pointer;
+}
+
+/* Hover effect with scale and color change */
+.navigation ul > li:first-child:hover {
+  color: black;
+  background-color: rgba(205, 205, 192, 0.2); /* Optional glow effect */
+  transform: scale(1.35); /* Slight zoom on hover */
+  border: none;
+  border: dotted 2px rgb(224, 187, 99);
+  box-shadow: 0 0 10px rgba(142, 220, 141, 0.5); /* Optional glow effect */
 }
 
 nav a {
@@ -97,7 +117,85 @@ nav a {
 
 /* hero */
 
+.hero::before {
+  z-index: 0;
+}
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(to bottom right, var(--teal), #ffffff); */
+  color: var(--beige);
+  background: var(--teal);
+  height: 95vh;
+  padding: 2%;
+}
 
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-wrap: wrap;
+  flex: 1;
+
+}
+
+.hero-left > * {
+  width: 50%;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+
+}
+.hero-right img {
+  width: 500px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}
+.hero-btn {
+  flex-direction: column;
+  display: flex;
+  /* gap: 20px; */
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+.hero-btn > a {
+  border: 1px solid var(--beige);
+  border-radius: 25px;
+  padding: 15px;
+  background-color: var(--teal);
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  width: 10rem;
+  text-align: center;
+  transition: all 0.3s ease; /* Add transition here */
+  cursor: pointer;
+}
+
+.hero-btn > a:hover {
+  background-color: var(--beige);
+  color: var(--teal);
+  transition: 0.3s;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
 /* upcoming-events */
 
 .upcoming-events {

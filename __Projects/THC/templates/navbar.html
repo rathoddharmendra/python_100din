@@ -2,14 +2,15 @@
   <div class="container">
     <div class="logo">
       <a href="{{url_for('home')}}">
-        <img src="../static/assets/img/mountain-logo-bg.png" alt="icon" />
-        <span>THC - The Hikers Club</span>
+        <img src="../static/assets/img/m-logo-bg.png" alt="icon" />
+        <span>The <br> Hikers <br>Club</span>
       </a>
     </div>
     <div class="navigation">
       <ul>
-        <li><a href="{{ url_for('create_event') }}">+ New Event</a></li>
-        <li><a href="{{ url_for('show_events') }}">Upcoming Events</a></li>
+        <li><a href="{{ url_for('create_event') }}">+ Create</a></li>
+        <li><a href="{{ url_for('show_events') }}">Join Us</a></li>
+        <li><a href="{{ url_for('show_events') }}">Support</a></li>
         <li><i class="fa-solid fa-user"></i></li>
       </ul>
     </div>
