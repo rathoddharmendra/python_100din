@@ -7,7 +7,8 @@
   --black: #000000;
   --navy: #27445D;
   --teal: #71BBB2;
-  --beige: #EFE9D5;
+  --beige: #ffffff;
+  /* --beige: #EFE9D5; */
   
 }
 html {
@@ -35,9 +36,21 @@ button{
 
 /* navbar */
 
-#logo {
- width: 50px;
+.logo img {
+ max-width: 90px;
  height: auto;
+}
+.logo span {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.logo a {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  position: relative;
+
 }
 
 nav {
@@ -57,14 +70,7 @@ nav .container {
   
 }
 
-.logo a {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  position: relative;
-  font-size: 1.8rem;
 
-}
 
 .navigation ul {
   display: flex;
@@ -91,6 +97,16 @@ nav a {
 
 /* hero */
 
+
+/* upcoming-events */
+
+.upcoming-events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20% 40px;
+}
 .main {
   display: flex;
   flex-direction: row-reverse;

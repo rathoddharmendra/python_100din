@@ -1,16 +1,16 @@
 <nav>
   <div class="container">
     <div class="logo">
-      <a class="" href="{{url_for('home')}}">
-        <img id="logo" src="{{ url_for('static', filename='/assets/img/logo.png') }}" alt="icon" />
-        <span>SN Tours</span>
+      <a href="{{url_for('home')}}">
+        <img src="../static/assets/img/mountain-logo-bg.png" alt="icon" />
+        <span>THC - The Hikers Club</span>
       </a>
     </div>
     <div class="navigation">
       <ul>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="/#booking-form">Booking</a></li>
-        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        <li><a href="{{ url_for('create_event') }}">+ New Event</a></li>
+        <li><a href="{{ url_for('show_events') }}">Upcoming Events</a></li>
+        <li><i class="fa-solid fa-user"></i></li>
       </ul>
     </div>
     <div class="burger">
