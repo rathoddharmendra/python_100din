@@ -101,6 +101,21 @@ nav > div  {
   box-shadow: 0 0 10px rgba(142, 220, 141, 0.5); /* Optional glow effect */
 }
 
+
+.navigation ul > li {
+  padding: 12px;
+  border-radius: 75px;
+  transition: all 0.3s ease; /* Add transition here */
+  cursor: pointer;
+}
+
+/* Hover effect with scale and color change */
+.navigation ul > li:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  background-color: rgba(205, 205, 192, 0.2);
+  border: none;
+}
+
 nav a {
   text-decoration: none;
   color: var(--beige);
@@ -128,7 +143,7 @@ nav a {
   /* background: linear-gradient(to bottom right, var(--teal), #ffffff); */
   color: var(--beige);
   background: var(--teal);
-  height: 95vh;
+  height: fit-content;
   padding: 2%;
 }
 
@@ -152,22 +167,6 @@ nav a {
   padding: 0;
 }
 
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex: 1;
-
-}
-.hero-right img {
-  width: 500px;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  border-radius: 5px;
-}
 .hero-btn {
   flex-direction: column;
   display: flex;
@@ -196,6 +195,59 @@ nav a {
   transition: 0.3s;
   transform: scale(1.05); /* Slight zoom on hover */
 }
+.hero-right {
+  perspective: 1000px;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.carousel {
+  /* position: relative; */
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+  /* transform: rotateX(1deg) rotateZ(20deg); Tilted rotation effect */
+}
+
+.carousel-img {
+  position: absolute;
+  top:25%;
+  left: 0%;
+  width: 500px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 1s ease, filter 1s ease, opacity 1s ease;
+}
+
+/* Front image */
+.carousel-img.active {
+  transform: translateZ(200px);
+  z-index: 3;
+  filter: none;
+  opacity: 1;
+}
+
+/* Top/back image */
+.carousel-img.top {
+  transform: rotateX(60deg) translateZ(50px);
+  filter: blur(6px);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+/* Bottom/back image */
+.carousel-img.bottom {
+  transform: rotateX(-60deg) translateZ(50px);
+  filter: blur(6px);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+
 /* upcoming-events */
 
 .upcoming-events {
