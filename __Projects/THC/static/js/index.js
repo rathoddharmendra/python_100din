@@ -41,6 +41,13 @@
 //   })()
   
 
+
+  const scrollDown = document.querySelector('.scroll-down');
+  scrollDown.addEventListener('click', () => {
+    const target = document.querySelector('.upcoming-events');
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+  );
   const images = document.querySelectorAll('.carousel-img');
   let index = 0;
 
@@ -58,3 +65,35 @@
     images[(index + 1) % 3].classList.add('top');
     images[(index + 2) % 3].classList.add('bottom');
   }, 2000); // 2 seconds delay between rotations
+
+
+  // city selector
+  document.getElementById('city-selector').addEventListener('click', toggleDropdown);
+  function toggleDropdown() {
+    const dropdown = document.getElementById('city-dropdown');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    document.getElementById('city-search').focus();
+  }
+
+  function selectCity(city) {
+    document.getElementById('selected-city').textContent = city;
+    document.getElementById('city-dropdown').style.display = 'none';
+    // Optional: trigger event reload by city
+  }
+
+  function filterCities() {
+    const input = document.getElementById('city-search').value.toLowerCase();
+    const items = document.querySelectorAll('#city-list li');
+    items.forEach(li => {
+      const match = li.textContent.toLowerCase().includes(input);
+      li.style.display = match ? 'block' : 'none';
+    });
+  }
+
+  // Optional: Close dropdown when clicking outside
+  window.addEventListener('click', (e) => {
+    if (!e.target.closest('.city-selector')) {
+      document.getElementById('city-dropdown').style.display = 'none';
+    }
+  });
+
