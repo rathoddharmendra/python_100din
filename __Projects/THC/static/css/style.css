@@ -583,3 +583,61 @@ footer ul div {
   align-items: center;
   gap: 20px;
 }
+
+
+/* contact page  */
+
+#contact
+{
+    margin-top: 4rem;
+    text-align: center;
+}
+#contact div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+
+}
+#contact div > img{
+    width: 30rem;
+    height: auto;
+    border: 0;
+    margin: 0 7%;
+    border-radius: 2rem;
+}
+#contact div > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    /* border: 1px solid teal; */
+    border-radius: 25px;
+
+}
+
+#contact div > form > input, textarea {
+    width: 75%;
+    padding: 0.8rem;
+    margin: 1rem;
+    border: 1px solid #8e8888;
+    border-radius: 25px;
+
+}
+
+#contact div > form > label {
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin: 1rem;
+    text-align: start;
+    align-self: flex-start;
+}
+
+#contact div > form > input[type="submit"] {
+    background-color: rgb(254,183,41);
+    cursor: pointer;
+}

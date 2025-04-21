@@ -112,6 +112,10 @@ def create_event():
 def show_events():
     return render_template('show-events.html', events=all_events)
 
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    return render_template('contact.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=3000, host='0.0.0.0')
     

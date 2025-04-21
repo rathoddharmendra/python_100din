@@ -1,24 +1,26 @@
-{% include 'header.html' %}
-{% include 'navbar.html' %}
+{% include 'header.html' %} {% include 'navbar.html' %}
+        <section id="contact">
+            <!-- hero slides => 3 images -->
+            <h1>Contact Us</h1>
+            <p>We are glad to hear from you</p>
+            <div>
+                <img src="static/assets/img/hiking-meetup-groups-you-probably-shouldnt-join_s.avif" alt="temple">
+           
+                <form action="{{ url_for('contact')}}" method="POST">
+                    <!-- <label for="name">Name</label> -->
+                    <input type="text" id="name" name="name" placeholder="Your name..">
+    
+                    <!-- <label for="email">Email</label> -->
+                    <input type="email" id="email" name="email" placeholder="Your email..">
+                    <!-- <input type="text" id="phone" name="phone" placeholder="Your Number.."> -->
+    
+                    <!-- <label for="subject">Subject</label> -->
+                    <textarea id="subject" name="subject" placeholder="Write your message here.." style="height:200px"></textarea>
+    
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            
+        </section>
 
-<div id="contact" class="container-fluid">
-
-    <div class="contact-image">
-        <img src="{{ url_for('static', filename='assets/img/flying_email.jpg')}}" alt="">
-    </div>
-
-    <div class="contact-form">
-        <h2>Get in touch</h2>
-        <form action="{{ url_for('contact')}}" method="POST">
-            <input type="text" name="name" id="name" placeholder="Full Name*">
-            <input type="email" name="email" id="email" placeholder="email address (john.doe@gmail.com)">
-            <input type="text" name="phone" id="phone" placeholder="Phone Number">
-            <input type="text" name="subject" id="subject" placeholder="Message Title*">
-            <textarea name="message" id="message" rows="10" placeholder="Write your message here*"></textarea>
-            <button type="submit">Send Email </button>
-
-        </form>
-    </div>
-
-</div>
-{% include 'footer.html' %}
+{% include "footer.html" %}

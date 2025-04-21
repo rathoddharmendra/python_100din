@@ -4,56 +4,39 @@
 
 <div class="container">
 
-  <div class="hero">
-    <div class="px-4 py-5 my-5 text-center" bis_skin_checked="1">
-      <img class="d-block mx-auto mb-4" src="./assets/img/logo.png" alt="" width="100" height="auto">
-      <h1 class="display-5 fw-bold text-body-emphasis">Welcome to - The Hikers Club</h1>
-      <div class="col-lg-6 mx-auto" bis_skin_checked="1">
-        <!-- add great barber kind of photo -->
-        <p class="lead mb-4">We are here to make your travel experience unforgettable.</p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="{{url_for('create_event')}}" class="btn btn-primary btn-lg px-4 gap-3">Create New Hike</a> 
-          <a href="{{url_for('show_events')}}" class="btn btn-primary btn-lg px-4 gap-3">Join Group</a>
-        </div>
+  <div class="create-event">
+    <form action="">
+      <h1>Create Event</h1>
+      <div class="event-form">
+        <label for="event-name">Event Name</label>
+        <input type="text" id="event-name" name="event-name" placeholder="Enter event name.." required>
+
+        <label for="event-date">Event Date</label>
+        <input type="date" id="event-date" name="event-date" required>
+
+        <label for="event-location">Event Location</label>
+        <input type="text" id="event-location" name="event-location" placeholder="Enter event location.." required>
+
+        <label for="event-description">Event Description</label>
+        <textarea id="event-description" name="event-description" placeholder="Describe your event.." required></textarea>
+
+        <label for="event-image">Upload Event Image</label>
+        <input type="file" id="event-image" name="event-image" accept=".jpg, .jpeg, .png">
+
+        <button type="submit">Create Event</button>
       </div>
-    </div>
+    </form>
+    <ul>
+      <li>
+        carousel with upload image in center
+      </li>
+      <li>
+
+      </li>
+    </ul>
+
+  
   </div>
-  <div class="upcoming-events">
-    <hr>
-    <h2 class="border-bottom">Upcoming Events</h2>
-    <p>Join upcoming events in your city</p>
-    <!-- dropdown with city search -->
-    <div class="row">
-      {% if events|length > 0 %}
-      {% for event in events %}
-      <div class="col" bis_skin_checked="1">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary" bis_skin_checked="1">
-          <div class="card-header py-3 text-bg-primary border-primary" bis_skin_checked="1">
-            <h4 class="my-0 fw-normal">{{ event.title }}</h4>
-            <span><img src="https://picsum.photos/id/237/200/300" alt="cover-image"></span>
-          </div>
-          <div class="card-body" bis_skin_checked="1">
-            <h1 class="card-title pricing-card-title">{{ event.date }}<small class="text-body-secondary fw-light"></small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>{{ event.description }}</li>
-              <li>Location: {{ event.location }}</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Join Now</button>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      {% else %}
-      No events available at the moment.
-      {% endif %}
-
-      
-    </div>
-    <a href="{{url_for('show_events')}}">show more</a>
-  </div>
-
-
-</div>
 {% include 'footer.html' %}
 
 
