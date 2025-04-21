@@ -8,7 +8,11 @@ todo:
 4. Add join now functionality on detail page, and on card
 5. Show events on page
 
-5. create global variable for city - and integrate in landing page and all events page
+todo:
+1. change fonts 
+2. create card design
+
+3. create global variable for city - and integrate in landing page and all events page
    1. values - global, Berlin, Bangalore, etc
 Notes - 
     <script src="https://kit.fontawesome.com/5bde470069.js" crossorigin="anonymous"></script>

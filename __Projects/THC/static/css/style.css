@@ -313,6 +313,8 @@ nav a {
 
 
 /* upcoming-events */
+
+
 .event-header {
   display: flex;
   flex-direction: column;
@@ -413,7 +415,7 @@ nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2% 0;
+  height: fit-content;
 }
 
 .event-row {

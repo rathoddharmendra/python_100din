@@ -1,68 +1,67 @@
-{% include 'header.html' %} 
-{% include 'navbar.html' %}
+{% include 'header.html' %} {% include 'navbar.html' %}
 <!-- hero section -->
 
 <div class="container">
-  
   {% include 'hero.html' %}
   <div class="upcoming-events">
     <div class="event-header">
-    <div class="city-selector">
-      <div class="city-display" onclick="toggleDropdown()">
-        Browsing events in <i class="fa-solid fa-chevron-down"></i> <span id="selected-city" style="text-decoration: underline;">Berlin</span> 
-      </div>
-    
-      <div class="city-dropdown" id="city-dropdown">
-        <input type="text" id="city-search" placeholder="Search cities..." oninput="filterCities()" />
-        <ul id="city-list">
-          <li onclick="selectCity('Globally')">Globally</li>
-          <li onclick="selectCity('Berlin')">Berlin</li>
-          <li onclick="selectCity('Munich')">Munich</li>
-          <li onclick="selectCity('Paris')">Paris</li>
-          <li onclick="selectCity('Amsterdam')">Amsterdam</li>
-          <li onclick="selectCity('New York')">New York</li>
-          <li onclick="selectCity('Tokyo')">Tokyo</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-    <h2 class="">Discover</h2>
-    <p>Upcoming Events <span>near</span> You</p>
-  </div>
-</div>
-    <!-- dropdown with city search -->
-    <div class="event-row">
-      {% if events|length > 0 %}
-      {% for event in events %}
-      <div class="event-card" bis_skin_checked="1">
-  
-        <img src="https://picsum.photos/id/237/200/300" alt="cover-image">
-            <span>{{ event.status_tag }}</span>
-            
-            <ul class="">
-              <li><h4 class="">{{ event.title }}</h4></li>
-              <li><p class="">{{ event.date }}<small class=""></small></p></li>
-              <li>{{ event.location }}</li>
-              <li>Free</li>
-              <li>{{ event.organizer_name }}</li>
-              <li>{{ event.participant_count }} <i class="fa-solid fa-user-group"></i></li>
-            </ul>
-            <button type="button" class="">Join</button>
-          </div>
+      <div class="city-selector">
+        <div class="city-display" onclick="toggleDropdown()">
+          Browsing events in <i class="fa-solid fa-chevron-down"></i>
+          <span id="selected-city" style="text-decoration: underline"
+            >Berlin</span
+          >
+        </div>
+
+        <div class="city-dropdown" id="city-dropdown">
+          <input
+            type="text"
+            id="city-search"
+            placeholder="Search cities..."
+            oninput="filterCities()"
+          />
+          <ul id="city-list">
+            <li onclick="selectCity('Globally')">Globally</li>
+            <li onclick="selectCity('Berlin')">Berlin</li>
+            <li onclick="selectCity('Munich')">Munich</li>
+            <li onclick="selectCity('Paris')">Paris</li>
+            <li onclick="selectCity('Amsterdam')">Amsterdam</li>
+            <li onclick="selectCity('New York')">New York</li>
+            <li onclick="selectCity('Tokyo')">Tokyo</li>
+          </ul>
         </div>
       </div>
-      {% endfor %}
-      {% else %}
-      No events available at the moment.
-      {% endif %}
-
-      
+      <div>
+        <h2 class="">Discover</h2>
+        <p>Upcoming Events <span>near</span> You</p>
+      </div>
     </div>
+    <!-- dropdown with city search -->
+    <div class="event-row">
+      {% if events|length > 0 %} {% for event in events %}
+      <div class="event-card" bis_skin_checked="1">
+        <img src="https://picsum.photos/id/237/200/300" alt="cover-image" />
+
+        <ul class="">
+          <span>{{ event.status_tag }}</span>
+          <li><h4 class="">{{ event.title }}</h4></li>
+          <li>
+            <p class="">{{ event.date }}<small class=""></small></p>
+          </li>
+          <li>{{ event.location }}</li>
+          <li>Free</li>
+          <li>{{ event.organizer_name }}</li>
+          <li>
+            {{ event.participant_count }} <i class="fa-solid fa-user-group"></i>
+          </li>
+        </ul>
+        <button type="button" class="">Join</button>
+      </div>
+      {% endfor %} {% else %} No events available at the moment. {% endif %}
+    </div>
+
     <a href="{{url_for('show_events')}}">show more</a>
   </div>
-
-
 </div>
+
 {% include 'footer.html' %}
-
-

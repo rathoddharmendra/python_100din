@@ -35,7 +35,11 @@ all_events = [
         'name': 'Event 1',
         'description': 'Description for Event 1',
         'date': '2023-10-01',
-        'location': 'berlin'
+        'location': 'berlin',
+        'status_tag': 'Open',
+        'organizer_name': 'John Doe',
+        'participant_count': 11,
+
     },
     {
         'id': 2,
@@ -43,7 +47,11 @@ all_events = [
         'name': 'Event 2',
         'description': 'Description for Event 2',
         'date': '2023-10-02',
-        'location': 'berlin'
+        'location': 'berlin',
+        'status_tag': 'Going Fast',
+        'organizer_name': 'Dee',
+        'participant_count': 20,
+        
 
     },
     {
@@ -52,7 +60,12 @@ all_events = [
         'name': 'Event 3',
         'description': 'Description for Event 3',
         'date': '2023-10-03',
-        'location': 'berlin'
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'John Doe',
+        'participant_count': 3,
+
+
 
     },
     {
@@ -61,7 +74,12 @@ all_events = [
         'name': 'Event 1',
         'description': 'Description for Event 1',
         'date': '2023-10-01',
-        'location': 'berlin'
+        'location': 'berlin',
+        'status_tag': 'Open',
+        'organizer_name': 'Dharmendra Kumar Rathod',
+        'participant_count': 2,
+
+
 
     },
     {
@@ -70,14 +88,17 @@ all_events = [
         'name': 'Event 2',
         'description': 'Description for Event 2',
         'date': '2023-10-02',
-        'location': 'berlin'
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'John Doe',
+        'participant_count': 10,
 
     }
 ]
 
 @app.route('/')
 def home():
-    return render_template('index.html', events=all_events[:3])
+    return render_template('index.html', events=all_events[:4])
 
 @app.route('/create-event', methods=['GET', 'POST'])
 def create_event():
