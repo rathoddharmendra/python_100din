@@ -31,7 +31,7 @@ app.config['SQLALCHEMY_POOL_PRE_PING'] = True
 all_events = [
     {
         'id': 1,
-        'title': 'Event 1',
+        'title': 'Fun In Barcelona',
         'name': 'Event 1',
         'description': 'Description for Event 1',
         'date': '2023-10-01',
@@ -43,7 +43,7 @@ all_events = [
     },
     {
         'id': 2,
-        'title': 'Event 2',
+        'title': 'New tides Berlin',
         'name': 'Event 2',
         'description': 'Description for Event 2',
         'date': '2023-10-02',
@@ -56,13 +56,13 @@ all_events = [
     },
     {
         'id': 3,
-        'title': 'Event 3',
+        'title': 'Crazy Night Party',
         'name': 'Event 3',
         'description': 'Description for Event 3',
         'date': '2023-10-03',
         'location': 'berlin',
         'status_tag': 'New',
-        'organizer_name': 'John Doe',
+        'organizer_name': 'Mr. John Doe',
         'participant_count': 3,
 
 
@@ -70,7 +70,7 @@ all_events = [
     },
     {
         'id': 1,
-        'title': 'Event 1',
+        'title': 'Social Animals',
         'name': 'Event 1',
         'description': 'Description for Event 1',
         'date': '2023-10-01',
@@ -84,13 +84,13 @@ all_events = [
     },
     {
         'id': 2,
-        'title': 'Event 2',
+        'title': 'Love Birds Event',
         'name': 'Event 2',
         'description': 'Description for Event 2',
         'date': '2023-10-02',
         'location': 'berlin',
         'status_tag': 'New',
-        'organizer_name': 'John Doe',
+        'organizer_name': 'Lee Doe',
         'participant_count': 10,
 
     }
@@ -98,7 +98,7 @@ all_events = [
 
 @app.route('/')
 def home():
-    return render_template('index.html', events=all_events[:4])
+    return render_template('index.html', events=all_events[:5])
 
 @app.route('/create-event', methods=['GET', 'POST'])
 def create_event():

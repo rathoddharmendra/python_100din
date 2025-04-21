@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root{
   --primary: #854836;
-  --secondary: rgb(255, 178, 44);
+  --secondary: rgba(255, 192, 203, 0.287);
   --tertiary: #F7F7F7;
   --black: #000000;
   --navy: #27445D;
@@ -85,8 +87,8 @@ nav > div  {
 
 
 .navigation ul > li:first-child {
-  border: solid 2px var(--secondary);
-  color: var(--secondary);
+  border: solid 2px var(--tertiary);
+  color: var(--beige);
   padding: 12px;
   border-radius: 75px;
   transition: all 0.3s ease; /* Add transition here */
@@ -95,7 +97,6 @@ nav > div  {
 
 .navigation ul > li:first-child a {
   text-decoration: none;
-  color: var(--secondary);
   font-size: 1.2rem;
 }
 
@@ -416,6 +417,7 @@ nav a {
   justify-content: center;
   align-items: center;
   height: fit-content;
+  margin: 2% 0;
 }
 
 .event-row {
@@ -434,16 +436,19 @@ nav a {
   align-items: flex-start;
   text-align: start;
   background-color: var(--beige);
-  border-radius: 25px;
+  border-radius: 2rem;
   border: 1px solid var(--teal);
   margin-bottom: 20px;
-  width: 20rem;
+  width: 15rem;
+  height: fit-content;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .event-card img {
   width: 100%;
-  height: 100px;
+  height: 10rem;
   object-fit: fill;
-  border-radius: 25px;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
 }
 
 .event-card ul {
@@ -452,16 +457,129 @@ nav a {
   margin: 0;
 }
 
+.event-card ul li {
+  margin: 7px 0;
+  padding: 0;
+}
+
+.event-card ul li p {
+  margin: 1px;
+  padding: 0;
+  font-size: 1rem;
+}
+.event-row ul > li:nth-child(3) {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.event-row ul > li:nth-child(4) {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.event-row ul > li:nth-child(5) {
+  font-size: 1.2rem;
+  font-weight: 100;
+  font-family: "Poiret One", serif;
+}
+
+.event-row ul > li:nth-child(6) {
+  font-size: 1.2rem;
+  font-weight: 400;
+  /* text-overflow:clip; */
+  overflow: hidden;
+  height: 1.2rem;
+  font-family: "Poppins", serif;
+}
+
+
+.event-card ul li h4 {
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 20px 0;
+  overflow: hidden;
+  height: 1.2rem;
+  font-family: "Source Code Pro", monospace;
+
+}
+
+.event-card ul li span {
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: var(--secondary);
+  border-radius: 1rem;
+  padding: 10px 15px;
+  min-width: 10rem;
+  text-align: center;
+}
 .event-card button {
+  align-self: center;
   background-color: var(--teal);
   color: var(--beige);
   border: none;
   padding: 10px;
-  border-radius: 25px;
+  border-radius: 2rem;
   cursor: pointer;
   font-size: 1.2rem;
-  margin-bottom: 20px;
-  align-self: center ;
+  margin-bottom: 15px;
+  transition: all 0.3s ease; /* Add transition here */
+  width: 80%;
+}
+
+.event-card button:hover{
+  background-color: var(--secondary);
+  color: var(--beige);
+  transform: scale(1.05); /* Slight zoom on hover */
 }
 
 
+.upcoming-events > a {
+  text-decoration: none;
+  color: gray;
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding: 10px;
+  font-family: "Source Code Pro", monospace;
+  text-decoration: underline;
+}
+
+
+/* footer */
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  background-color: var(--teal);
+  color: var(--beige);
+  padding: 2%;
+  margin-top: 2%;
+}
+
+footer ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: var(--beige);
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+footer ul li a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+footer ul div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

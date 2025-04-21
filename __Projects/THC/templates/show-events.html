@@ -1,44 +1,66 @@
-{% include 'header.html' %} 
-{% include 'navbar.html' %}
+{% include 'header.html' %} {% include 'navbar.html' %}
 <!-- hero section -->
 
 <div class="container">
   <div class="upcoming-events">
-    <hr>
-    <h2 class="border-bottom">Upcoming Events</h2>
-    <p>Join upcoming events in your city</p>
-    <!-- dropdown with city search -->
-    <div class="row">
-      {% if events|length > 0 %}
-      {% for event in events %}
-      <div class="col" bis_skin_checked="1">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary" bis_skin_checked="1">
-          <div class="card-header py-3 text-bg-primary border-primary" bis_skin_checked="1">
-            <h4 class="my-0 fw-normal">{{ event.title }}</h4>
-            <span><img src="https://picsum.photos/id/237/200/300" alt="cover-image"></span>
-          </div>
-          <div class="card-body" bis_skin_checked="1">
-            <h1 class="card-title pricing-card-title">{{ event.date }}<small class="text-body-secondary fw-light"></small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>{{ event.description }}</li>
-              <li>Location: {{ event.location }}</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Join Now</button>
-          </div>
+    <div class="event-header">
+      <div class="city-selector">
+        <div class="city-display" onclick="toggleDropdown()">
+          Browsing events in <i class="fa-solid fa-chevron-down"></i>
+          <span id="selected-city" style="text-decoration: underline"
+            >Berlin</span
+          >
+        </div>
+
+        <div class="city-dropdown" id="city-dropdown">
+          <input
+            type="text"
+            id="city-search"
+            placeholder="Search cities..."
+            oninput="filterCities()"
+          />
+          <ul id="city-list">
+            <li onclick="selectCity('Globally')">Globally</li>
+            <li onclick="selectCity('Berlin')">Berlin</li>
+            <li onclick="selectCity('Munich')">Munich</li>
+            <li onclick="selectCity('Paris')">Paris</li>
+            <li onclick="selectCity('Amsterdam')">Amsterdam</li>
+            <li onclick="selectCity('New York')">New York</li>
+            <li onclick="selectCity('Tokyo')">Tokyo</li>
+          </ul>
         </div>
       </div>
-      {% endfor %}
-      {% else %}
-      No events available at the moment.
-      {% endif %}
-
-      
+      <div>
+        <h2 class="">Discover</h2>
+        <p>Upcoming Events <span>near</span> You</p>
+      </div>
     </div>
-    <a href="{{url_for('show_events')}}">show more</a>
+    <!-- dropdown with city search -->
+    <div class="event-row">
+      {% if events|length > 0 %} {% for event in events %}
+      <div class="event-card" bis_skin_checked="1">
+        <img src={{ "https://picsum.photos/" ~ (event.organizer_name | count) }} alt="cover-image" />
+
+        <ul class="">
+          <li><span>{{ event.status_tag }}</span></li>
+          <li><h4 class="">{{ event.title | upper }}</h4></li>
+          <li>
+            <p class="">{{ event.date }}<small class=""></small></p>
+          </li>
+          <li><p>{{ event.location  | upper }}</p></li>
+          <li><p>FREE</p></li>
+          <li><p>{{ event.organizer_name | upper  }}</p></li>
+          <li>
+            <p>{{ event.participant_count }} <i class="fa-solid fa-user-group"></i></p>
+          </li>
+        </ul>
+        <button type="button" class="">Join</button>
+      </div>
+      {% endfor %} {% else %} No events available at the moment. {% endif %}
+    </div>
+<!-- 
+    <a href="{{url_for('show_events')}}">Show more</a> -->
   </div>
-
-
 </div>
+
 {% include 'footer.html' %}
-
-

@@ -40,19 +40,19 @@
     <div class="event-row">
       {% if events|length > 0 %} {% for event in events %}
       <div class="event-card" bis_skin_checked="1">
-        <img src="https://picsum.photos/id/237/200/300" alt="cover-image" />
+        <img src={{ "https://picsum.photos/" ~ (event.organizer_name | count) }} alt="cover-image" />
 
         <ul class="">
-          <span>{{ event.status_tag }}</span>
-          <li><h4 class="">{{ event.title }}</h4></li>
+          <li><span>{{ event.status_tag }}</span></li>
+          <li><h4 class="">{{ event.title | upper }}</h4></li>
           <li>
             <p class="">{{ event.date }}<small class=""></small></p>
           </li>
-          <li>{{ event.location }}</li>
-          <li>Free</li>
-          <li>{{ event.organizer_name }}</li>
+          <li><p>{{ event.location  | upper }}</p></li>
+          <li><p>FREE</p></li>
+          <li><p>{{ event.organizer_name | upper  }}</p></li>
           <li>
-            {{ event.participant_count }} <i class="fa-solid fa-user-group"></i>
+            <p>{{ event.participant_count }} <i class="fa-solid fa-user-group"></i></p>
           </li>
         </ul>
         <button type="button" class="">Join</button>
@@ -60,7 +60,7 @@
       {% endfor %} {% else %} No events available at the moment. {% endif %}
     </div>
 
-    <a href="{{url_for('show_events')}}">show more</a>
+    <a href="{{url_for('show_events')}}">Show more</a>
   </div>
 </div>
 
