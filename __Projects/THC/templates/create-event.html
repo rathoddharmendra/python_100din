@@ -1,42 +1,111 @@
-{% include 'header.html' %} 
-{% include 'navbar.html' %}
+{% include 'header.html' %} {% include 'navbar.html' %}
 <!-- hero section -->
 
-<div class="container">
+<div class="create-event">
+  <div class="sidebar">
+    <ul>
+      <li>publish</li>
+      <li>save as draft</li>
+      <li>preview</li>
+    </ul>
+  </div>
 
-  <div class="create-event">
-    <form action="">
-      <h1>Create Event</h1>
-      <div class="event-form">
-        <label for="event-name">Event Name</label>
-        <input type="text" id="event-name" name="event-name" placeholder="Enter event name.." required>
-
-        <label for="event-date">Event Date</label>
-        <input type="date" id="event-date" name="event-date" required>
-
-        <label for="event-location">Event Location</label>
-        <input type="text" id="event-location" name="event-location" placeholder="Enter event location.." required>
-
-        <label for="event-description">Event Description</label>
-        <textarea id="event-description" name="event-description" placeholder="Describe your event.." required></textarea>
-
-        <label for="event-image">Upload Event Image</label>
-        <input type="file" id="event-image" name="event-image" accept=".jpg, .jpeg, .png">
-
-        <button type="submit">Create Event</button>
-      </div>
-    </form>
+  <div class="event-form">
     <ul>
       <li>
-        carousel with upload image in center
+        <div id="event-form-upload">
+          <div class="upload-icon">
+            <i class="fa-solid fa-upload"></i>
+          </div>
+          <div class="upload-text">
+            <p>Click to upload or drag and drop</p>
+          </div>
+          <input type="file" id="file-upload" accept="image/*" />
+        </div>
+
+      </li>
+
+
+
+      <li >
+        <div id="event-title"> 
+        <h2>Event Overview</h2>
+        <div> 
+          <label for="event-name">Event title</label>
+          <p>Be clear and descriptive with a title that tells people what your event is about.</p>
+          <input type="text" id="event-name" name="event-name" placeholder="Event Name" required>
+          event title and description
+        </div>
+        <div>
+          <label for="event-summary">Summary</label>
+          <p>Grab people's attention with a short description about your event. Attendees will see this at the top of your event page. (140 characters max) See examples</p>
+          <textarea name="event-summary" id="event-summary"></textarea>
+        </div>
+
+        
+        
+        </li>
+
+      <li>
+        date and time and location + Meeting Point Address or name of the spot
+        where people should meet
+      </li>
+
+      <li>
+        Trek Details
+        <ul>
+          <li>Distance & Difficulty</li>
+          <li>Approximate Distance (in km)</li>
+          <li>Difficulty Level (Easy / Medium / Hard)</li>
+        </ul>
       </li>
       <li>
+        Event Type
+        <ul>
+          <li>Hiking</li>
+          <li>Camping</li>
+          <li>Photography</li>
+          <li>Wildlife</li>
+          <li>Adventure</li>
+        </ul>
+      </li>
 
+      <li>
+        Max Participants (optional) Leave blank if it’s open What to Bring
+        (optional) E.g. water, shoes, snacks, etc. Your Contact / In-app
+        Messaging (Only if you want participants to reach out)
+      </li>
+      <li>
+        Description What’s the vibe? Any views, rivers, snacks after? Keep it
+        chill and short. Any additional detials to add
       </li>
     </ul>
 
-  
+    <div>
+      <button>Publish </button> 
+    </div>
   </div>
+</div>
 {% include 'footer.html' %}
 
+<!-- <form action="">
+  <h1>Create Event</h1>
+  <div class="event-form">
+    <label for="event-name">Event Name</label>
+    <input type="text" id="event-name" name="event-name" placeholder="Enter event name.." required>
 
+    <label for="event-date">Event Date</label>
+    <input type="date" id="event-date" name="event-date" required>
+
+    <label for="event-location">Event Location</label>
+    <input type="text" id="event-location" name="event-location" placeholder="Enter event location.." required>
+
+    <label for="event-description">Event Description</label>
+    <textarea id="event-description" name="event-description" placeholder="Describe your event.." required></textarea>
+
+    <label for="event-image">Upload Event Image</label>
+    <input type="file" id="event-image" name="event-image" accept=".jpg, .jpeg, .png">
+
+    <button type="submit">Create Event</button>
+  </div>
+</form> -->

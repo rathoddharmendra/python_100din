@@ -97,3 +97,15 @@
     }
   });
 
+
+
+  // Event listener for the "See More" button
+  // create event page
+  // const slides = document.querySelectorAll('.event-form-carousel-slide');
+  // let current = 0;
+
+  // setInterval(() => {
+  //   slides[current].classList.remove('active');
+  //   current = (current + 1) % slides.length;
+  //   slides[current].classList.add('active');
+  // }, 1000);

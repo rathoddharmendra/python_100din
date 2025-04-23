@@ -93,12 +93,108 @@ all_events = [
         'organizer_name': 'Lee Doe',
         'participant_count': 10,
 
+    },
+    {
+        'id': 2,
+        'title': 'Love Birds Event',
+        'name': 'Event 2',
+        'description': 'Description for Event 2',
+        'date': '2023-10-02',
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'Lee Doe',
+        'participant_count': 10,
+
+    },
+    {
+        'id': 2,
+        'title': 'Love Birds Event',
+        'name': 'Event 2',
+        'description': 'Description for Event 2',
+        'date': '2023-10-02',
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'Lee Doe',
+        'participant_count': 10,
+
+    },
+    {
+        'id': 2,
+        'title': 'Love Birds Event',
+        'name': 'Event 2',
+        'description': 'Description for Event 2',
+        'date': '2023-10-02',
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'Lee Doe',
+        'participant_count': 10,
+
+    },
+    {
+        'id': 2,
+        'title': 'Love Birds Event',
+        'name': 'Event 2',
+        'description': 'Description for Event 2',
+        'date': '2023-10-02',
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'Lee Doe',
+        'participant_count': 10,
+
+    },
+    {
+        'id': 2,
+        'title': 'Love Birds Event',
+        'name': 'Event 2',
+        'description': 'Description for Event 2',
+        'date': '2023-10-02',
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'Lee Doe',
+        'participant_count': 10,
+
+    },
+    {
+        'id': 2,
+        'title': 'Love Birds Event',
+        'name': 'Event 2',
+        'description': 'Description for Event 2',
+        'date': '2023-10-02',
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'Lee Doe',
+        'participant_count': 10,
+
+    },
+    {
+        'id': 2,
+        'title': 'Love Birds Event',
+        'name': 'Event 2',
+        'description': 'Description for Event 2',
+        'date': '2023-10-02',
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'Lee Doe',
+        'participant_count': 10,
+
+    },
+    {
+        'id': 2,
+        'title': 'Love Birds Event',
+        'name': 'Event 2',
+        'description': 'Description for Event 2',
+        'date': '2023-10-02',
+        'location': 'berlin',
+        'status_tag': 'New',
+        'organizer_name': 'Lee Doe',
+        'participant_count': 10,
+
     }
 ]
 
 @app.route('/')
 def home():
-    return render_template('index.html', events=all_events[:5])
+    return render_template('index.html', events=all_events[:6])
 
 @app.route('/create-event', methods=['GET', 'POST'])
 def create_event():
