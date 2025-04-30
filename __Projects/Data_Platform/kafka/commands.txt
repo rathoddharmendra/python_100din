@@ -1,4 +1,4 @@
-docker exec -it e2f7b0 kafka-topics.sh --bootstrap-server localhost:9092 --list
+docker exec -it f7ee8d8d2e6c kafka-topics.sh --bootstrap-server localhost:9092 --list
 docker exec -it 3989856a524f bash
 docker ps
 

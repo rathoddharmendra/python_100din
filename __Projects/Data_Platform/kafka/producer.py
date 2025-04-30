@@ -19,14 +19,14 @@ def generate_random_sentence() -> str:
     sentence_length =  randint(10,20)
     return ' '.join([r.get_random_word() for _ in range(sentence_length)])
 
-count = 1028
+count = 10
 
 while count > 0:
     count -= 1
     # send message here
     
     producer.produce(
-        topic='test-topic',
+        topic=f'test-topic',
         value=generate_random_sentence(),
         key=b'i'
     )

@@ -4,6 +4,10 @@ In this sample project, we did -
 2. Publilshed data to test-topic - producer 
 3. Read all data from kafka topic and dumped into a database table - consumer
 
+
+TODO:
+1. add schema to producer
+
 This practical code, shows how data can be dumped from producer to a persistent storage using Kakfa for fan-out subscription or to leverage other benefits of using Kafka
 > Producer -> Kafka bin -> Database table
 
