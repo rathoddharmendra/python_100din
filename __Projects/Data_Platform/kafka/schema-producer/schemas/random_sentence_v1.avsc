@@ -1,8 +1,0 @@
-{
-  "type": "record",
-  "name": "RandomSentence",
-  "fields": [
-    { "name": "id", "type": "int" },
-    { "name": "sentence", "type": "string" }
-  ]
-}

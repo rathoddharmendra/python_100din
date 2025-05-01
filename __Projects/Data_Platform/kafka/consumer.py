@@ -3,8 +3,8 @@ from conn import generate_cursor
 
 # Kafka consumer configuration
 conf = {
-    'bootstrap.servers': 'localhost:9092',  # Change if using a remote broker
-    'group.id': 'test-consumer-group',
+    'bootstrap.servers': 'localhost:29092',  # Change if using a remote broker
+    'group.id': 'test-consumer-group-01',
     'auto.offset.reset': 'earliest',  # Start from beginning if no previous offset exists
     'enable.auto.commit': False,          # Disable auto commit to manually control offsets
 
@@ -32,11 +32,16 @@ try:
                 raise KafkaException(msg.error())
 
         # Print received message
-        print(f"Received message: {msg.value().decode('utf-8')}")
-        data = msg.value().decode('utf-8')
+        try:
+            print(f"Received message: {msg.value().decode('utf-8')}")
+            data = msg.value().decode('utf-8')
         # cursor.execute(f'insert into dumps values({len(data)}, {data[0]})')
-        cursor.execute('INSERT INTO dumps VALUES (?, ?)', (len(data), data))
-        con.commit()
+            cursor.execute('INSERT INTO dumps VALUES (?, ?)', (len(data), data))
+            con.commit()
+        except Exception as e:
+            print(f"Error processing message: {e}")
+            cursor.execute('INSERT INTO dumps VALUES (?, ?)', (0, str(e)))
+            con.commit()
 
 except KeyboardInterrupt:
     print("\nClosing consumer...")
