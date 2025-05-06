@@ -15,6 +15,26 @@
     "editor.suggest.showWords": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
-    "editor.inlayHints.enabled": "on"
+    "editor.inlayHints.enabled": "on",
+    "sqltools.connections": [
+        {
+            "authenticator": "SNOWFLAKE",
+            "ocspOptions": {
+                "ocspFailOpen": true
+            },
+            "snowflakeOptions": {
+                "clientSessionKeepAlive": true,
+                "clientSessionKeepAliveHeartbeatFrequency": 3600
+            },
+            "previewLimit": 50,
+            "driver": "Snowflake",
+            "name": "VSCode-Snowflake",
+            "account": "NIKUIUN-DF48053",
+            "username": "admin",
+            "password": "UYF92ARdPqybkyk",
+            "database": "SNOWFLAKE_LEARNING_DB",
+            "warehouse": "SNOWFLAKE_LEARNING_WH"
+        }
+    ]
 
 }

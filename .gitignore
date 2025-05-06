@@ -8,3 +8,4 @@ workspace.xml
 *venv*
 .env
 .cache
+*.tfvars

@@ -1,0 +1,105 @@
+{
+  "version": 4,
+  "terraform_version": "1.11.4",
+  "serial": 1,
+  "lineage": "03459a08-4112-30b7-c66d-acded0e52193",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "snowflake_warehouse",
+      "name": "tf_wh",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "auto_resume": "true",
+            "auto_suspend": 60,
+            "comment": "",
+            "enable_query_acceleration": "default",
+            "fully_qualified_name": "\"NEW_TF_WH\"",
+            "id": "NEW_TF_WH",
+            "initially_suspended": null,
+            "max_cluster_count": null,
+            "max_concurrency_level": 8,
+            "min_cluster_count": null,
+            "name": "NEW_TF_WH",
+            "parameters": [
+              {
+                "max_concurrency_level": [
+                  {
+                    "default": "8",
+                    "description": "Maximum number of SQL statements a warehouse cluster can execute concurrently before queuing them. Small SQL statements count as a fraction of 1.",
+                    "key": "MAX_CONCURRENCY_LEVEL",
+                    "level": "",
+                    "value": "8"
+                  }
+                ],
+                "statement_queued_timeout_in_seconds": [
+                  {
+                    "default": "0",
+                    "description": "Timeout in seconds for queued statements: statements will automatically be canceled if they are queued on a warehouse for longer than this amount of time; disabled if set to zero.",
+                    "key": "STATEMENT_QUEUED_TIMEOUT_IN_SECONDS",
+                    "level": "",
+                    "value": "0"
+                  }
+                ],
+                "statement_timeout_in_seconds": [
+                  {
+                    "default": "172800",
+                    "description": "Timeout in seconds for statements: statements are automatically canceled if they run for longer; if set to zero, max value (604800) is enforced.",
+                    "key": "STATEMENT_TIMEOUT_IN_SECONDS",
+                    "level": "",
+                    "value": "172800"
+                  }
+                ]
+              }
+            ],
+            "query_acceleration_max_scale_factor": -1,
+            "resource_monitor": null,
+            "scaling_policy": null,
+            "show_output": [
+              {
+                "auto_resume": true,
+                "auto_suspend": 60,
+                "available": 0,
+                "comment": "",
+                "created_on": "2025-05-05 10:25:36.898 -0700 PDT",
+                "enable_query_acceleration": false,
+                "is_current": true,
+                "is_default": false,
+                "max_cluster_count": 1,
+                "min_cluster_count": 1,
+                "name": "NEW_TF_WH",
+                "other": 0,
+                "owner": "ACCOUNTADMIN",
+                "owner_role_type": "ROLE",
+                "provisioning": 0,
+                "query_acceleration_max_scale_factor": 8,
+                "queued": 0,
+                "quiescing": 0,
+                "resource_monitor": "",
+                "resumed_on": "2025-05-05 10:25:37.008 -0700 PDT",
+                "running": 0,
+                "scaling_policy": "STANDARD",
+                "size": "XSMALL",
+                "started_clusters": 1,
+                "state": "STARTED",
+                "type": "STANDARD",
+                "updated_on": "2025-05-05 10:25:37.008 -0700 PDT"
+              }
+            ],
+            "statement_queued_timeout_in_seconds": 0,
+            "statement_timeout_in_seconds": 172800,
+            "warehouse_size": "XSMALL",
+            "warehouse_type": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
