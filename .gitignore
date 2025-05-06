@@ -7,5 +7,6 @@ workspace.xml
 .venv
 *venv*
 .env
-.cache
+*.cache
 *.tfvars
+*.log
