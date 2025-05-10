@@ -1,27 +1,29 @@
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+# from airflow import DAG
+# from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 import os
 import pandas as pd
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
-from airflow.providers.snowflake.operators.snowflake import SnowflakeOperator
-import logging
+# from airflow.providers.snowflake.operators.snowflake import SnowflakeOperator
+
 
 
 # Constants
-SOURCE_DIR = "/opt/airflow/plugins"
+SOURCE_DIR = "/Users/mac_dee/Documents/Dee/code/python_100din/__Projects/Data_Platform/USE_CASES/cost_international_education"
+# SOURCE_DIR = "/opt/airflow/plugins"
 TARGET_TABLE = "INTERNATIONAL_EDUCATION"
 
 # Simple cache to remember last update
 MOD_TIME_TRACKER = '/tmp/edu_file_last_mod.txt'
+
 
 def load_to_snowflake():
     # Direct connection
     conn = snowflake.connector.connect(
 
         user='admin',
-        password='',
+        password='UYF92ARdPqybkyk',
         account='NIKUIUN-DF48053',
         warehouse='COMPUTE_WH',
         database='SNOWFLAKE_LEARNING_DB',
@@ -88,45 +90,27 @@ def etl_to_snowflake():
         user='admin',
         password='UYF92ARdPqybkyk',
         account='NIKUIUN-DF48053',
-        warehouse='SNOWFLAKE_LEARNING_WH',
+        warehouse='COMPUTE_WH',
         database='SNOWFLAKE_LEARNING_DB',
         schema='AWS_UNLOAD'
     )
 
     # Truncate table for overwrite (or skip this to append)
     cur = conn.cursor()
-    # cur.execute(f"TRUNCATE TABLE IF EXISTS {TARGET_TABLE}")
+    cur.execute(f"TRUNCATE TABLE IF EXISTS {TARGET_TABLE}")
     cur.close()
+    df.columns = [col.upper() for col in df.columns]
 
     # Load
-    df.columns = [col.upper() for col in df.columns]
     success, nchunks, nrows, _ = write_pandas(conn, df, TARGET_TABLE)
     print(f"Loaded {nrows} rows into {TARGET_TABLE}")
-    logging.info(f"Loaded {nrows} rows into {TARGET_TABLE}")
 
     # Save last mod time
     with open(MOD_TIME_TRACKER, 'w') as f:
         f.write(str(last_mod_time))
-        print(last_mod_time)
-        logging.info(f"Saved last modification time: {last_mod_time}")
+
     conn.close()
 
-# Airflow DAG definition
-default_args = {
-    'owner': 'airflow',
-    'depends_on_past': False,
-    'retry_delay': timedelta(minutes=1),
-    'start_date': datetime(2025, 5, 8),
-    'retries': 1,
-}
-
-dag = DAG(
-    'mac_etl_to_snowflake',
-    default_args=default_args,
-    schedule_interval='*/5 * * * *',  # every 1 minute
-    catchup=False,
-    max_active_runs=2
-)
 
 # create_table = SnowflakeOperator(
 #     task_id='create_table',
@@ -149,34 +133,7 @@ dag = DAG(
 #     dag=dag,
 # )
 
-def check_data_quality(**kwargs):
-    df = kwargs['ti'].xcom_pull(task_ids='load_data_task')
-    
-    if df is None or df.empty:
-        raise ValueError("DataFrame is empty!")
-    
-    if df['Country'].isnull().any():
-        raise ValueError("Missing values found in 'Country' column!")
-
-    print("✅ Data quality checks passed.")
-
-# quality_check = PythonOperator(
-#     task_id='data_quality_check',
-#     python_callable=check_data_quality,
-#     provide_context=True,
-#     dag=dag,
-# )
-
-
-create_table = PythonOperator(
-    task_id='create_table',
-    python_callable=load_to_snowflake,
-    dag=dag,
-)
-run_etl = PythonOperator(
-    task_id='etl_task',
-    python_callable=etl_to_snowflake,
-    dag=dag,
-)
-
-create_table >> run_etl
+if __name__ == "__main__":
+    load_to_snowflake()
+    etl_to_snowflake()
+    # create_table

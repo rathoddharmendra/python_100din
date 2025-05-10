@@ -1,0 +1,9 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - cd terraform/frankfurt && terraform init && terraform apply -auto-approve
+    - cd ../../mumbai && terraform init && terraform apply -auto-approve
+    - cd ../../route53 && terraform init && terraform apply -auto-approve
