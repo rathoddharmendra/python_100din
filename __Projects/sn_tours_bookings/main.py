@@ -87,5 +87,5 @@ def contact():
 #     return render_template("postit.html", post=data)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3000, host='0.0.0.0')
+    app.run(debug=True, port=4000, host='0.0.0.0', ssl_context=('/Users/mac_dee/.ssh/localhost+1.pem', '/Users/mac_dee/.ssh/localhost+1-key.pem'))
     
