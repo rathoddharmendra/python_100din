@@ -39,6 +39,8 @@ def update_rows(elem):
 def check_data(elem) -> bool:
     return len(elem) != 0
 
+# Main Program
+
 is_data = True
 while is_data:
     driver.get(BASE_URL + str(page_number))
