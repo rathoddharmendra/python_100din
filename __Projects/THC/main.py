@@ -3,6 +3,7 @@ from db import generate_cursor, init_db
 import random, os
 from datetime import datetime
 from werkzeug.utils import secure_filename
+from typing import Optional
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here'  # Required for flash messages
@@ -14,7 +15,7 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-def allowed_file(filename):
+def allowed_file(filename: str) -> bool:
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 CITIES = ['Berlin', 'Bangalore', 'San Francisco', 'New York', 'London', 'Paris', 'Tokyo']
@@ -217,7 +218,7 @@ def create_event():
             image_path = None
             if 'event-image' in request.files:
                 file = request.files['event-image']
-                if file and allowed_file(file.filename):
+                if file and file.filename and allowed_file(file.filename):
                     filename = secure_filename(file.filename)
                     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                     file.save(file_path)
