@@ -1,18 +1,25 @@
 {% include 'header.html' %} {% include 'navbar.html' %}
-<!-- hero section -->
 
 <div class="create-event">
   <div class="sidebar">
     <ul>
-      <li>publish</li>
-      <li>save as draft</li>
-      <li>preview</li>
+      <li><button type="submit" form="event-form">Publish</button></li>
+      <li><button type="button" onclick="saveAsDraft()">Save as draft</button></li>
+      <li><button type="button" onclick="previewEvent()">Preview</button></li>
     </ul>
   </div>
 
   <div class="event-form">
-    <ul>
-      <li>
+    <form id="event-form" action="{{ url_for('create_event') }}" method="POST" enctype="multipart/form-data">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <div class="form-section">
         <div id="event-form-upload">
           <div class="upload-icon">
             <i class="fa-solid fa-upload"></i>
@@ -20,72 +27,147 @@
           <div class="upload-text">
             <p>Click to upload or drag and drop</p>
           </div>
-          <input type="file" id="file-upload" accept="image/*" />
+          <input type="file" id="event-image" name="event-image" accept="image/*" />
         </div>
+      </div>
 
-      </li>
-
-
-
-      <li >
-        <div id="event-title"> 
+      <div class="form-section">
         <h2>Event Overview</h2>
-        <div> 
-          <label for="event-name">Event title</label>
-          <p>Be clear and descriptive with a title that tells people what your event is about.</p>
+        <div class="form-group">
+          <label for="event-name">Event title*</label>
+          <p class="help-text">Be clear and descriptive with a title that tells people what your event is about.</p>
           <input type="text" id="event-name" name="event-name" placeholder="Event Name" required>
-          event title and description
         </div>
-        <div>
+
+        <div class="form-group">
           <label for="event-summary">Summary</label>
-          <p>Grab people's attention with a short description about your event. Attendees will see this at the top of your event page. (140 characters max) See examples</p>
-          <textarea name="event-summary" id="event-summary"></textarea>
+          <p class="help-text">Grab people's attention with a short description about your event. (140 characters max)</p>
+          <textarea name="event-summary" id="event-summary" maxlength="140"></textarea>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Date, Time & Location</h2>
+        <div class="form-group">
+          <label for="event-date">Event Date*</label>
+          <input type="date" id="event-date" name="event-date" required>
         </div>
 
-        
-        
-        </li>
+        <div class="form-group">
+          <label for="event-time">Event Time*</label>
+          <input type="time" id="event-time" name="event-time" required>
+        </div>
 
-      <li>
-        date and time and location + Meeting Point Address or name of the spot
-        where people should meet
-      </li>
+        <div class="form-group">
+          <label for="event-location">Location*</label>
+          <input type="text" id="event-location" name="event-location" placeholder="Event Location" required>
+        </div>
 
-      <li>
-        Trek Details
-        <ul>
-          <li>Distance & Difficulty</li>
-          <li>Approximate Distance (in km)</li>
-          <li>Difficulty Level (Easy / Medium / Hard)</li>
-        </ul>
-      </li>
-      <li>
-        Event Type
-        <ul>
-          <li>Hiking</li>
-          <li>Camping</li>
-          <li>Photography</li>
-          <li>Wildlife</li>
-          <li>Adventure</li>
-        </ul>
-      </li>
+        <div class="form-group">
+          <label for="meeting-point">Meeting Point</label>
+          <input type="text" id="meeting-point" name="meeting-point" placeholder="Specific meeting spot">
+        </div>
+      </div>
 
-      <li>
-        Max Participants (optional) Leave blank if it’s open What to Bring
-        (optional) E.g. water, shoes, snacks, etc. Your Contact / In-app
-        Messaging (Only if you want participants to reach out)
-      </li>
-      <li>
-        Description What’s the vibe? Any views, rivers, snacks after? Keep it
-        chill and short. Any additional detials to add
-      </li>
-    </ul>
+      <div class="form-section">
+        <h2>Trek Details</h2>
+        <div class="form-group">
+          <label for="distance">Approximate Distance (in km)</label>
+          <input type="number" step="0.1" id="distance" name="distance" placeholder="Distance in kilometers">
+        </div>
 
-    <div>
-      <button>Publish </button> 
-    </div>
+        <div class="form-group">
+          <label for="difficulty">Difficulty Level</label>
+          <select id="difficulty" name="difficulty">
+            <option value="">Select difficulty</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Event Type</h2>
+        <div class="form-group">
+          <select id="event-type" name="event-type" required>
+            <option value="">Select event type</option>
+            <option value="Hiking">Hiking</option>
+            <option value="Camping">Camping</option>
+            <option value="Photography">Photography</option>
+            <option value="Wildlife">Wildlife</option>
+            <option value="Adventure">Adventure</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Additional Details</h2>
+        <div class="form-group">
+          <label for="max-participants">Max Participants</label>
+          <input type="number" id="max-participants" name="max-participants" placeholder="Leave blank if open">
+        </div>
+
+        <div class="form-group">
+          <label for="what-to-bring">What to Bring</label>
+          <textarea id="what-to-bring" name="what-to-bring" placeholder="E.g. water, shoes, snacks, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-info">Contact Information</label>
+          <input type="text" id="contact-info" name="contact-info" placeholder="How participants can reach you">
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Event Description</h2>
+        <div class="form-group">
+          <label for="event-description">Full Description</label>
+          <p class="help-text">What's the vibe? Any views, rivers, snacks after? Keep it chill and short.</p>
+          <textarea id="event-description" name="event-description" rows="6"></textarea>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Organizer Information</h2>
+        <div class="form-group">
+          <label for="organizer-name">Organizer Name*</label>
+          <input type="text" id="organizer-name" name="organizer-name" required>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
+
+<script>
+function saveAsDraft() {
+  // TODO: Implement save as draft functionality
+  alert('Save as draft functionality coming soon!');
+}
+
+function previewEvent() {
+  // TODO: Implement preview functionality
+  alert('Preview functionality coming soon!');
+}
+
+// Preview uploaded image
+document.getElementById('event-image').addEventListener('change', function(e) {
+  if (e.target.files && e.target.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const preview = document.createElement('img');
+      preview.src = e.target.result;
+      preview.style.maxWidth = '100%';
+      preview.style.height = 'auto';
+      const uploadDiv = document.getElementById('event-form-upload');
+      uploadDiv.innerHTML = '';
+      uploadDiv.appendChild(preview);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  }
+});
+</script>
+
 {% include 'footer.html' %}
 
 <!-- <form action="">
