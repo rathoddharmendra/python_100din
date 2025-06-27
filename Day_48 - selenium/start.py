@@ -25,7 +25,10 @@ driver.get('https://sheralkaren.github.io/git-pages/public/BBG/')
 # using css selector
 
 # using xpath div>p>a
-random_text = driver.find_element(By.XPATH, '/html/body/footer/p')
+# random_text = driver.find_element(By.XPATH, '/html/body/footer/p')
+random_text = driver.find_element(By.XPATH, '//div[@id="hero-box"]/p')
 print(random_text.text)
 driver.quit()
 # driver.close()
+
+# //div[@id="hero-box"]/p

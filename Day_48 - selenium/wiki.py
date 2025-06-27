@@ -17,9 +17,14 @@ driver.get(URL)
 
 # Wikivoyage.click()
 
+click_input = driver.find_element(By.XPATH, "//div[@id='p-search']/a[@class='search-toggle']")
+click_input.click()
+
 
 search_input = driver.find_element(By.NAME, 'search')
 search_input.send_keys('Python', Keys.ENTER)
+
+
 
 # Wait for the search results to load
 driver.implicitly_wait(5)

@@ -65,6 +65,12 @@
   color: white;
 }
 
+.progress-steps li:not(.active):not(.completed) {
+  color: #1976d2;
+  font-weight: 500;
+  background-color: #f0f4fa;
+}
+
 .step-number {
   width: 24px;
   height: 24px;
@@ -168,14 +174,14 @@ textarea {
 input:hover,
 select:hover,
 textarea:hover {
-  border-color: #999;
+  /* border-color: #999; */
 }
 
 input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #4CAF50;
+  /* border-color: #4CAF50; */
   box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
@@ -215,7 +221,7 @@ textarea {
 }
 
 #event-form-upload:hover {
-  border-color: #4CAF50;
+  /* border-color: #4CAF50; */
   background-color: #f5f5f5;
 }
 

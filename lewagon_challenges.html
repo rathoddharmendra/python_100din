@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Wagon Data Transformation Challenges</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #FD1015;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .challenge-container {
+            margin-bottom: 20px;
+        }
+
+        .collapsible {
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+            margin-bottom: 5px;
+        }
+
+        .collapsible:hover {
+            background-color: #f8f8f8;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: #FD1015;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: white;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .content-inner {
+            padding: 20px;
+        }
+
+        .challenge-title {
+            font-weight: bold;
+            color: #FD1015;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .challenge-description {
+            margin-bottom: 15px;
+        }
+
+        .challenge-instructions {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .challenge-hints {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .challenge-tests {
+            background-color: #d4edda;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .challenge-resources {
+            background-color: #e2e3e5;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background-color: #2d2d2d;
+            color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+
+        .download-btn {
+            background-color: #FD1015;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background-color: #e60000;
+        }
+
+        .note {
+            background-color: #e7f5ff;
+            border-left: 4px solid #FD1015;
+            padding: 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Le Wagon Data Transformation Challenges</h1>
+        <p>Basic SQL Notions - Data Transformation</p>
+    </div>
+
+    <div class="challenge-container">
+        <button class="collapsible">Challenge 1: Introduction to SQL</button>
+        <div class="content">
+            <div class="content-inner">
+                <div class="challenge-title">Understanding SQL Basics</div>
+                <div class="challenge-description">
+                    SQL (Structured Query Language) is the standard language for managing and manipulating databases. In this challenge, you'll learn the fundamental concepts of SQL and how to write basic queries.
+                </div>
+                <div class="challenge-instructions">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Understand the basic structure of SQL queries</li>
+                        <li>Learn about SELECT, FROM, and WHERE clauses</li>
+                        <li>Practice writing simple queries</li>
+                        <li>Understand the concept of tables and relationships</li>
+                    </ol>
+                </div>
+                <div class="challenge-hints">
+                    <h3>Key Concepts:</h3>
+                    <ul>
+                        <li>SELECT: Specifies which columns to retrieve</li>
+                        <li>FROM: Specifies which table to query</li>
+                        <li>WHERE: Filters the results based on conditions</li>
+                        <li>Basic syntax: SELECT column1, column2 FROM table_name WHERE condition;</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    -- Example query
+                    SELECT first_name, last_name
+                    FROM users
+                    WHERE age > 18;
+                </div>
+            </div>
+        </div>
+
+        <button class="collapsible">Challenge 2: Data Filtering and Conditions</button>
+        <div class="content">
+            <div class="content-inner">
+                <div class="challenge-title">Advanced Filtering Techniques</div>
+                <div class="challenge-description">
+                    Learn how to filter data using various SQL conditions and operators to get exactly the data you need.
+                </div>
+                <div class="challenge-instructions">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Master comparison operators (=, <, >, <=, >=, !=)</li>
+                        <li>Learn logical operators (AND, OR, NOT)</li>
+                        <li>Understand pattern matching with LIKE</li>
+                        <li>Practice complex filtering conditions</li>
+                    </ol>
+                </div>
+                <div class="challenge-hints">
+                    <h3>Advanced Filtering:</h3>
+                    <ul>
+                        <li>Use IN for multiple possible values</li>
+                        <li>Use BETWEEN for range queries</li>
+                        <li>Use LIKE with wildcards (% and _)</li>
+                        <li>Combine conditions with AND/OR</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    -- Example of complex filtering
+                    SELECT *
+                    FROM products
+                    WHERE price BETWEEN 10 AND 100
+                    AND category IN ('Electronics', 'Books')
+                    AND name LIKE '%phone%';
+                </div>
+            </div>
+        </div>
+
+        <button class="collapsible">Challenge 3: Sorting and Ordering</button>
+        <div class="content">
+            <div class="content-inner">
+                <div class="challenge-title">Data Organization</div>
+                <div class="challenge-description">
+                    Learn how to sort and organize your query results to make data more meaningful and easier to analyze.
+                </div>
+                <div class="challenge-instructions">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Master the ORDER BY clause</li>
+                        <li>Understand ascending and descending order</li>
+                        <li>Learn to sort by multiple columns</li>
+                        <li>Practice combining sorting with filtering</li>
+                    </ol>
+                </div>
+                <div class="challenge-hints">
+                    <h3>Sorting Tips:</h3>
+                    <ul>
+                        <li>ASC for ascending order (default)</li>
+                        <li>DESC for descending order</li>
+                        <li>Multiple columns are sorted in sequence</li>
+                        <li>NULL values can be handled with NULLS FIRST/LAST</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    -- Example of multi-column sorting
+                    SELECT *
+                    FROM employees
+                    WHERE department = 'Sales'
+                    ORDER BY salary DESC, hire_date ASC;
+                </div>
+            </div>
+        </div>
+
+        <button class="collapsible">Challenge 4: Data Aggregation</button>
+        <div class="content">
+            <div class="content-inner">
+                <div class="challenge-title">Summarizing Data</div>
+                <div class="challenge-description">
+                    Learn how to use aggregate functions to summarize and analyze data effectively.
+                </div>
+                <div class="challenge-instructions">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Understand aggregate functions (COUNT, SUM, AVG, MIN, MAX)</li>
+                        <li>Learn to use GROUP BY</li>
+                        <li>Master HAVING clause</li>
+                        <li>Practice combining aggregation with other clauses</li>
+                    </ol>
+                </div>
+                <div class="challenge-hints">
+                    <h3>Aggregation Concepts:</h3>
+                    <ul>
+                        <li>COUNT counts rows or non-null values</li>
+                        <li>SUM adds up numeric values</li>
+                        <li>AVG calculates the mean</li>
+                        <li>GROUP BY creates groups for aggregation</li>
+                        <li>HAVING filters after aggregation</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    -- Example of aggregation
+                    SELECT 
+                        department,
+                        COUNT(*) as employee_count,
+                        AVG(salary) as avg_salary
+                    FROM employees
+                    GROUP BY department
+                    HAVING COUNT(*) > 5
+                    ORDER BY avg_salary DESC;
+                </div>
+            </div>
+        </div>
+
+        <button class="collapsible">Challenge 5: Joins and Relationships</button>
+        <div class="content">
+            <div class="content-inner">
+                <div class="challenge-title">Working with Multiple Tables</div>
+                <div class="challenge-description">
+                    Master the art of combining data from multiple tables using different types of joins.
+                </div>
+                <div class="challenge-instructions">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Understand different types of joins (INNER, LEFT, RIGHT, FULL)</li>
+                        <li>Learn to use table aliases</li>
+                        <li>Master join conditions</li>
+                        <li>Practice complex joins with multiple tables</li>
+                    </ol>
+                </div>
+                <div class="challenge-hints">
+                    <h3>Join Types:</h3>
+                    <ul>
+                        <li>INNER JOIN: Only matching records</li>
+                        <li>LEFT JOIN: All records from left table</li>
+                        <li>RIGHT JOIN: All records from right table</li>
+                        <li>FULL JOIN: All records from both tables</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    -- Example of multiple joins
+                    SELECT 
+                        e.name,
+                        d.department_name,
+                        p.project_name
+                    FROM employees e
+                    LEFT JOIN departments d ON e.department_id = d.id
+                    LEFT JOIN projects p ON e.project_id = p.id
+                    WHERE d.location = 'New York';
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="download-btn" onclick="downloadPage()">Download Page</button>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+
+        function downloadPage() {
+            const element = document.documentElement;
+            const html = element.outerHTML;
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'lewagon_challenges.html';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html> 
