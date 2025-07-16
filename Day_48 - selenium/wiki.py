@@ -17,7 +17,7 @@ driver.get(URL)
 
 # Wikivoyage.click()
 
-click_input = driver.find_element(By.XPATH, "//div[@id='p-search']/a[@class='search-toggle']")
+click_input = driver.find_element(By.XPATH, "//*[@id='p-search']/a[@class='search-toggle']")
 click_input.click()
 
 
