@@ -23,16 +23,19 @@ point_elements = soup.select(selector='span.score')
 
 max = 0
 index = 0
-# Find the article with the highest points
+# Find the article with the highest pozints
 for point in point_elements:
-    point_int = int(point.getText().split()[0])
+    point_int = int(point.get_text().split()[0])
     if point_int > max:
         max = point_int
         index = point_elements.index(point)
         
 
-print(f'Article with the highest points: {anchor_tags[index].getText()}({anchor_tags[index].get('href')}) with {max} score')
+output = f'Article with the highest points: {anchor_tags[index].getText()}({anchor_tags[index].get('href')}) with {max} score'
+print(output)
 
+with open('output.text', 'a') as file:
+    file.write(+ output + '\n')
 
 
 
